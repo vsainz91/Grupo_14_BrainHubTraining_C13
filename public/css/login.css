@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;    ;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/*   -----------   HEADER  -------------------*/
+
+header#nav-bar {
+    background-color: #112031;
+}
+
+.logo {
+    width: 100px;
+}
+
+header div.nav-bar {
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header div .main-movil {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(199, 59, 24);
+    cursor: pointer;
+}
+
+.nav-container {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    background-color: #D4ECDD;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(0 at center);
+    transition: all 0.5s ease-in;
+}
+
+
+ul.nav-container li.list-nav a{
+    color: rgb(199, 59, 24);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header div .close {
+    display: none;
+}
+
+#nav-bar:target .nav-container {
+   /* height: calc(100vh - 80px); */
+    clip-path: circle(100% at center);
+}
+
+#nav-bar:target .open {
+    display: none;
+}
+
+#nav-bar:target .close {
+    display: flex;
+}
+
+
+/*    ----------   FORM   -----------      */
+
+section.container-login form a {
+    color: rgb(34, 34, 182);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+section.container-login {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+section.container-login h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+section.container-login div.lineal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+section.container-login div.lineal .line-one {
+    height: 3px;
+    left: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
+}
+
+section.container-login div.lineal .line-two {
+    height: 3px;
+    right: 0%;
+    width: 47%;
+    background-color: black;
+    margin-top: 8px;
+    border: none;
+}
+
+section.container-login .lineal .separator {
+    padding: 0 5px;
+    font-weight: 600;
+}
+
+section.container-login .container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section.container-login .btn {
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+}
+
+section.container-login .container-form .btn-log:hover {
+    background: linear-gradient(225deg, #cc245c, #ccf000);
+    box-shadow:  0 5px 5px grey;
+    font-size: 20px;
+}
+
+section.container-login .btn-log-facebook {
+    background-color: #335089;
+    color: white;
+}
+
+section.container-login .btn-log-google {
+    background-color: #A8B8BF;
+    color: white;
+}
+
+section.container-login .container-form .btn-log {
+    background-color: #98CA3F;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+section.container-login .container-form .btn-register {
+    border: solid 2px #263CFF;
+    color: #263CFF;
+    background-color: white;
+    margin-top: 8px;
+    height: 37px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+section.container-login .input-container {
+    width: 100%;
+}
+
+section.container-login .container-form .input-log {
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+section.container-login .container-form .check-remember {
+    margin-top: 1rem;
+}
+
+section.container-login .container-form p.link_pass-recover {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/*         FOOTER         */
+
+footer.footer-container {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    max-width: 550px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #345B63;
+}
+
+footer.footer-container .logo {
+    margin-bottom: 15px;
+}
+
+footer.footer-container .about-text {
+    margin-bottom: 15px;
+}
+
+footer.footer-container section h3 {
+    margin: 25px 0 15px;
+    color: black;
+    font-weight: 700;
+    text-shadow:  3px 3px 3px white;
+}
+
+footer.footer-container section li {
+    padding: 5px;
+}
+
+
+footer.footer-container section a {
+    color: black;
+    transition: all 0.7s ease-in;
+}
+
+footer.footer-container section a:hover {
+    color: white;
+}
+
+footer.footer-container section .cont-curs-reds {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto 40px;
+
+}
+
+footer.footer-container hr {
+    margin-bottom: 20px;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    border: none;
+    max-width: 420px;
+}
+
+footer.footer-container .copyright {
+    color: white;
+    text-align: center;
+}
+
+/*            FOOTER____REDES              */
+
+footer.footer-container section li .fa-facebook-square {
+    color: #1c3875;
+}
+
+footer.footer-container section li .fa-twitter {
+    color: #00ACEE;
+}
+footer.footer-container section li .fa-linkedin {
+    color: #0e76a8;
+}
+footer.footer-container section  li .fa-instagram-square {
+    color: transparent;
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}

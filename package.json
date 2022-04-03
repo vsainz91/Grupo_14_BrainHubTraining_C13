@@ -1,0 +1,22 @@
+{
+  "name": "grupo_14_brainhubtraining_c13",
+  "version": "1.0.0",
+  "description": "Somos una plataforma de cursos certificados online con una amplia oferta de educación en diferentes áreas y disciplinas.\r Nuestros cursos están dirigidos a cualquier persona que quiera adquirir nuevos conocimientos de manera autónoma y remota.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifmad/Grupo_14_BrainHubTraining_C13.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifmad/Grupo_14_BrainHubTraining_C13/issues"
+  },
+  "homepage": "https://github.com/lifmad/Grupo_14_BrainHubTraining_C13#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
