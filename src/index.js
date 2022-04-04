@@ -5,6 +5,10 @@ const PORT = 3050
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+/* Views config */
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, "views"));
+
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../views/index.html')) 
