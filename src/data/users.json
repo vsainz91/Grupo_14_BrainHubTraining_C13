@@ -1,0 +1,19 @@
+[{
+    "id": 0,
+    "name": "",
+    "email": "",
+    "password": "",
+    "avatar": ""
+}, {
+    "id": 1,
+    "name": "",
+    "email": "user@mail.com",
+    "password": "123456",
+    "avatar": ""
+}, {
+    "id": 2,
+    "name": "",
+    "email": "mail@mail.com",
+    "password": "123",
+    "avatar": ""
+}]

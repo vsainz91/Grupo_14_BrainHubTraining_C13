@@ -2,7 +2,7 @@
   "name": "grupo_14_brainhubtraining_c13",
   "version": "1.0.0",
   "description": "Somos una plataforma de cursos certificados online con una amplia oferta de educación en diferentes áreas y disciplinas.\r Nuestros cursos están dirigidos a cualquier persona que quiera adquirir nuevos conocimientos de manera autónoma y remota.",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
