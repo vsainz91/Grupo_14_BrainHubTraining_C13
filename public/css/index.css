@@ -235,6 +235,7 @@ main {
     padding: 20px 10px;
     font-weight: bold;
     margin-top: -1px;
+    width: 100%;
 }
 
 .titulo_baner {
@@ -263,7 +264,6 @@ main section {
     display: flex;
     flex-direction: column;
     text-align: center;
-
 }
 
 main section h3 {
@@ -497,7 +497,6 @@ footer{
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-
     }
 
     .buscador {

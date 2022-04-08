@@ -28,6 +28,23 @@ app.use('/login', usersRouter); // Login, registro, perfil
 app.use('/admin', adminRouter); // Admin, CRUD Cursos
 app.use('/productCart', productsRouter); //Carrito
 
+/* app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, './views/index')) 
+} )
+app.get('/login', function(req, res) {
+    res.sendFile(path.join(__dirname, './views/login')) 
+} )
+app.get('/productCart', function(req, res) {
+    res.sendFile(path.join(__dirname, './views/productCart')) 
+} )
+app.get('/productDetail', function(req, res) {
+    res.sendFile(path.join(__dirname, './views/productDetail')) 
+} )
+app.get('/register', function(req, res) {
+    res.sendFile(path.join(__dirname, './views/register')) 
+} )
+ */
+
 app.listen(PORT, () => console.log(`
 Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`

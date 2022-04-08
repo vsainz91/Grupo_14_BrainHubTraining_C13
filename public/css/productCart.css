@@ -278,6 +278,15 @@ button.comprar:hover{
     cursor: pointer;
 }
 
+div.total-amount {
+    display: flex;
+    border: #000;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
 /* Footer */
 
 footer{
