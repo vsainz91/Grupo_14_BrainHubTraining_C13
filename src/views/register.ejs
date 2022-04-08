@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-        <!--      Font Awesome   -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-        <!--      Favicon        -->
-        <link rel="shortcut icon" href="/images/logo-brainhub-favicon.jpg">
-        <!--      Stylesheet   -->
-        <link rel="stylesheet" href="/css/login.css">
-        <!--      Fonts        -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap" rel="stylesheet">
-    </head>
+    <%- include ('partials/head') %>
+    
     
     <body>
-        <header id="nav-bar">
-            <div class="nav-bar">
-                <img class="logo" src="/images/logo-brainhub.jpg" alt="">
-                <a href="#nav-bar" class="main-movil open"><i class="fa-solid fa-bars"></i></a>
-                <a href="#" class="main-movil close"><i class="fa-solid fa-xmark"></i></a>
-            </div>
-            <nav>
-                <ul class="nav-container">
-                    <li class="list-nav"><a href="/">Inicio</a></li>
-                    <li class="list-nav"><a href="">Categorias</a></li>
-                    <li class="list-nav"><a href="">Acerca de</a></li>
-    
-                </ul>
-            </nav>
-        </header>
+        <%- include ('partials/header') %>
         <section class="container-login">
             <h2 class="title">Iniciar sesion</h2>
     
@@ -55,37 +29,6 @@
                 <button class="btn-register btn">Registrate</button>
             </form>
         </section>
-        <footer class="footer-container">
-            <section>
-                <a href="#"><img class="logo" src="/images/logo-brainhub.jpg" alt=""></a>
-                <p class="about-text">Somos BrainHub Training, una institución online que se dedica a la enseñanza no convencional. Nos especializamos en la formación de lenguajes tanto clásicos como de tecnología.</p>
-                <section>
-                    <h3>Enlaces de ayuda</h3>
-                    <li><a href="#">Politica de privacidad</a></li>
-                    <li><a href="#">Terminos y condiciones</a></li>
-                    <li><a href="#">Ploticas de cookies</a></li>
-                    <li><a href="#">Atencion al cliente</a></li>
-                </section>
-                <section class="cont-curs-reds">
-                    <div>
-                        <h3>Cursos</h3>
-                        <li><a href="#">Idiomas</a></li>
-                        <li><a href="#">Diseño Web</a></li>
-                        <li><a href="#">Programación</a></li>
-                        <li><a href="#">Proximos cursos</a></li>
-                    </div>
-                    <div>
-                        <h3>Redes sociales</h3>
-                        <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-square"></i>
-                                Facebook</a></li>
-                        <li><a href=""><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                        <li><a href=""><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                        <li><a href=""><i class="fa-brands fa-instagram-square"></i> Instagram</a></li>
-                    </div>
-                </section>
-            </section>
-            <hr>
-            <p class="copyright">© Copyright 2022 <span>BrainHub Training</span></p>
-        </footer>
+        <%- include ('partials/footer') %>
     </body>
 </html>

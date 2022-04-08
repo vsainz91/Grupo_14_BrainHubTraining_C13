@@ -2,56 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/productCart.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/6cdc6ab529.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/images/logo-brainhub-favicon.jpg" type="">
-    <title>Product Cart</title>
-</head>
+    <%- include ('partials/head') %>
 
 <body>
-    <header class="header">
-        <nav>
-            <div><input type="checkbox" id="menu-burger"></div>
-            <label for="menu-burger" class="bar-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul class="burger-display">
-                <li><a class="active" href="#" target="_self">INICIO</a></li>
-                <li><a href="#">CATEGORÍAS</a></li>
-                <li><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <div class="logo"> <a href="#"><img src="/images/logo-brainhub.jpg" alt="Logo Brainhub" id="logo"></a></div>
-        <div class="buscador">
-            <input type="text" name="search" placeholder="Buscar cursos">
-            <button class="search">
-                <i class="fas fa-search"></i>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li class="menu-item"> <a href="/">INICIO</a>
-                </li>
-                <li class="menu-item">CATEGORIAS
-                    <ul class="submenu">
-                        <li><a href="#idiomas">IDIOMAS</a></li>
-                        <li><a href="#tecnologia">PROGRAMACIÓN</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item"> <a href="#brainhub-about"> ACERCA DE </a></li>
-            </ul>
-        </nav>
-        <div class="user"> LOGIN </div>
-    </header>
+    <%- include ('partials/header') %>
     <main>
         <div>
             <h2>Carrito de compras</h2>
@@ -81,45 +35,7 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container__footer">
-            <div class="article_footer">
-                <div class="footer-logo">
-                    <img src="/images/logo-brainhub.jpg" alt="logo BrainHub">
-                </div>
-            </div>
-            <div class="article__footer">
-                <div class="somos_Brainhub">
-                    <p id="brainhub-about">Somos BrainHub Training, una institución online que se dedica a la enseñanza no convencional. Nos especializamos en la formación de lenguajes tanto clásicos como de tecnología.</p>
-                </div>
-            </div>
-            <div class="article__footer">
-                <h2>Enlaces de ayuda</h2>
-                <a href="#">Política de privacidad</a>
-                <a href="#">Términos y condiciones</a>
-                <a href="#">Políticas de cookies</a>
-                <a href="#">Atención al cliente</a>
-            </div>
-            <div class="article__footer">
-                <h2>Cursos</h2>
-                <a href="#">Idiomas</a>
-                <a href="#">Diseño Web</a>
-                <a href="#">Programación</a>
-                <a href="#">Próximos cursos</a>
-            </div>
-            <div class="article__footer">
-                <h2>Redes Sociales</h2>
-                <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
-                <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-                <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <hr>
-            <p>Marca Registrada © 2022 <b>BrainHub Training</b></p>
-        </div>
-    </footer>
+    <%- include ('partials/footer') %>
     <script src="/js/header.js"></script>
 </body>
 
