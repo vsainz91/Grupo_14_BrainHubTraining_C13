@@ -1,6 +1,6 @@
 # Retrospectiva
 
-SPRINT 1 
+# SPRINT 1 
 
 ## Comenzar a hacer:
 - Definir logo y paleta.
@@ -20,3 +20,22 @@ SPRINT 1
 
 ## Dejar de hacer:
 - Reuniones largas.
+
+# SPRINT 2 
+
+## Comenzar a hacer:
+- Comprometerse más con el equipo
+ 
+## Hacer más:
+- Practicar más Github.
+- Mejorar comunicación.
+
+## Continuar haciendo:
+- Cumplir plazos.
+
+## Hacer menos:
+- Descansar.
+
+## Dejar de hacer:
+- Reuniones largas.
+- Perder integrantes.
