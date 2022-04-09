@@ -1,0 +1,86 @@
+/* FOOTER */
+
+footer{
+    width: 100%;
+    padding: 10px 0px;
+    background: #345B63;
+    margin: 0;
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-top: 10px;
+}
+
+
+.article__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.article__footer .footer-logo img{
+    width: 100px;
+    margin-bottom: 0px;
+    
+}
+
+.article__footer .somos_Brainhub{
+    max-width: 280px;
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+    padding-top: 0px;
+}
+
+.article__footer h2{
+    margin-bottom: 30px;
+    color: black;
+    font-weight: 700;
+}
+
+.article__footer a{
+    margin-top: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.article__footer a:hover{
+    opacity: 0.8;
+    color: plum;
+}
+
+.article__footer a .fab{
+    font-size: 20px;
+}
+
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.copyright p{
+    margin-top: 20px;
+    color: lightgrey;
+}
+
+.copyright hr{
+    border: none;
+    height: 1px;
+    background-color: black;
+}
+
+/* END FOOTER */
+
+@media (min-width:768px) {
+    footer{
+        flex-wrap: wrap;
+        display: inline-block;
+    }
+}

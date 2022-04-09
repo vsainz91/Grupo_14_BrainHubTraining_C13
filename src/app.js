@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, "views"));
 /* Middlewares de Rutas */
 app.use('/', indexRouter); // HOME - Contact 
 
-app.use('/login', usersRouter); // Login, registro, perfil
+app.use('/users', usersRouter); // Login, registro, perfil
 app.use('/admin', adminRouter); // Admin, CRUD Cursos
 app.use('/products', productsRouter); //Carrito
 
