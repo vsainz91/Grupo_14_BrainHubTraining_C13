@@ -12,8 +12,6 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Categoría</th>
-                <th scope="col">Emprendimiento</th>
-                <th scope="col">Stock</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -24,8 +22,6 @@
                   <td><%- producto.name %></td>
                   <td><%- producto.price %></td>
                   <td><%- producto.categoryId %></td>
-                  <td><%- producto.projectId %></td>
-                  <td><%- producto.stock %></td>
                   <td>
                     <a href="/admin/productos/editar/<%- producto.id %>" class="btn btn-success">
                       <i class="fa-solid fa-pen-to-square"></i>

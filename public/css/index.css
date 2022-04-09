@@ -5,6 +5,8 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('root.css');
+@import url('addProducts.css');
+@import url('editProducts.css');
 
 
 body {
