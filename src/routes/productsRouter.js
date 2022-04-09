@@ -6,8 +6,9 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.getAll);
 
 /* Ruta parametrizada de detalle del curso */
-router.get('/productdetail/:id', productsController.productDetail);
-router.get('/productCart', productsController.productCart);
+router.get('/detail/:id', productsController.productDetail);
+
+router.get('/cart', productsController.productCart);
 
 
 module.exports = router;

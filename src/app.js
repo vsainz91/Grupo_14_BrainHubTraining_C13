@@ -25,27 +25,11 @@ app.set('views', path.join(__dirname, "views"));
 
 /* Middlewares de Rutas */
 app.use('/', indexRouter); // HOME - Contact 
-app.use('/productdetail', productsRouter); // Listado, detalle
+
 app.use('/login', usersRouter); // Login, registro, perfil
 app.use('/admin', adminRouter); // Admin, CRUD Cursos
-app.use('/productcart', productsRouter); //Carrito
+app.use('/products', productsRouter); //Carrito
 
-/* app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/index')) 
-} )
-app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/login')) 
-} )
-app.get('/productCart', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/productCart')) 
-} )
-app.get('/productDetail', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/productDetail')) 
-} )
-app.get('/register', function(req, res) {
-    res.sendFile(path.join(__dirname, './views/register')) 
-} )
- */
 
 app.listen(PORT, () => console.log(`
 Servidor escuchando en el puerto ${PORT}
