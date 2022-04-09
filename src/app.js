@@ -2,6 +2,8 @@ const express = require ('express');
 const app = express(); 
 const path = require ('path');
 const PORT = 3050
+const process = require('process');
+
 // const methodOverride = require('method-override');
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -23,10 +25,10 @@ app.set('views', path.join(__dirname, "views"));
 
 /* Middlewares de Rutas */
 app.use('/', indexRouter); // HOME - Contact 
-app.use('/productDetail', productsRouter); // Listado, detalle
+app.use('/productdetail', productsRouter); // Listado, detalle
 app.use('/login', usersRouter); // Login, registro, perfil
 app.use('/admin', adminRouter); // Admin, CRUD Cursos
-app.use('/productCart', productsRouter); //Carrito
+app.use('/productcart', productsRouter); //Carrito
 
 /* app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, './views/index')) 

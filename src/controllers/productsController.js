@@ -5,7 +5,11 @@ module.exports = {
     productDetail: (req, res) => {
         res.render('productDetail', {
            titulo: "Detalle",
-           
+        })
+    },
+    productCart: (req, res) => {
+        res.render('productCart', {
+        titulo: "Carrito"
         })
     },
     getAll: (req, res) => {
@@ -36,10 +40,5 @@ ${course.description}
             res.write("Curso no existe")
         }
         res.end()
-    },
-    productCart: (req, res) => {
-        res.render('productCart', {
-        titulo: "Carrito"
-        })
     }
 };
