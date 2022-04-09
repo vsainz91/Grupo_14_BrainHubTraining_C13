@@ -20,7 +20,7 @@ main.main_index {
     margin-top: 80px;
 }
 
-.banner {
+main.main_index .main_banner {
     background: url("/images/banner2.jpg");
     min-height: 100%;
     position: relative;
@@ -37,7 +37,7 @@ main.main_index {
     width: 100%;
 }
 
-.titulo_banner {
+main.main_index .main_banner .titulo_banner {
      position: absolute;
      font-size: 200%;
      color: black;     
@@ -47,7 +47,7 @@ main.main_index {
      text-align: center;
  }   
 
-.banner img {
+.main.main_index .main_banner img.course_image {
     width: 100%;
 }
 
@@ -88,7 +88,7 @@ main.main_index section article.main-courses {
 }
 
 
-main.main_index section article a picture img{
+main.main_index section article a picture img.course_image{
     height: 150px;
 }
 

@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('partials/head') %> 
-    <body>
+    <body class="login_body">
         <%- include ('partials/header') %> 
         <section class="container-login">
             <h2 class="title">Iniciar sesión</h2>
             <button class="btn-log-facebook btn">Inicia sesión con Facebook</button>
             <button class="btn-log-google btn">Inicia sesión con Google</button>
-            <div class="lineal">
-                <hr class="line-one line">
-                <p class="separator">0</p>
-                <hr class="line-two line">
-            </div>
             <form class="container-form" action="" method="">
                 <div class="input-container">
                     <input class="input-log" type="email" class="input-style" name="email" placeholder="Ingrese su email">
@@ -23,7 +18,7 @@
                 <button type="submit" class="btn btn-log">Ingresar</button>
                 <p class="link_pass-recover"><a href="#">¿Olvidaste tu contraseña?</a></p>
                 <p>¿Aún no tienes cuenta en BrainHub?</p>
-                <button class="btn-register btn">Registrate</button>
+                <button class="btn-register btn"> <a href="/users/register">Registrate</a></button>
             </form>
         </section>
         <%- include ('partials/footer') %>

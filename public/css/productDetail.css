@@ -233,11 +233,11 @@ main.product_detail .descripcion2{
     perspective: 100px;
 
 }
-img {
+.slider img {
    width: 150px;
    transition: transform 1s;
 }
-img:hover {
+.slider img:hover {
     transform: translateZ(20px);
 }
 .slider::before,
