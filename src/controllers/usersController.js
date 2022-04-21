@@ -25,10 +25,10 @@ module.exports = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            avatar: req.file ? req.file.filename : ""
+            avatar: req.file ? req.file.filename : "default-image.png"
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
-        res.redirect('/usuarios/login')
+        res.redirect('/users/login')
     }
 }
