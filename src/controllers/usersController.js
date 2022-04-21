@@ -12,6 +12,7 @@ module.exports = {
         })
     }, 
     processRegister: (req, res) => {
+        
         let lastId = 0;
         getUsers.forEach(user => {
             if(user.id > lastId){
@@ -24,10 +25,10 @@ module.exports = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            avatar: "" 
+            avatar: req.file ? req.file.filename : "default-image.png"
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
-        res.redirect('users/login')
+        res.redirect('/users/login')
     }
 }
