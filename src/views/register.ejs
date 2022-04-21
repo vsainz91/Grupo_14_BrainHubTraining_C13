@@ -4,14 +4,13 @@
     <body class="login_body">
         <%- include ('partials/header') %> 
         <section class="container-login">
-            <h2 class="title">Iniciar sesión</h2>
+            <h2 class="title">Registrarse</h2>
     
-            <button class="btn-log-facebook btn">Inicia sesión con Facebook</button>
-            <button class="btn-log-google btn">Inicia sesión con Google</button>
-            <form class="container-form" action="/profile" method="post" enctype="multipart/form-data">
+            
+            <form class="container-form" action="" method="post" enctype="multipart/form-data">
                 <div class="input-container">
                     <input class="input-log" type="email" class="input-style" name="email" placeholder="Ingrese su email">
-                    <input class="input-log" type="password" name="pass" placeholder="Ingrese su contraseña">
+                    <input class="input-log" type="password" name="pass" placeholder="crea tu contraseña">
                 </div>
                 <div class="check-remember">
                     <label for="recordar">Recordar <input type="checkbox" name="terms" id="recordar"></label>
@@ -20,9 +19,7 @@
                     <label for="avatar">Avatar</label>
                     <input type="file" name="avatar" id="avatar">
                 </div>
-                <button type="submit" class="btn btn-log">Ingresar</button>
-                <p class="link_pass-recover"><a href="#">¿Olvidaste tu contraseña?</a></p>
-                <p>¿Aún no tienes cuenta en BrainHub?</p>
+                
                 <button class="btn-register btn">Registrate</button>
             </form>
         </section>
