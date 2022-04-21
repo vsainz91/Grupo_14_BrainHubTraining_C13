@@ -2,12 +2,12 @@ const {getUsers, writeUsers} = require('../data');
 
 module.exports = {
     login: (req, res) => {
-        res.render('login', {
+        res.render('./users/login', {
             titulo: "Login"
         })
     }, 
     register: (req, res) => {
-        res.render('register', {
+        res.render('./users/register', {
             titulo: "Registro"
         })
     }, 
@@ -28,6 +28,6 @@ module.exports = {
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
-        res.redirect('/usuarios/login')
+        res.redirect('users/login')
     }
 }

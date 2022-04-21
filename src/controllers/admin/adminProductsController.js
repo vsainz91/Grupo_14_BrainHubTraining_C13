@@ -26,7 +26,7 @@ module.exports = {
         }
         getProducts.push(newProduct)
         writeProducts(getProducts)
-        res.redirect('admin/cursos')
+        res.redirect('admin/courses')
     },
 
     productEdit: (req, res) => {
@@ -38,5 +38,35 @@ module.exports = {
             titulo: "Edición",
             curso
         })
+    },
+    productUpdate: (req, res) => {
+        let idProducto = +req.params.id;
+        
+        getProducts.forEach(producto => {
+            if(producto.id === idProducto){
+                producto.name = req.body.name
+                producto.price = req.body.price
+                producto.categoryId = req.body.categoryId
+                producto.description = req.body.description
+            }
+        });
+        writeProducts(getProducts);
+        res.redirect('/admin/cursos');
+    },
+    productDelete: (req, res) => {
+        let idProducto = +req.params.id;
+        
+        getProducts.forEach(producto => {
+            if(producto.id === idProducto){
+                
+                let productToDeleteIndex = getProducts.indexOf(producto);
+                
+                getProducts.splice(productToDeleteIndex, 1)
+            }
+        })
+        
+        writeProducts(getProducts);
+        
+        res.redirect('/admin/cursos')
     }
 }

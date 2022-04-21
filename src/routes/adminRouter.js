@@ -6,14 +6,18 @@ const adminProductsController = require('../controllers/admin/adminProductsContr
 
 router.get('/', adminController.index);
 
+/* CRUD PRODUCTOS */
 
-router.get('/cursos', adminProductsController.list);
+router.get('/courses', adminProductsController.list);
 
-router.get('/cursos/agregar', adminProductsController.productAdd);
+router.get('/courses/add', adminProductsController.productAdd);
 
-router.post('/cursos', adminProductsController.productCreate);
+router.post('/courses', adminProductsController.productCreate);
 
-router.get('/cursos/editar/:id', adminProductsController.productEdit);
+router.get('/courses/edit/:id', adminProductsController.productEdit);
 
+router.put('/courses/:id', adminProductsController.productUpdate);
+
+router.delete('/courses/delete/:id', adminProductsController.productDelete);
 
 module.exports = router;
