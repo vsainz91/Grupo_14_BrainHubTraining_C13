@@ -6,6 +6,9 @@
         background-size: cover;
         background-attachment: fixed;
     }
+    .contenedor{
+        margin-top: 2rem;
+    }
    
     .contenedor .form {
         background-color: rgba(0,0,0,.6);
