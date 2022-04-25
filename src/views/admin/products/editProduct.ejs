@@ -5,15 +5,15 @@
   <%- include('../partials/header') %> 
   
   <div class="contenedor">
-    <form action="" class="form">
+    <form action="/admin/courses/<%= course.id %>?_method=PUT" method="post" class="form">
         <div class="form-header">
             <h1 class="form-title">Editar Curso</span></h1>
         </div>
         <div class="form-header">
             <h1 class="Agregar Curso"></h1>
         </div>
-        <label for="nombre" class="form-label">Nombre del Curso</label>
-        <input type="text" id="nombre" class="form-control" placeholder="Ej: Introducción a React">
+        <label for="name" class="form-label"> Nombre del Curso</label>
+        <input type="text" name="name" class="form-control" id="name" value="<%= course.name %>">
         <label for="price" class="form-label">Precio</label>
         <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
         <label for="category" class="form-label">Categorias</label>
@@ -21,12 +21,11 @@
             <option selected hidden>Categoría</option>
             <option value="1">Idiomas</option>
             <option value="2">Programación</option>
-
         </select>
         
         <label for="description" class="form-label">Descripción</label>
         <textarea name="description" class="form-control" id="description" rows="3"
-            placeholder="Escriba la descripción del curso"></textarea>
+        value="<%= course.description %>"></textarea>
         <button class="btn_editar" type="submit">Editar</button>
     </form>
 </div>

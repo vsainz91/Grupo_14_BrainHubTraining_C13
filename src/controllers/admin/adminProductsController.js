@@ -4,7 +4,7 @@ module.exports = {
     list: (req, res) => {
         res.render('admin/products/listProducts', {
             titulo: "Listado de cursos",
-            productos: getProducts
+            course: getProducts
         })
     },
     productAdd: (req, res) => {
@@ -26,7 +26,7 @@ module.exports = {
         }
         getProducts.push(newCourse)
         writeProducts(getProducts)
-        res.redirect('admin/courses')
+        res.redirect('/admin/courses')
     },
 
     productEdit: (req, res) => {

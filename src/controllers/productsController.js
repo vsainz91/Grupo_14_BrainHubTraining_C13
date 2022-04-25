@@ -3,13 +3,13 @@ const { getProducts } = require('../data');
 
 module.exports = {
     productDetail: (req, res) => {
-        res.render('productDetail', {
+        res.render('products/productDetail', {
            titulo: "Detalle",
            course: getProducts
         })
     },
     productCart: (req, res) => {
-        res.render('productCart', {
+        res.render('products/productCart', {
         titulo: "Carrito"
         })
     },

@@ -267,11 +267,16 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
 
 @media (min-width: 1024px) {
 
+    header nav.header-admin{
+        display: flex;
+        justify-content: space-around;
+    }
+
     header nav label.bar-btn {
         display: none;
     }
 
-    header nav ul.menu {
+    header nav ul.menu-admin {
         display: flex;
         list-style: none;
         align-items: center;
@@ -304,6 +309,13 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
         justify-content: center;
         align-items: center;
         margin-left: 0;
+    }
+
+    header .menu-item-admin {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+
     }
 
 }

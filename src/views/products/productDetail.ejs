@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('partials/head') %> 
+<%- include ('../partials/head') %> 
 <body>
-    <%- include ('partials/header') %> 
+    <%- include ('../partials/header') %> 
     <section class="banner">
         <div class="titulo_baner">
             <h1><%= course.name %> </h1>
@@ -11,7 +11,7 @@
     </section>
     <main class="product_detail">
         <div class="descripcion">
-        <div class="star">
+        <div class="star" name="name">
             <h2><%= course.name %> </h2><br>
             <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
                 class="fa fa-solid fa-star"></i><i class="fa fa-thin fa-star"></i>
@@ -19,7 +19,7 @@
             <button class="compra"> <a href="/products/cart">Agregar al carrito</a></button>
             <img src="/images/<%= course.image %>" alt="">
         </div>
-        <div class="detail_container">
+        <div class="detail_container" name="description">
             <p>
                <%= course.description %><br><br>
                 Trabaja con componentes, propiedades, estado y efectos.<br><br> Almacena tu información en Local
@@ -31,7 +31,7 @@
         </div>
     </div>
         <hr>
-    <div class="descripcion2">
+    <div class="descripcion2" name="description">
         <section class="card">
             <div class="glass_card">
                 <div class="content_top">
@@ -69,7 +69,7 @@
             </ul>
         </section>
        
-        <section class="requisitos">
+        <!-- <section class="requisitos">
             <h2 class="software">Conocimiento previos para cursar </h2>
             <ul>
                 <li>HTML y CSS</li>
@@ -87,7 +87,7 @@
                 <li>Editor de código</li>
                 <li>NPM o Yarn</li>
             </ul>
-        </section>
+        </section> -->
     </div>
         <div class="slider">
             <h2>Herramientas que vamos a trabajar</h2>
@@ -199,7 +199,7 @@
             </div>
         </div>
     </main>
-    <%- include ('partials/footer') %>
+    <%- include ('../partials/footer') %>
     <script>
         const Temario = document.getElementsByClassName('tema');
         for (i = 0; i < Temario.length; i++) {

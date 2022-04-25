@@ -3,7 +3,7 @@ const app = express();
 const path = require ('path');
 const PORT = 3050
 const process = require('process');
-//const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -16,7 +16,7 @@ const adminRouter = require('./routes/adminRouter');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-//app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 /* Views config */
 app.set('view engine', 'ejs')

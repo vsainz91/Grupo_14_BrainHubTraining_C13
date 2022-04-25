@@ -1,8 +1,9 @@
 @import url('root.css');
 
-main-container{
+.main-container{
 	margin: 150px auto;
 	width: 600px;
+	margin-top: 6rem;
 }
 
 table{
