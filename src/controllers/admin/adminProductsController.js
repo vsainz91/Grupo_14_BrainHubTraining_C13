@@ -32,7 +32,7 @@ module.exports = {
     productEdit: (req, res) => {
         let idCurso = +req.params.id;
 
-        let course = products.find(course => course.id === idCurso)
+        let course = getProducts.find(course => course.id === idCurso)
 
         res.render('admin/products/editProduct', {
             titulo: "Edición",
@@ -42,7 +42,7 @@ module.exports = {
     productUpdate: (req, res) => {
         let idCurso = +req.params.id;
         
-        products.forEach(course => {
+        getProducts.forEach(course => {
             if(course.id === idCurso){
                 course.name = req.body.name
                 course.price = req.body.price
@@ -50,7 +50,7 @@ module.exports = {
                 course.description = req.body.description
             }
         });
-        writeProducts(products);
+        writeProducts(getProducts);
         res.redirect('/admin/courses');
     },
     productDelete: (req, res) => {
