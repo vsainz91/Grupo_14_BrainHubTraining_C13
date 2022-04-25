@@ -5,24 +5,23 @@
     <%- include ('partials/header') %> 
     <section class="banner">
         <div class="titulo_baner">
-            <h1>Curso de Introducción a React.js</h1>
+            <h1><%= course.name %> </h1>
             <h2>On line</h2>
         </div>
     </section>
     <main class="product_detail">
         <div class="descripcion">
         <div class="star">
-            <h2>Introducción a React.js</h2><br>
+            <h2><%= course.name %> </h2><br>
             <i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i
                 class="fa fa-solid fa-star"></i><i class="fa fa-thin fa-star"></i>
-            <h2>Acceso Total AR $7475</h2><br><br>
+            <h2>Acceso Total AR $ <%= course.price %> </h2><br><br>
             <button class="compra"> <a href="/products/cart">Agregar al carrito</a></button>
-            <img src="/images/react.png" alt="">
+            <img src="/images/<%= course.image %>" alt="">
         </div>
         <div class="detail_container">
             <p>
-                ¡Aprende React.js, la librería más popular de JavaScript para crear aplicaciones web
-                interactivas!<br><br>
+               <%= course.description %><br><br>
                 Trabaja con componentes, propiedades, estado y efectos.<br><br> Almacena tu información en Local
                 Storage,
                 implementa React Context para comunicar componentes y teletransporta componentes con React
@@ -38,7 +37,7 @@
                 <div class="content_top">
                     <h2>Instructor</h2>
                     <img src="/images/instructor1.jpg" alt="">
-                    <h2>Pepita Pérez</h2>
+                    <h2><%= course.instructor %> </h2>
                     <h3>Desarrolladora de Software</h3>
                     <p>Apasionada por la educación online, y es
                         una persona comprometida y entusiasta de los nuevos métodos de enseñanza</p>
@@ -62,9 +61,9 @@
             <h2 class="software">Información del Curso</h2>
             <ul>
                 <li>Nivel introductorio</li>
-                <li>5 horas de contenido</li>
-                <li>14 horas de práctica</li>
-                <li>21 clases</li>
+                <li> <%= course.contentHours %> horas de contenido</li>
+                <li> <%= course.practiceTime %> horas de práctica</li>
+                <li> <%= course.lessons %> clases</li>
                 <li>Material de apoyo</li>
                 <li>Certificado al finalizar la cursada</li>
             </ul>

@@ -3,7 +3,7 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 
 /* listar cursos */
-router.get('/', productsController.getAll);
+router.get('/', productsController.index);
 
 /* Ruta parametrizada de detalle del curso */
 router.get('/detail/:id', productsController.productDetail);
