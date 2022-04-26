@@ -3,9 +3,11 @@ const { getProducts } = require('../data');
 
 module.exports = {
     productDetail: (req, res) => {
+        let courseId = +req.params.id;
+        let courses = getProducts.find(course => course.id === courseId);
         res.render('products/productDetail', {
            titulo: "Detalle",
-           courses: getProducts
+           courses
         })
     },
     productCart: (req, res) => {

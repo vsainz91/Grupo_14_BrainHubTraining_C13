@@ -14,9 +14,9 @@ module.exports = {
     },
     productCreate: (req, res) => {
         let lastId = 0;
-        getProducts.forEach(course => {
-            if(course.id > lastId){
-                lastId = course.id;
+        getProducts.forEach(courses => {
+            if(courses.id > lastId){
+                lastId = courses.id;
             }
         });
 
@@ -30,24 +30,24 @@ module.exports = {
     },
 
     productEdit: (req, res) => {
-        let idCurso = +req.params.id;
+        let courseId = +req.params.id;
 
-        let course = getProducts.find(course => course.id === idCurso)
+        let courses = getProducts.find(courses => courses.id === courseId)
 
         res.render('admin/products/editProduct', {
             titulo: "Edición",
-            course
+            courses
         })
     },
     productUpdate: (req, res) => {
         let idCurso = +req.params.id;
         
-        getProducts.forEach(course => {
-            if(course.id === idCurso){
-                course.name = req.body.name
-                course.price = req.body.price
-                course.categoryId = req.body.categoryId
-                course.description = req.body.description
+        getProducts.forEach(courses => {
+            if(courses.id === idCurso){
+                courses.name = req.body.name
+                courses.price = req.body.price
+                courses.categoryId = req.body.categoryId
+                courses.description = req.body.description
             }
         });
         writeProducts(getProducts);

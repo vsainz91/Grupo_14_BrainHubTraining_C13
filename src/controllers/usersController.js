@@ -29,6 +29,6 @@ module.exports = {
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
-        res.redirect('users/login')
+        res.redirect('/users/login')
     }
 }
