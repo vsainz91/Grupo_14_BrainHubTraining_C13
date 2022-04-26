@@ -215,7 +215,7 @@ main.product_detail .descripcion2{
 .slider {
     height: 250px;
     position: relative;
-    width: 95%;
+    width: 100%;
     display: grid;
     place-items: center;
     overflow: hidden;

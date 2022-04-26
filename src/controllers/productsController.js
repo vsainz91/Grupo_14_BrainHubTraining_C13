@@ -5,7 +5,7 @@ module.exports = {
     productDetail: (req, res) => {
         res.render('products/productDetail', {
            titulo: "Detalle",
-           course: getProducts
+           courses: getProducts
         })
     },
     productCart: (req, res) => {
@@ -17,7 +17,7 @@ module.exports = {
         res.render('index', {
            titulo: "Homepage",
            products_title: "Cursos",
-           course: getProducts
+           courses: getProducts
         })
     },
 };
