@@ -23,7 +23,7 @@ module.exports = {
         let newCourse = {
             ...req.body, 
             id: lastId + 1,
-            image: req.file ? req.file.filename:"default-image.png" ,
+            image: req.file ? req.file.filename:"default-image.jpg" ,
         }
         getProducts.push(newCourse)
         writeProducts(getProducts)

@@ -1,4 +1,5 @@
 const {getUsers, writeUsers} = require('../data');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     login: (req, res) => {
@@ -12,8 +13,13 @@ module.exports = {
         })
     }, 
     processRegister: (req, res) => {
+
+        let errors = validationResult(req);
         
-        let lastId = 0;
+
+        if(errors.isEmpty()){
+
+            let lastId = 0;
         getUsers.forEach(user => {
             if(user.id > lastId){
                 lastId = user.id
@@ -24,11 +30,18 @@ module.exports = {
             id: lastId + 1,
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password,
-            avatar: req.file ? req.file.filename : "default-image.png"
+            password: req.body.pass,
+            avatar: req.file ? req.file.filename : "default-image.jpg"
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
         res.redirect('/users/login')
-    }
+    } else {
+        res.render('users/register', {
+            titulo: "Registro",
+            errors: errors.mapped()
+        })
+        }
+    }     
+        
 }
