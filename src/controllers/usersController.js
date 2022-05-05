@@ -10,7 +10,7 @@ module.exports = {
     processLogin: (req, res) => {
         let errors = validationResult(req);
         
-        if (errors.isEmpty){
+        if (errors.isEmpty()){
             //levantar sesión
             res.redirect('/')
         }else{

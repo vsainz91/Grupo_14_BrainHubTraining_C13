@@ -10,13 +10,13 @@
             <form class="container-form" action="/users/login" method="post">
                 <div class="input-container">
                     <input class="input-log" type="email" class="input-style" name="email" placeholder="Ingrese su email">
-                    <% if (locals.errors && errors.email){ %>
+                    <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %></small>
-                   <% } %> 
+                    <% } %> 
                     <input class="input-log" type="password" name="pass" placeholder="Ingrese su contraseña">
-                    <% if (locals.errors && errors.pass){ %>
+                    <% if (locals.errors && errors.pass) { %>
                         <small class="text-danger"><%= errors.pass.msg %></small>
-                   <% } %>
+                    <% } %>
                 </div>
                 <div class="check-remember">
                     <label for="recordar">Recordar <input type="checkbox" name="terms" id="recordar"></label>
