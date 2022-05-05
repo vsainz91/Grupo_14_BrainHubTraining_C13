@@ -7,6 +7,19 @@ module.exports = {
             titulo: "Login"
         })
     }, 
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty){
+            //levantar sesión
+            res.redirect('/')
+        }else{
+            res.render('users/login', {
+                titulo: "Login",
+                errors: errors.mapped()
+            })
+
+        }
+    },
     register: (req, res) => {
         res.render('users/register', {
             titulo: "Registro"
