@@ -3,8 +3,9 @@ const router = express.Router();
 const adminController = require('../controllers/admin/adminController');
 const adminProductsController = require('../controllers/admin/adminProductsController');
 const uploadFile = require('../middlewares/uploadProductImage')
-
-router.get('/', adminController.index);
+const userSessionCheck = require('../middlewares/userSessionCheck');
+const adminCheck = require ('../middlewares/adminCheck');
+router.get('/', userSessionCheck, adminCheck,adminController.index);
 
 /* CRUD PRODUCTOS */
 

@@ -6,7 +6,7 @@ let validateLogin = [
         .notEmpty().withMessage("El email es requerido").bail()
         .isEmail().withMessage("Ingrese un email válido"),
     body("email").custom((value, { req })=>{
-        let user = users.find(user => user.email === req.body.email);
+        let user = getUsers.find(user => user.email === req.body.email);
         if(user.pass === req.body.pass){
             return true;
         }
