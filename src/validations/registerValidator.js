@@ -9,14 +9,12 @@ check("email")
     .notEmpty().withMessage(" El e-mail es requerido").bail()
     .isEmail().withMessage("Ingrese un e-mail válido"),
 body("email").custom((value)=>{
-    let user = users.find(user => user.email=== value);
+    let user = users.find(user => user.email === value);
     if(user){
        return false; 
     }
     return true;
 }).withMessage ("e-mail ya registrado"),
-
-
 
 check("pass")
     .notEmpty().withMessage("Ingrese una contaseña")
