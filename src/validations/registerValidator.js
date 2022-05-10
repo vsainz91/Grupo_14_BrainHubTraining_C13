@@ -1,7 +1,7 @@
 const {check, body} = require('express-validator');
 const {getUsers} = require('../data');
 
-let validateRegister=[
+let validateRegister = [
 check("name")
     .notEmpty().withMessage('El nombre es requerido').bail()
     .isLength({ min:5 }).withMessage('Ingrese un nombre válido'),
@@ -21,6 +21,7 @@ check("pass")
     .isLength({min:8}).withMessage("La contraseña debe tener por lo menos 8 caracteres"),
 check("password2")
     .notEmpty().withMessage("Repita su contraseña"),
+
 body("password2").custom((value, {req}) => {
     if (value !== req.body.pass){
         return false;
@@ -30,4 +31,5 @@ body("password2").custom((value, {req}) => {
     
 
 ];
+
 module.exports = validateRegister;

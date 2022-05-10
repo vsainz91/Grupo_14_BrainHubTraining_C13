@@ -5,7 +5,7 @@ const adminProductsController = require('../controllers/admin/adminProductsContr
 const uploadFile = require('../middlewares/uploadProductImage')
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const adminCheck = require ('../middlewares/adminCheck');
-router.get('/', userSessionCheck, adminCheck,adminController.index);
+router.get('/', userSessionCheck, adminCheck, adminController.index);
 
 /* CRUD PRODUCTOS */
 

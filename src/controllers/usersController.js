@@ -1,6 +1,7 @@
 const {getUsers, writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
 
+
 module.exports = {
     login: (req, res) => {
         res.render('users/login', {
@@ -18,14 +19,25 @@ module.exports = {
                 id: getUsers.id,
                 name: getUsers.name,
                 avatar: getUsers.avatar,
-                email: getUsers.email
+                email: getUsers.email,
+                rol: user.rol
 
+            }
+            if(req.body.remember){
+                const TIME_IN_MILISECONDS = 60000;
+                res.cookie('formarCookie', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
             }
             res.locals.user = req.session.user
 
             
             
             res.redirect('/')
+
+            
         }else{
             res.render('users/login', {
                 titulo: "Login",
@@ -60,7 +72,7 @@ module.exports = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.pass,
-            avatar: req.file ? req.file.filename : "default-image.jpg",
+            avatar: req.file ? req.file.filename : "default-image.png",
             rol: "USER"
         }
         getUsers.push(newUser)
@@ -73,6 +85,15 @@ module.exports = {
             session: req.session
         })
         }
-    }     
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+
+        if(req.cookies.formarCookie){
+            res.cookie('formarCookie', "", { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    }   
         
 }
