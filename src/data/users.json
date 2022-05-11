@@ -75,5 +75,29 @@
         "email": "enriquemime@gmail.com",
         "password": "12345678",
         "avatar": "default-image.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Al pepe",
+        "email": "alpepe@hotmail.com",
+        "password": "holamundo",
+        "avatar": "default-image.png",
+        "rol": "USER"
+    },
+    {
+        "id": 14,
+        "name": "anita sanchez",
+        "email": "an@gmail.com",
+        "password": "1a2345678",
+        "avatar": "default-image.png",
+        "rol": "USER"
+    },
+    {
+        "id": 15,
+        "name": "luis gomez",
+        "email": "luis@gmail.com",
+        "password": "holamundo",
+        "avatar": "default-image.png",
+        "rol": "USER"
     }
 ]

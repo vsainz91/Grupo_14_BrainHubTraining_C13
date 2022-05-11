@@ -8,8 +8,8 @@ check("name")
 check("email")
     .notEmpty().withMessage(" El e-mail es requerido").bail()
     .isEmail().withMessage("Ingrese un e-mail válido"),
-body("email").custom((value)=>{
-    let user = users.find(user => user.email === value);
+body("custom").custom((value)=>{
+    let user = getUsers.find(user => user.email === value);
     if(user){
        return false; 
     }

@@ -23,7 +23,7 @@ app.use(session({
     secret: 'brainhub',
     resave: false,
     saveUninitialized: true,
-    cookie: {}
+    cookie: { secure: true}
     
     }))
 

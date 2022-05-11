@@ -9,15 +9,16 @@ router.get('/', userSessionCheck, adminCheck, adminController.index);
 
 /* CRUD PRODUCTOS */
 
-router.get('/courses', adminProductsController.list);
+router.get('/courses', userSessionCheck, adminCheck, adminProductsController.list);
 
-router.get('/courses/add', adminProductsController.productAdd);
+router.get('/courses/add', userSessionCheck, adminCheck, adminProductsController.productAdd);
 
-router.post('/courses', uploadFile.single('image') ,adminProductsController.productCreate);
+//router.post('/courses', uploadFile.single('image') ,productCreateValidator, adminProductsController.productCreate);
 
-router.get('/courses/edit/:id', adminProductsController.productEdit);
+router.get('/courses/edit/:id', userSessionCheck, adminCheck, adminProductsController.productEdit);
 
 router.put('/courses/:id', adminProductsController.productUpdate);
+
 
 router.delete('/courses/delete/:id', adminProductsController.productDelete);
 
