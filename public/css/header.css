@@ -206,6 +206,27 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
     display: block;
 }
 
+.header_avatar{
+   
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color:rgb(79, 155, 232);
+        position: relative;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        
+}
+.avatar_session {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(198, 30, 30);
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+}
+
 /* END HEADER */
 
 @media screen and (min-width: 768px){
@@ -327,5 +348,7 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
         margin-left: 150px;
         margin-right: 130px;
     }
+
+    
 
 }
