@@ -7,7 +7,7 @@ barButton.addEventListener('click', function () {
     burgerDisplay.classList.toggle('active');
 });
 
-//Barra buscador en mobile que se despliegue
+// Barra buscador en mobile que se despliegue
 
 let searchButton = document.querySelector('.search-button');
 let searchDisplay = document.querySelector('.search-input');

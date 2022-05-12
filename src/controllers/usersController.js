@@ -30,7 +30,6 @@ module.exports = {
 
         let errors = validationResult(req);
         
-
         if(errors.isEmpty()){
 
             let lastId = 0;
@@ -45,7 +44,7 @@ module.exports = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.pass,
-            avatar: req.file ? req.file.filename : "default-image.jpg"
+            avatar: req.file ? req.file.filename : "default-image.png"
         }
         getUsers.push(newUser)
         writeUsers(getUsers)

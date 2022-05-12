@@ -91,13 +91,16 @@ header nav div input {
 }
 
 header nav ul.burger-display.active {
-    display: block;
+    display: flex;
     opacity: 1;
     animation: fade-in 1s;
     top: 30px;
     font-size: 1rem;
     margin-left: -10px;
-    padding: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -150,15 +153,20 @@ header nav.menu-burger:hover {
     background: rgba(196, 196, 196, 0.14);
 }
 
+/* .buscador .search-button:hover > .search-input {
+    display: block;
+} */
+
 .buscador .search-input.active{
     display: block;
+    top: 30;
 }
 
 .buscador input:focus {
     outline: none;
 }
 .buscador button{
-    background-color: #345B63;
+    background-color: white;
     border-left: solid 1px white;
     color: #000;
     border: none;
@@ -262,8 +270,8 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
     .buscador {
         padding: 5px;
     }
+    
     .buscador input{
-        display: block;
         border: #000;
     }
 
@@ -297,7 +305,7 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
         width: 15rem;
     }
 
-    .buscador input{
+    .buscador .search-input{
         display: block;
         border: #000;
     }
