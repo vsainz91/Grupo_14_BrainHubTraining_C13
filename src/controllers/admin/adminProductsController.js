@@ -1,4 +1,5 @@
 const { getProducts, writeProducts } = require('../../data');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     list: (req, res) => {
@@ -13,23 +14,31 @@ module.exports = {
         })
     },
     productCreate: (req, res) => {
+        let errors = validationResult(req);
         let lastId = 0;
-        getProducts.forEach(courses => {
-            if(courses.id > lastId){
-                lastId = courses.id;
+        if(errors.isEmpty()){
+            getProducts.forEach(courses => {
+                if(courses.id > lastId){
+                    lastId = courses.id;
+                }
+            });
+
+            let newCourse = {
+                ...req.body, 
+                id: lastId + 1,
+                image: req.file ? req.file.filename:"default-image.png" ,
             }
-        });
-
-        let newCourse = {
-            ...req.body, 
-            id: lastId + 1,
-            image: req.file ? req.file.filename:"default-image.jpg" ,
+            getProducts.push(newCourse)
+            writeProducts(getProducts)
+            res.redirect('/admin/courses')
+        }else{
+            res.render('admin/products/addProduct', {
+                titulo: "Agregar curso",
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
-        getProducts.push(newCourse)
-        writeProducts(getProducts)
-        res.redirect('/admin/courses')
     },
-
     productEdit: (req, res) => {
         let courseId = +req.params.id;
 

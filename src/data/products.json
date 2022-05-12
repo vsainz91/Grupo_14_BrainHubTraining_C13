@@ -67,19 +67,15 @@
         "image": "curso-Nodejs.jpg"
     },
     {
-        "name": "prueba 2",
-        "price": "2500",
-        "categoryId": "2",
-        "description": "descripción",
-        "id": 7,
+        "name": "Italiano",
+        "price": "3000",
+        "instructor": "José García",
+        "contentHours": "17",
+        "practiceTime": "13",
+        "lessons": "11",
+        "categoryId": "Programación",
+        "description": "adasfg",
+        "id": 11,
         "image": "default-image.png"
-    },
-    {
-        "name": "prueba 3",
-        "price": "1100",
-        "categoryId": "1",
-        "description": "el Mejor Curso",
-        "id": 8,
-        "image": "image-1651629860064.jpg"
     }
 ]

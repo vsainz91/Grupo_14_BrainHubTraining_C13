@@ -7,16 +7,6 @@ const registerValidator = require ('../validations/registerValidator');
 const loginValidator = require ('../validations/loginValidator');
 const userInSessionCheck = require('../middlewares/userInSessionCheck');
 
-
-
-
-
-
-
-
-
-
-
 router.get('/login', userInSessionCheck, usersController.login);
 router.post('/login', loginValidator, usersController.processLogin);
 router.get('/register', userInSessionCheck, usersController.register);

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head') %>
-
     <body class="login_body">
         <%- include ('../partials/header') %>
             <section class="container-login">
+                <p class="text-end">¿Ya estás registrado? <a href="/users/login">¡Logueate!</a></p>
                 <h2 class="title">Registrarse</h2>
-
                 <form class="container-form" action="/users/register" method="post" enctype="multipart/form-data">
                     <div class="input-container">
                         <input class="input-log" type="nombre" class="input-style" name="name"
@@ -37,7 +36,10 @@
                         <label for="avatar">Avatar</label>
                         <input type="file" name="avatar" id="avatar">
                     </div>
+                    <div>
                     <button class="btn-register btn">Registrate</button>
+                    <button class="btn" type="reset">Limpiar</button>
+                    </div>
                 </form>
             </section>
             <%- include ('../partials/footer') %>

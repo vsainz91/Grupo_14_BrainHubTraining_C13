@@ -5,8 +5,9 @@ const PORT = 3050
 const process = require('process');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const cookieSession = require('./middlewares/cookieSession');
 
-app.use(express.static(path.join(__dirname, 'public')))
 
 /* Enrutadores */
 const indexRouter = require('./routes/indexRouter');
@@ -24,8 +25,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {}
-    
-    }))
+}));
+app.use(cookieParser());
+app.use(cookieSession);
 
 /* Views config */
 app.set('view engine', 'ejs')

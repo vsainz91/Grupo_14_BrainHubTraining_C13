@@ -1,7 +1,6 @@
 const {getUsers, writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
 
-
 module.exports = {
     login: (req, res) => {
         res.render('users/login', {
@@ -31,20 +30,13 @@ module.exports = {
                     secure: true
                 })
             }
-            res.locals.user = req.session.user
-
-            
-            
             res.redirect('/')
-
-            
         }else{
             res.render('users/login', {
                 titulo: "Login",
                 errors: errors.mapped(),
                 session: req.session
             })
-
         }
     },
     register: (req, res) => {
@@ -54,11 +46,9 @@ module.exports = {
         })
     }, 
     processRegister: (req, res) => {
-
         let errors = validationResult(req);
-        
-        if(errors.isEmpty()){
 
+        if(errors.isEmpty()){
             let lastId = 0;
         getUsers.forEach(user => {
             if(user.id > lastId){
