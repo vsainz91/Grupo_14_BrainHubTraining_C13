@@ -21,6 +21,55 @@
         "avatar": ""
     },
     {
+        "id": 3,
+        "email": "enriquemime@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 4,
+        "email": "enriquemime@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 5,
+        "email": "enriquemime@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 6,
+        "email": "enriquemime@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 7,
+        "email": "enriquemime@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 8,
+        "email": "enriquemime@gmail.com",
+        "avatar": "avatar-1650501713606.jpg"
+    },
+    {
+        "id": 9,
+        "email": "vsainz1@hotmail.com",
+        "avatar": "default-image.png"
+    },
+    {
+        "id": 10,
+        "name": "vfv",
+        "email": "v@maikl",
+        "password": "vfv",
+        "avatar": "default-image.jpg"
+    },
+    {
+        "id": 11,
+        "name": "",
+        "email": "",
+        "password": "",
+        "avatar": "default-image.jpg"
+    },
+    {
         "id": 12,
         "name": "jhon enrique",
         "email": "enriquemime@gmail.com",
@@ -29,9 +78,26 @@
     },
     {
         "id": 13,
-        "name": "Valeria S",
-        "email": "vsainz1@hotmail.com",
-        "password": "12345678",
-        "avatar": "avatar-1651768577485.jpg"
+        "name": "Al pepe",
+        "email": "alpepe@hotmail.com",
+        "password": "holamundo",
+        "avatar": "default-image.png",
+        "rol": "USER"
+    },
+    {
+        "id": 14,
+        "name": "anita sanchez",
+        "email": "an@gmail.com",
+        "password": "1a2345678",
+        "avatar": "default-image.png",
+        "rol": "USER"
+    },
+    {
+        "id": 15,
+        "name": "luis gomez",
+        "email": "luis@gmail.com",
+        "password": "holamundo",
+        "avatar": "default-image.png",
+        "rol": "USER"
     }
 ]

@@ -5,7 +5,8 @@ module.exports = {
         res.render('index', {
            titulo: "Homepage",
            products_title: "Cursos",
-           cursos: getProducts
+           cursos: getProducts,
+           session: req.session
         })
     },
 } 

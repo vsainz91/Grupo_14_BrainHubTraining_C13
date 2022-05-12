@@ -1,29 +1,56 @@
 const {getUsers, writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
 
+
 module.exports = {
     login: (req, res) => {
         res.render('users/login', {
-            titulo: "Login"
+            titulo: "Login",
+            session: req.session
         })
     }, 
     processLogin: (req, res) => {
         let errors = validationResult(req);
         
         if (errors.isEmpty()){
-            //levantar sesión
+            let user = getUsers.find(user => user.email === req.body.email);
+            
+            req.session.user = {
+                id: getUsers.id,
+                name: getUsers.name,
+                avatar: getUsers.avatar,
+                email: getUsers.email,
+                rol: user.rol
+
+            }
+            if(req.body.remember){
+                const TIME_IN_MILISECONDS = 60000;
+                res.cookie('formarCookie', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
+            }
+            res.locals.user = req.session.user
+
+            
+            
             res.redirect('/')
+
+            
         }else{
             res.render('users/login', {
                 titulo: "Login",
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                session: req.session
             })
 
         }
     },
     register: (req, res) => {
         res.render('users/register', {
-            titulo: "Registro"
+            titulo: "Registro",
+            session: req.session
         })
     }, 
     processRegister: (req, res) => {
@@ -44,7 +71,8 @@ module.exports = {
             name: req.body.name,
             email: req.body.email,
             password: req.body.pass,
-            avatar: req.file ? req.file.filename : "default-image.png"
+            avatar: req.file ? req.file.filename : "default-image.png",
+            rol: "USER"
         }
         getUsers.push(newUser)
         writeUsers(getUsers)
@@ -52,9 +80,19 @@ module.exports = {
     } else {
         res.render('users/register', {
             titulo: "Registro",
-            errors: errors.mapped()
+            errors: errors.mapped(),
+            session: req.session
         })
         }
-    }     
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+
+        if(req.cookies.formarCookie){
+            res.cookie('formarCookie', "", { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    }   
         
 }

@@ -4,6 +4,7 @@ const path = require ('path');
 const PORT = 3050
 const process = require('process');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -17,6 +18,14 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.set('trust proxy', 1)
+app.use(session({
+    secret: 'brainhub',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+    
+    }))
 
 /* Views config */
 app.set('view engine', 'ejs')
