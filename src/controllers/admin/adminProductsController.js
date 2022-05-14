@@ -5,7 +5,7 @@ module.exports = {
     list: (req, res) => {
         res.render('admin/products/listProducts', {
             titulo: "Listado de cursos",
-            course: getProducts
+            course: getProducts,
         })
     },
     productAdd: (req, res) => {

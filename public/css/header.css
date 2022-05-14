@@ -56,7 +56,6 @@ header div.user:hover{
 header nav {
     display: flex;
     align-items: center;
-
 }
 
 header nav ul.burger-display {
@@ -219,7 +218,7 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
-        background-color:rgb(79, 155, 232);
+        background-color:#345B63;
         position: relative;
         margin-bottom: 1rem;
         margin-top: 1rem;
@@ -228,11 +227,16 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
 .avatar_session {
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(198, 30, 30);
+    background-color: rgb(15, 255, 27);
     top: 0;
     right: 0;
     width: 10px;
     height: 10px;
+}
+
+.header_avatar img{
+    height: 65px;
+    border-radius: 50%;
 }
 
 /* END HEADER */
