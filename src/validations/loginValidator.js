@@ -6,15 +6,15 @@ let validateLogin = [
     check("email")
         .notEmpty().withMessage("El email es requerido").bail()
         .isEmail().withMessage("Ingrese un email válido"),
-    body("custom").custom((value, { req })=>{
-        let user = getUsers.find(user => user.email === req.body.email);
-        if(bcrypt.compareSync(user.pass, req.body.pass)) {
+    body("email").custom((value)=>{
+        let user = getUsers.find(user => user.email === value);
+        if(user !== undefined) {
             return true;
         }
         return false;
-    }).withMessage("email o contraseña incorrecto"),
+    }).withMessage("Email o contraseña incorrecto"),
     check("pass")
-        .notEmpty().withMessage("Ingrese una contraseña"),
+    .notEmpty().withMessage("Ingrese una contraseña válida"),
 ];
 
 module.exports = validateLogin;
