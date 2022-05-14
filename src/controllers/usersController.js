@@ -21,11 +21,11 @@ module.exports = {
                 avatar: user.avatar,
                 email: user.email,
                 rol: user.rol
-
             }
+            
             if(req.body.remember){
                 const TIME_IN_MILISECONDS = 120000;
-                res.cookie('formarCookie', req.session.user, {
+                res.cookie('brainhubCookie', req.session.user, {
                     expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                     httpOnly: true,
                     secure: true
