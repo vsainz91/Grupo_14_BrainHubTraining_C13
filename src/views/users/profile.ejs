@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head') %> 
+<body>
+
+    <div class="contenedor_perfil">
+        <form action="/admin/courses/<%= courses.id %>?_method=PUT" method="post" class="form">
+            <div class="form-header">
+                <h1 class="form-title">Editar Curso</span></h1>
+            </div>
+            <label for="name" class="form-label"> Nombre del Curso</label>
+            <input type="text" name="name" class="form-control" id="name" value="<%= courses.name %>">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
+            <label for="category" class="form-label">Categorias</label>
+            <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
+                <option selected hidden>Categoría</option>
+                <option value="1">Idiomas</option>
+                <option value="2">Programación</option>
+            </select>
+            
+            <label for="description" class="form-label">Descripción</label>
+            <textarea name="description" class="form-control" id="description" rows="3"
+            value="<%= courses.description %>"></textarea>
+            <button class="btn_editar" type="submit">Editar</button>
+        </form>
+    </div>
+
+    <%- include ('../partials/footer') %>
+</body>
+</html>
