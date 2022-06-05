@@ -5,6 +5,8 @@ const productsController = require('../controllers/productsController');
 // Creacion
 router.get("/crear", productsController.crear);
 
+router.post("/crear", productsController.guardado);
+
 /* listar cursos */
 router.get('/', productsController.index);
 
