@@ -1,4 +1,5 @@
 const { getProducts } = require('../data');
+let bd = require("../database/models");
 
 
 module.exports = {
@@ -25,4 +26,11 @@ module.exports = {
            session: req.session
         })
     },
+    crear: function (req, res){
+        db.category.findAll()
+        .then(function(category) {
+            return res.render('products/listProducts', {category:category}) //revisar//
+        })
+
+    }
 };

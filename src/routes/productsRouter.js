@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsController');
 
+// Creacion
+router.get("/crear", productsController.crear);
+
 /* listar cursos */
 router.get('/', productsController.index);
 
