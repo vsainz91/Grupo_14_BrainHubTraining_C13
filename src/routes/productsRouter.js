@@ -3,9 +3,9 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 
 // Creacion
-router.get("/crear", productsController.crear);
+router.get("/addProduct", productsController.crear);
 
-router.post("/crear", productsController.guardado);
+router.post("/addProduct", productsController.guardado);
 
 /* listar cursos */
 router.get('/', productsController.index);

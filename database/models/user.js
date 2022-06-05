@@ -40,7 +40,7 @@ module.exports = function(sequelize, dataTypes){
 
     user.associate = function (models) {
         user.belongsToMany(models.course, {
-            ass: "courses",
+            as: "courses",
             through: "user_course",// revisar tabla intermedia//
             foreignKey: "user_id",
             otherKey: "course_id",
