@@ -2,30 +2,49 @@
 <html lang="en">
     <%- include ('../partials/head') %> 
 <body>
-
+    <%- include ('../partials/header') %> 
     <div class="contenedor_perfil">
-        <form action="/admin/courses/<%= courses.id %>?_method=PUT" method="post" class="form">
-            <div class="form-header">
-                <h1 class="form-title">Editar Curso</span></h1>
+        <form action="/users/profile" class="profile-form">
+            <div class="profile-form-header">
+                <h1 class="form-title">Mi Perfil</span></h1>
             </div>
-            <label for="name" class="form-label"> Nombre del Curso</label>
-            <input type="text" name="name" class="form-control" id="name" value="<%= courses.name %>">
-            <label for="price" class="form-label">Precio</label>
-            <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
-            <label for="category" class="form-label">Categorias</label>
-            <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
-                <option selected hidden>Categoría</option>
-                <option value="1">Idiomas</option>
-                <option value="2">Programación</option>
-            </select>
-            
-            <label for="description" class="form-label">Descripción</label>
-            <textarea name="description" class="form-control" id="description" rows="3"
-            value="<%= courses.description %>"></textarea>
+            <div class="profile_info">
+                <label for="name" class="form-label"> Nombre </label>
+                <input type="text" name="name" class="form-control" id="name">
+                <label for="age" class="form-label">Edad</label>
+                <input type="number" name="age" class="form-control" id="age">
+            </div>
+            <div class="profile-box_avatar">
+                <h3 class="profile-subtitle">Avatar</h3>
+                <div class="profile-avatar"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
+                <!-- <div class="input_file-container">
+                    <span class="avatar_span">Subir imagen</span>
+                    <input type="file" name="avatar" >
+                </div> -->
+            </div>
+            <div class="interests">
+                <h3 class="profile_h3">Tus intereses</h3>
+                <label for="photography">Fotografía</label>
+                <input type="checkbox" name="intereses" id="photography" value="photography">
+                <label for="dev">Desarrollo Web</label>
+                <input type="checkbox" name="intereses" id="dev" value="dev">
+                <label for="languages">Idiomas</label>
+                <input type="checkbox" name="intereses" id="languages" value="languages">
+            </div>
+            <div class="userData_container">
+                <h3 class="profile_h3">Datos de contacto</h3>
+                <div class="form_box">
+                    <div class="input-container">
+                        <input type="email" class="input-style" name="email" placeholder="Ingrese su email" value="" >
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" class="input-style" name="tel" placeholder="Ingrese su teléfono">
+                    </div>
+                </div>
+            </div>
             <button class="btn_editar" type="submit">Editar</button>
         </form>
     </div>
-
     <%- include ('../partials/footer') %>
 </body>
 </html>

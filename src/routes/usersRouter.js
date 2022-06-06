@@ -12,6 +12,8 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.get('/register', userInSessionCheck, usersController.register);
 router.post('/register',uploadFile.single('avatar'), registerValidator, usersController.processRegister);
 router.get('/logout', usersController.logout);
+router.get('/profile', usersController.profile);
+// router.post('/profile', usersController.profile);
 
 
 module.exports = router;

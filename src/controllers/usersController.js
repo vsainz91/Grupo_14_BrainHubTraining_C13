@@ -40,6 +40,12 @@ module.exports = {
             })
         }
     },
+    profile: (req, res) => {
+        res.render('users/profile', {
+            titulo: "Profile",
+            session: req.session
+        })
+    },
     register: (req, res) => {
         res.render('users/register', {
             titulo: "Registro",

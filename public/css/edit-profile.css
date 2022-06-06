@@ -1,0 +1,60 @@
+@import url('root.css');
+
+.contenedor_perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+
+}
+
+.profile-form {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    margin: 3rem 0;
+    font-family: 'Nunito Sans', sans-serif;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form-header {
+    text-align: center;
+    
+}
+
+.profile-form .profile-box_avatar {
+    align-items: center;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+}
+.profile-subtitle {
+    width: 30%;
+}
+.avatar_span {
+    width: 50%;
+}
+
+.profile_info {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+}
+
+.profile_info .form-label {
+    margin: 10px;
+}
+
+.profile_h3 {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
