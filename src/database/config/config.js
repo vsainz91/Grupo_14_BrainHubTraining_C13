@@ -1,8 +1,8 @@
-module.exprots = {
+module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development", //nombre de la bd//
+    "database": "brainhub_id", 
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

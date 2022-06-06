@@ -2,7 +2,7 @@ const { name } = require("ejs");
 const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = "course";
+    let alias = "product";
     let cols = {
         id: {
             type: dataTypes.INTEGER, 
@@ -48,7 +48,7 @@ module.exports = function(sequelize, dataTypes){
         }
     }
     let config = {
-        tableName : "courses",
+        tableName : "products",
         timestamps: false
     }
     let course = sequelize.define(alias, cols, config);
@@ -56,19 +56,19 @@ module.exports = function(sequelize, dataTypes){
     course.associate = function (models) {
         course.belongsTo(models.category, {
             as: "category",
-            foreignKey: "course_id"
+            foreignKey: "product_id"
 
         });
 
         course.belongsToMany(models.user, {
             ass: "users",
-            through: "user_course",// revisar tabla intermedia//
-            foreignKey: "course_id",
+            through: "user_product",// revisar tabla intermedia//
+            foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false
 
         });
     }
     
-    return course;
+    return product;
 }

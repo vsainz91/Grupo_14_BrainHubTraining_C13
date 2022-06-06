@@ -1,7 +1,7 @@
 const { name } = require("ejs");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = "category";
+    let alias = "Category";
     let cols = {
         id: {
             type: dataTypes.INTEGER, 
@@ -14,23 +14,23 @@ module.exports = function(sequelize, dataTypes){
         },
         products_id: {
             type : dataTypes.INTEGER,
-            foreignKey :true
+            foreignKey: true
         }
     }
     let config = {
         tableName : "categories",
         timestamps: false
     }
-    let category = sequelize.define(alias, cols, config);
+    let Category = sequelize.define(alias, cols, config);
 
-    category.associate = function (models) {
-        category.hasMany(models.course, {
-            as: "courses",
-            foreignKey: "course_id"
+    Category.associate = function (models) {
+        Category.hasMany(models.course, {
+            as: "products",
+            foreignKey: "product_id"
 
         });
     }
 
 
-    return category;
+    return Category;
 }

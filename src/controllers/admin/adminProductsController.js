@@ -1,6 +1,7 @@
 const { getProducts, writeProducts } = require('../../data');
 const { validationResult } = require('express-validator');
 
+
 module.exports = {
     list: (req, res) => {
         res.render('admin/products/listProducts', {
@@ -16,22 +17,22 @@ module.exports = {
     productCreate: (req, res) => {
         let errors = validationResult(req);
         let lastId = 0;
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             getProducts.forEach(courses => {
-                if(courses.id > lastId){
+                if (courses.id > lastId) {
                     lastId = courses.id;
                 }
             });
 
             let newCourse = {
-                ...req.body, 
+                ...req.body,
                 id: lastId + 1,
-                image: req.file ? req.file.filename:"default-image.png" ,
+                image: req.file ? req.file.filename : "default-image.png",
             }
             getProducts.push(newCourse)
             writeProducts(getProducts)
             res.redirect('/admin/courses')
-        }else{
+        } else {
             res.render('admin/products/addProduct', {
                 titulo: "Agregar curso",
                 errors: errors.mapped(),
@@ -51,9 +52,9 @@ module.exports = {
     },
     productUpdate: (req, res) => {
         let idCurso = +req.params.id;
-        
+
         getProducts.forEach(courses => {
-            if(courses.id === idCurso){
+            if (courses.id === idCurso) {
                 courses.name = req.body.name
                 courses.price = req.body.price
                 courses.categoryId = req.body.categoryId
@@ -65,18 +66,21 @@ module.exports = {
     },
     productDelete: (req, res) => {
         let idCurso = +req.params.id;
-        
+
         getProducts.forEach(course => {
-            if(course.id === idCurso){
-                
+            if (course.id === idCurso) {
+
                 let courseToDeleteIndex = getProducts.indexOf(course);
-                
+
                 getProducts.splice(courseToDeleteIndex, 1)
             }
         })
-        
+
         writeProducts(getProducts);
-        
+
         res.redirect('/admin/courses')
-    }
+    },
 }
+
+
+   
