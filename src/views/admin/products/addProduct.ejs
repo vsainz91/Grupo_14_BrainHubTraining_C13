@@ -19,13 +19,14 @@
         <label for="instructor" class="form-label">Instructor</label>
         <input type="text" name="instructor" class="form-control" id="instructor" placeholder="Ej: Mark Thompson">
         <label for="contentHours" class="form-label">Horas de contenido</label>
-        <input type="number" name="contentHours" class="form-control" id="contentHours" placeholder="Ej: 40">
+        <input type="number" name="content_hours" class="form-control" id="contentHours" placeholder="Ej: 40">
         <label for="practiceTime" class="form-label">Horas de práctica</label>
-        <input type="number" name="practiceTime" class="form-control" id="practiceTime" placeholder="Ej: 30">
+        <input type="number" name="practice_time" class="form-control" id="practiceTime" placeholder="Ej: 30">
         <label for="lessons" class="form-label">Lecciones</label>
         <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
+        
         <label for="category" class="form-label">Categorias</label>
-        <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
+    <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
             <option selected hidden>Categoría</option>
             <option value="Idiomas">Idiomas</option>
             <option value="Programación">Programación</option>
@@ -42,5 +43,76 @@
 
       <%- include('../partials/footer') %> 
      
+</body>
+</html>//
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('../partials/head') %> 
+<body>
+    <%- include ('../partials/header') %> 
+        <h1>Crear Curso</h1> 
+        <form action="/products/crear" method="POST">
+            <div>
+                <label for="">Nombre del Curso</label>
+                <input type= "text" name="name">
+            </div>
+            <div>
+                <label for="">Precio</label>
+                <input type= "text" name="price">
+            </div>
+            <div>
+                <label for="">Descripcion</label>
+                <input type= "text" name="description">
+            </div>
+            <div>
+                <label for="">Instructor</label>
+                <input type= "text" name="instructor">
+            </div>
+            <div>
+                <label for="">Tiempo de práctica</label>
+                <input type= "text" name="practice_time">
+            </div>
+            <div>
+                <label for="">Número de lecciones</label>
+                <input type= "text" name="lessons">
+            </div>
+            <div>
+                <label for="">Horas de contenido</label>
+                <input type= "text" name="content_hours">
+            </div>
+            <div>
+                <label for="">Imagen</label>
+                <input type= "text" name="image">
+            </div>
+            <div>
+                <label for="">categoria</label>
+                <select name="categoria">
+                        <% for (let i = 0; i < courses.length; i++){
+                        %>
+                    }
+                    <option value="<%=categories[i].id">
+                        <%=categories[i].name%>
+                        
+
+                    </option>
+                    <% } %>
+                </select>
+            </div>
+            <button type="submit">Crear Curso</button>
+        </form>   
+
+       
+       
+    <%- include ('../partials/footer') %>
+    <script>
+        const Temario = document.getElementsByClassName('tema');
+        for (i = 0; i < Temario.length; i++) {
+            Temario[i].addEventListener('click', function () {
+                this.classList.toggle('active')
+            })
+        }
+    </script>
+    <script src="/js/header.js"></script>
 </body>
 </html>

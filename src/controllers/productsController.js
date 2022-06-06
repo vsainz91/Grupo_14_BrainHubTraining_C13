@@ -1,6 +1,7 @@
 const { getProducts } = require('../data');
 
 
+
 module.exports = {
     productDetail: (req, res) => {
         let courseId = +req.params.id;
@@ -24,5 +25,12 @@ module.exports = {
            courses: getProducts,
            session: req.session
         })
-    },
+    }
+    
+    //listado: function (req, res){
+        //db.courses.findAll()
+        //.then(function(courses){
+           // res.render('productsList', {courses:courses})
+       // })
+    //}
 };
