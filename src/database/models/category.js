@@ -4,16 +4,16 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Category";
     let cols = {
         id: {
-            type: dataTypes.INTEGER, 
+            type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
 
         },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.VARCHAR(100)
         },
-        products_id: {
-            type : dataTypes.INTEGER,
+        products_id: {//CAMBIAR POR COURSE
+            type : dataTypes.INTEGER(11),
             foreignKey: true
         }
     }

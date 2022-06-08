@@ -5,21 +5,21 @@ module.exports = function(sequelize, dataTypes){
     let alias = "user";
     let cols = {
         id: {
-            type: dataTypes.INTEGER, 
+            type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
 
         },
         name: {
-            type: dataTypes.STRING // firts name and last name//
+            type: dataTypes.VARCHAR(100)
         },
 
         email: {
-            type : dataTypes.STRING
+            type : dataTypes.VARCHAR(100)
         },
 
         password: {
-            type: dataTypes.INTEGER //revisar//
+            type: dataTypes.VARCHAR(100)
         },
 
         avatar: {
@@ -28,8 +28,12 @@ module.exports = function(sequelize, dataTypes){
 
        
         course_id: {
-            type : dataTypes.INTEGER,
+            type : dataTypes.INTEGER(11),
             foreignKey :true
+        },
+        rol_id: {
+            type : dataTypes.INTEGER(11),
+            foreignKey :true//revisar
         }
     }
     let config = {
@@ -51,3 +55,4 @@ module.exports = function(sequelize, dataTypes){
 
     return user;
 }
+
