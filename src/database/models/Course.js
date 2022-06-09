@@ -1,5 +1,5 @@
-const { name } = require("ejs");
-const { text } = require("express");
+//const { name } = require("ejs");
+//const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
     let alias = "Course";
@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
         },
 
         instructor: {
-            type: dataTypes.VARCHAR(100)
+            type: dataTypes.STRING,
         },
 
         practice_time: {
@@ -38,9 +38,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(11)
         },
 
-        image: {
+        /*image: {
             type: dataTypes.image // revisar NO ESTA EN DB//
-        },
+        },*/
 
         category_id: {
             type : dataTypes.INTEGER(10),
@@ -60,7 +60,7 @@ module.exports = function(sequelize, dataTypes){
 
         });
 
-        Course.belongsToMany(models.user, {
+        Course.belongsToMany(models.User, {
             ass: "users",
             through: "user_product",// revisar tabla intermedia//
             foreignKey: "product_id",

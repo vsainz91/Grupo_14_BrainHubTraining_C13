@@ -174,7 +174,7 @@ module.exports = {
                 session: req.session
             })
 
-        }
+        }},
         logout: (req, res) => {
             req.session.destroy();
 
@@ -185,5 +185,5 @@ module.exports = {
             res.redirect('/')
         }
     }
-}
+
 

@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         rol_name: {
-            type: dataTypes.TINYINT(4),
+            type: dataTypes.STRING(45),
             allowNull: false,
         },
     };

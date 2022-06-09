@@ -1,4 +1,4 @@
-const { name } = require("ejs");
+//const { name } = require("ejs");
 
 module.exports = function(sequelize, dataTypes){
     let alias = "Category";
@@ -10,7 +10,7 @@ module.exports = function(sequelize, dataTypes){
 
         },
         name: {
-            type: dataTypes.VARCHAR(100)
+            type: dataTypes.STRING,
         },
         course_id: {
             type : dataTypes.INTEGER(11),
