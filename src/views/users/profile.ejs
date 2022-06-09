@@ -11,18 +11,18 @@
             <div class="profile-box_avatar">
                 <h3 class="profile-subtitle">Avatar</h3>
                 <div class="profile-avatar"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
-                <!-- <div class="input_file-container">
-                    <span class="avatar_span">Subir imagen</span>
-                    <input type="file" name="avatar" >
-                </div> -->
+            </div>
+            <div class="input_file-avatar">
+                <span class="avatar_span">Editar imagen</span>
+                <input type="file" name="avatar" >
             </div>
             <div class="profile-info">
                 <p>Nombre: <%= user.name %></p>
                 <p>Email: <%= user.email %></p>
             </div>
-            <div class="profile_info" action="/usuarios/perfil?_method=PUT" method="POST">
-                <label for="name" class="form-label"> Nombre </label>
-                <input type="text" name="name" class="form-control" id="name" value="<%= locals.old && old.name %>">
+            <div class="profile_editinfo" action="/users/perfil?_method=PUT" method="POST">
+                <label for="name" class="form-edit"> Nuevo nombre </label>
+                <input type="text" name="name" class="form-edit" id="name" value="<%= locals.old && old.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <small class="text-danger"><%= errors.name.msg %></small>
                     <% } %>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div> -->
-            <button class="btn_editar" type="submit">Editar Datos</button>
+            <button class="btn_editar-profile" type="submit">Editar Datos</button>
         </form>
     </div>
     <%- include ('../partials/footer') %>

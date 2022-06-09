@@ -1,5 +1,3 @@
-// const { name } = require("ejs");
-// const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
     let alias = "User";
@@ -18,7 +16,7 @@ module.exports = function(sequelize, dataTypes){
             type : dataTypes.STRING,
         },
 
-        password: {
+        pass: {
             type: dataTypes.STRING,
         },
 

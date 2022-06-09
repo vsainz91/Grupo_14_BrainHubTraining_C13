@@ -42,7 +42,7 @@ CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
   `course_id` int(11) NOT NULL,
   `rol_id` int(11) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
