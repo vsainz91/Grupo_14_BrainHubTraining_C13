@@ -4,16 +4,16 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Category";
     let cols = {
         id: {
-            type: dataTypes.INTEGER, 
+            type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
 
         },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
         },
-        products_id: {
-            type : dataTypes.INTEGER,
+        course_id: {
+            type : dataTypes.INTEGER(11),
             foreignKey: true
         }
     }
@@ -25,8 +25,8 @@ module.exports = function(sequelize, dataTypes){
 
     Category.associate = function (models) {
         Category.hasMany(models.Course, {
-            as: "products",
-            foreignKey: "product_id"
+            as: "courses",
+            foreignKey: "course_id"
 
         });
     }

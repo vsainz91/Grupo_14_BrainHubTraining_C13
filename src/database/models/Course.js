@@ -5,17 +5,17 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Course";
     let cols = {
         id: {
-            type: dataTypes.INTEGER, 
+            type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
 
         },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER(11)//revisar
         },
 
         price: {
-            type : dataTypes.INTEGER
+            type : dataTypes.INTEGER(10)
         },
 
         description: {
@@ -23,32 +23,32 @@ module.exports = function(sequelize, dataTypes){
         },
 
         instructor: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
         },
 
         practice_time: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER(10)
         },
 
         lessons: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER(10)
         },
 
         content_hours: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER(11)
         },
 
-        // image: {
-        //     // type: dataTypes.image // revisar//
-        // },
+        /*image: {
+            type: dataTypes.image // revisar NO ESTA EN DB//
+        },*/
 
         category_id: {
-            type : dataTypes.INTEGER,
+            type : dataTypes.INTEGER(10),
             foreignKey :true
         }
     }
     let config = {
-        tableName : "products",
+        tableName : "courses",
         timestamps: false
     }
     let Course = sequelize.define(alias, cols, config);

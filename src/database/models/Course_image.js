@@ -3,23 +3,24 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(10),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
         image_name: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING,
             allowNull: false,
         },
-        product_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false,
+        course_id: {
+            type : dataTypes.INTEGER(11),
+            foreignKey: true
         }
+        
     };
 
     let config = {
-        tableName: "products_images",
+        tableName: "course_images",
         timestamps: false,
     };
 
@@ -27,8 +28,8 @@ module.exports = (sequelize, dataTypes) => {
 
     CourseImage.associate = (models) => {
         CourseImage.belongsTo(models.Course, {
-            as: "product",
-            foreingKey: "product_id"
+            as: "course",
+            foreingKey: "course_id"
         })
     }
 
