@@ -43,7 +43,7 @@ module.exports = function(sequelize, dataTypes){
     let User = sequelize.define(alias, cols, config);
 
     User.associate = function (models) {
-        User.belongsToMany(models.course, {
+        User.belongsToMany(models.Course, {
             as: "courses",
             through: "user_course",// revisar tabla intermedia//
             foreignKey: "user_id",

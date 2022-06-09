@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
     const CourseImage = sequelize.define(alias, cols, config);
 
     CourseImage.associate = (models) => {
-        CourseImage.belongsTo(models.product, {
+        CourseImage.belongsTo(models.Course, {
             as: "course",
             foreingKey: "course_id"
         })

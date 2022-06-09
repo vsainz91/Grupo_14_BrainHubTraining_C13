@@ -54,7 +54,7 @@ module.exports = function(sequelize, dataTypes){
     let Course = sequelize.define(alias, cols, config);
     
     Course.associate = function (models) {
-        Course.belongsTo(models.category, {
+        Course.belongsTo(models.Category, {
             as: "category",
             foreignKey: "product_id"
 
