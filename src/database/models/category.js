@@ -1,4 +1,4 @@
-const { name } = require("ejs");
+// const { name } = require("ejs");
 
 module.exports = function(sequelize, dataTypes){
     let alias = "Category";
@@ -24,13 +24,12 @@ module.exports = function(sequelize, dataTypes){
     let Category = sequelize.define(alias, cols, config);
 
     Category.associate = function (models) {
-        Category.hasMany(models.course, {
+        Category.hasMany(models.Course, {
             as: "products",
             foreignKey: "product_id"
 
         });
     }
-
 
     return Category;
 }

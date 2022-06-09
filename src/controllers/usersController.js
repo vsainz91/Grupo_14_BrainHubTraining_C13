@@ -1,6 +1,7 @@
-const {getUsers, writeUsers} = require('../data');
+// const {getUsers, writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require("../database/models");
 
 module.exports = {
     login: (req, res) => {
@@ -13,25 +14,34 @@ module.exports = {
         let errors = validationResult(req);
         
         if (errors.isEmpty()){
-            let user = getUsers.find(user => user.email === req.body.email);
-            
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                avatar: user.avatar,
-                email: user.email,
-                rol: user.rol
-            }
-            
-            if(req.body.remember){
-                const TIME_IN_MILISECONDS = 120000;
-                res.cookie('brainhubCookie', req.session.user, {
-                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                    httpOnly: true,
-                    secure: true
-                })
-            }
-            res.redirect('/')
+            //Levantar sesión
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then((user) => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    avatar: user.avatar,
+                    email: user.email,
+                    rol: user.rol_id
+                }
+                
+                if(req.body.remember){
+                    const TIME_IN_MILISECONDS = 120000;
+                    res.cookie('brainhubCookie', req.session.user, {
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    })
+                }
+
+                res.locals.user = req.session.user
+                res.redirect('/')
+            })
+            .catch(error => console.log(error))
         }else{
             res.render('users/login', {
                 titulo: "Login",

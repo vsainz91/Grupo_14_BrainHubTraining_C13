@@ -1,8 +1,8 @@
-const { name } = require("ejs");
-const { text } = require("express");
+// const { name } = require("ejs");
+// const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = "product";
+    let alias = "Course";
     let cols = {
         id: {
             type: dataTypes.INTEGER, 
@@ -38,9 +38,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER
         },
 
-        image: {
-            type: dataTypes.image // revisar//
-        },
+        // image: {
+        //     // type: dataTypes.image // revisar//
+        // },
 
         category_id: {
             type : dataTypes.INTEGER,
@@ -51,16 +51,15 @@ module.exports = function(sequelize, dataTypes){
         tableName : "products",
         timestamps: false
     }
-    let course = sequelize.define(alias, cols, config);
+    let Course = sequelize.define(alias, cols, config);
     
-    course.associate = function (models) {
-        course.belongsTo(models.category, {
+    Course.associate = function (models) {
+        Course.belongsTo(models.Category, {
             as: "category",
             foreignKey: "product_id"
-
         });
 
-        course.belongsToMany(models.user, {
+        Course.belongsToMany(models.User, {
             ass: "users",
             through: "user_product",// revisar tabla intermedia//
             foreignKey: "product_id",
@@ -70,5 +69,5 @@ module.exports = function(sequelize, dataTypes){
         });
     }
     
-    return product;
+    return Course;
 }

@@ -1,8 +1,8 @@
-const { name } = require("ejs");
-const { text } = require("express");
+// const { name } = require("ejs");
+// const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = "user";
+    let alias = "User";
     let cols = {
         id: {
             type: dataTypes.INTEGER, 
@@ -36,10 +36,10 @@ module.exports = function(sequelize, dataTypes){
         tableName : "users",
         timestamps: false
     }
-    let user = sequelize.define(alias, cols, config);
+    let User = sequelize.define(alias, cols, config);
 
-    user.associate = function (models) {
-        user.belongsToMany(models.course, {
+    User.associate = function (models) {
+        User.belongsToMany(models.Course, {
             as: "courses",
             through: "user_course",// revisar tabla intermedia//
             foreignKey: "user_id",
@@ -49,5 +49,5 @@ module.exports = function(sequelize, dataTypes){
         });
     }
 
-    return user;
+    return User;
 }

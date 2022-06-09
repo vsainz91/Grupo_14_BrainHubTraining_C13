@@ -8,12 +8,6 @@
             <div class="profile-form-header">
                 <h1 class="form-title">Mi Perfil</span></h1>
             </div>
-            <div class="profile_info">
-                <label for="name" class="form-label"> Nombre </label>
-                <input type="text" name="name" class="form-control" id="name">
-                <label for="age" class="form-label">Edad</label>
-                <input type="number" name="age" class="form-control" id="age">
-            </div>
             <div class="profile-box_avatar">
                 <h3 class="profile-subtitle">Avatar</h3>
                 <div class="profile-avatar"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
@@ -21,6 +15,17 @@
                     <span class="avatar_span">Subir imagen</span>
                     <input type="file" name="avatar" >
                 </div> -->
+            </div>
+            <div class="profile-info">
+                <p>Nombre: <%= user.name %></p>
+                <p>Email: <%= user.email %></p>
+            </div>
+            <div class="profile_info" action="/usuarios/perfil?_method=PUT" method="POST">
+                <label for="name" class="form-label"> Nombre </label>
+                <input type="text" name="name" class="form-control" id="name" value="<%= locals.old && old.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                    <% } %>
             </div>
             <div class="interests">
                 <h3 class="profile_h3">Tus intereses</h3>
@@ -31,7 +36,7 @@
                 <label for="languages">Idiomas</label>
                 <input type="checkbox" name="intereses" id="languages" value="languages">
             </div>
-            <div class="userData_container">
+            <!-- <div class="userData_container">
                 <h3 class="profile_h3">Datos de contacto</h3>
                 <div class="form_box">
                     <div class="input-container">
@@ -41,8 +46,8 @@
                         <input type="tel" class="input-style" name="tel" placeholder="Ingrese su teléfono">
                     </div>
                 </div>
-            </div>
-            <button class="btn_editar" type="submit">Editar</button>
+            </div> -->
+            <button class="btn_editar" type="submit">Editar Datos</button>
         </form>
     </div>
     <%- include ('../partials/footer') %>
