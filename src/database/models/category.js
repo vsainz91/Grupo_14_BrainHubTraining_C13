@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
         name: {
             type: dataTypes.VARCHAR(100)
         },
-        products_id: {//CAMBIAR POR COURSE
+        course_id: {
             type : dataTypes.INTEGER(11),
             foreignKey: true
         }
@@ -24,9 +24,9 @@ module.exports = function(sequelize, dataTypes){
     let Category = sequelize.define(alias, cols, config);
 
     Category.associate = function (models) {
-        Category.hasMany(models.course, {
-            as: "products",
-            foreignKey: "product_id"
+        Category.hasMany(models.Course, {
+            as: "courses",
+            foreignKey: "course_id"
 
         });
     }

@@ -2,7 +2,7 @@ const { name } = require("ejs");
 const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = "product";
+    let alias = "Course";
     let cols = {
         id: {
             type: dataTypes.INTEGER(10), 
@@ -11,7 +11,7 @@ module.exports = function(sequelize, dataTypes){
 
         },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER(11)//revisar
         },
 
         price: {
@@ -48,19 +48,19 @@ module.exports = function(sequelize, dataTypes){
         }
     }
     let config = {
-        tableName : "products",
+        tableName : "courses",
         timestamps: false
     }
-    let course = sequelize.define(alias, cols, config);
+    let Course = sequelize.define(alias, cols, config);
     
-    course.associate = function (models) {
-        course.belongsTo(models.category, {
+    Course.associate = function (models) {
+        Course.belongsTo(models.category, {
             as: "category",
             foreignKey: "product_id"
 
         });
 
-        course.belongsToMany(models.user, {
+        Course.belongsToMany(models.user, {
             ass: "users",
             through: "user_product",// revisar tabla intermedia//
             foreignKey: "product_id",
@@ -70,5 +70,5 @@ module.exports = function(sequelize, dataTypes){
         });
     }
     
-    return product;
+    return Course;
 }
