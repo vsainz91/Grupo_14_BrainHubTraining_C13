@@ -1,13 +1,17 @@
-const { getProducts, writeProducts } = require('../../data');
+// const { getProducts, writeProducts } = require('../../data');
 const { validationResult } = require('express-validator');
-
+const db = require('../../database/models');
+const fs = require('fs');
 
 module.exports = {
     list: (req, res) => {
+        db.Course.findAll()
+        .then(courses => {
         res.render('admin/products/listProducts', {
             titulo: "Listado de cursos",
-            course: getProducts,
+            course: courses,
         })
+      })
     },
     productAdd: (req, res) => {
         res.render('admin/products/addProduct', {
@@ -16,9 +20,15 @@ module.exports = {
     },
     productCreate: (req, res) => {
         let errors = validationResult(req);
-        let lastId = 0;
+        // let lastId = 0;
         if (errors.isEmpty()) {
-            getProducts.forEach(courses => {
+            db.Course.create({
+                ...req.body,
+                user_id: req.session.user.id, 
+            })
+            .then(() => res.redirect('/admin/courses'))
+            .catch(error => console.log(error))
+            /* getProducts.forEach(courses => {
                 if (courses.id > lastId) {
                     lastId = courses.id;
                 }
@@ -31,38 +41,47 @@ module.exports = {
             }
             getProducts.push(newCourse)
             writeProducts(getProducts)
-            res.redirect('/admin/courses')
-        } else {
-            res.render('admin/products/addProduct', {
-                titulo: "Agregar curso",
-                errors: errors.mapped(),
-                old: req.body
-            })
+            res.redirect('/admin/courses') */
         }
     },
     productEdit: (req, res) => {
         let courseId = +req.params.id;
 
-        let courses = getProducts.find(courses => courses.id === courseId)
-
+        db.Course.findByPk(courseId)
+      .then(course => {
         res.render('admin/products/editProduct', {
             titulo: "Edición",
-            courses
+            course
         })
+      })
+      .catch(error => console.log(error))
     },
     productUpdate: (req, res) => {
-        let idCurso = +req.params.id;
+        let errors = validationResult(req);
 
-        getProducts.forEach(courses => {
-            if (courses.id === idCurso) {
-                courses.name = req.body.name
-                courses.price = req.body.price
-                courses.categoryId = req.body.categoryId
-                courses.description = req.body.description
-            }
-        });
+        if(errors.isEmpty()){
+            db.Course.update({
+                ...req.body,
+                user_id: req.session.user.id,
+            })
+
         writeProducts(getProducts);
         res.redirect('/admin/courses');
+
+    }else{
+        let courseId = +req.params.id;
+
+        db.Course.findByPk(courseId)
+        .then(course => {
+          res.render('admin/products/editProduct', {
+            titulo: "Editar Curso",
+            course,
+            errors: errors.mapped(),
+            old: req.body
+          })
+        })
+        .catch(error => console.log(error))
+      }
     },
     productDelete: (req, res) => {
         let idCurso = +req.params.id;

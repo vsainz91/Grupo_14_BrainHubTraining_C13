@@ -58,22 +58,22 @@ CREATE TABLE `courses` (
 
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(1, 'Curso Completo de Inglés: Iniciación', 3500, 'Curso completo de inglés para dominar la gramática, traducción, conversación, vocabulario, pronunciación y mucho más.', 'Mark Thompson', 16, 28, 2, 1, NULL);
+VALUES(1, 'Curso Completo de Ingles: Iniciaciï¿½n', 3500, 'Curso completo de inglï¿½s para dominar la gramï¿½tica, traducciï¿½n, conversaciï¿½n, vocabulario, pronunciaciï¿½n y mucho mï¿½s.', 'Mark Thompson', 16, 28, 2, 1, NULL);
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(2, 'Portugués de Brasil básico', 4050, 'Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con explicaciones claras y concisas, el idioma portugués', 'Joao Fernandez', 25, 73, 4, 1, NULL);
+VALUES(2, 'Portugues de Brasil basico', 4050, 'Este curso esta diseï¿½ado para hispanohablantes y enseï¿½a de forma objetiva, con explicaciones claras y concisas, el idioma portuguï¿½s', 'Joao Fernandez', 25, 73, 4, 1, NULL);
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(3, 'Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer vídeo de la forma más dinámica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
+VALUES(3, 'Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer video de la forma mï¿½s dinï¿½mica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(4, 'Curso de Introducción a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu información en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
+VALUES(4, 'Curso de Introduccion a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu informaciï¿½n en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(5, 'Cómo y Por Qué Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce cómo iniciar una carrera en data science e inteligencia artificial entendiendo cómo funciona esta área de la tecnología, qué oportunidades tiene y qué caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
+VALUES(5, 'Como y Por Que Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce como iniciar una carrera en data science e inteligencia artificial entendiendo cï¿½mo funciona esta ï¿½rea de la tecnologï¿½a, quï¿½ oportunidades tiene y quï¿½ caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
 INSERT INTO brainhub_db.courses
 (id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(6, 'Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validación de datos. Despliega tu aplicación a producción en Heroku.', 'Juan García', 12, 25, 3, 2, NULL);
+VALUES(6, 'Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validaciï¿½n de datos. Despliega tu aplicaciï¿½n a producciï¿½n en Heroku.', 'Juan Garcï¿½a', 12, 25, 3, 2, NULL);
 
 
 -- brainhub_db.users definition
