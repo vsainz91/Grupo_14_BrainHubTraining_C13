@@ -1,12 +1,16 @@
-const { getProducts, writeProducts } = require('../../data');
 const { validationResult } = require('express-validator');
+const db = require('../../database/models');
+// const fs = require('fs');
 
 module.exports = {
     list: (req, res) => {
+        db.Course.findAll()
+        .then(courses => {
         res.render('admin/products/listProducts', {
             titulo: "Listado de cursos",
-            course: getProducts,
+            course: courses,
         })
+      })
     },
     productAdd: (req, res) => {
         res.render('admin/products/addProduct', {
@@ -15,25 +19,24 @@ module.exports = {
     },
     productCreate: (req, res) => {
         let errors = validationResult(req);
-        let lastId = 0;
-        if(errors.isEmpty()){
-            getProducts.forEach(courses => {
-                if(courses.id > lastId){
-                    lastId = courses.id;
-                }
-            });
 
-            let newCourse = {
-                ...req.body, 
-                id: lastId + 1,
-                image: req.file ? req.file.filename:"default-image.png" ,
-            }
-            getProducts.push(newCourse)
-            writeProducts(getProducts)
-            res.redirect('/admin/courses')
-        }else{
+        if (errors.isEmpty()) {
+            db.Course.create({
+                ...req.body,
+                user_id: req.session.user.id, 
+            })
+            // if req.files para preguntar
+            .then((course) => {
+                db.CourseImage.create({
+                    image_name: req.file.filename,
+                    course_id: course.id
+                })
+            })                
+            .then(() => res.redirect('/admin/courses'))
+            .catch(error => console.log(error))
+        }else {
             res.render('admin/products/addProduct', {
-                titulo: "Agregar curso",
+                titulo: "Agregar Curso",
                 errors: errors.mapped(),
                 old: req.body
             })
@@ -42,41 +45,66 @@ module.exports = {
     productEdit: (req, res) => {
         let courseId = +req.params.id;
 
-        let courses = getProducts.find(courses => courses.id === courseId)
-
-        res.render('admin/products/editProduct', {
-            titulo: "Edición",
-            courses
+        db.Course.findByPk(courseId)
+        .then(course => {
+            res.render('admin/products/editProduct', {
+                titulo: "Edición",
+                course
+            })
         })
+        .catch(error => console.log(error))
     },
     productUpdate: (req, res) => {
-        let idCurso = +req.params.id;
-        
-        getProducts.forEach(courses => {
-            if(courses.id === idCurso){
-                courses.name = req.body.name
-                courses.price = req.body.price
-                courses.categoryId = req.body.categoryId
-                courses.description = req.body.description
-            }
-        });
-        writeProducts(getProducts);
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.Course.update({
+                ...req.body,
+                user_id: req.session.user.id,
+            })
+
+
         res.redirect('/admin/courses');
+
+    }else{
+        let courseId = +req.params.id;
+
+        db.Course.findByPk(courseId)
+        .then(course => {
+          res.render('admin/products/editProduct', {
+            titulo: "Editar Curso",
+            course,
+            errors: errors.mapped(),
+            old: req.body
+          })
+        })
+        .catch(error => console.log(error))
+      }
     },
     productDelete: (req, res) => {
-        let idCurso = +req.params.id;
-        
-        getProducts.forEach(course => {
-            if(course.id === idCurso){
-                
-                let courseToDeleteIndex = getProducts.indexOf(course);
-                
-                getProducts.splice(courseToDeleteIndex, 1)
+        let courseId = +req.params.id;
+
+        db.CourseImage.findAll({
+            where: {
+              course_id: courseId,
             }
         })
-        
-        writeProducts(getProducts);
-        
-        res.redirect('/admin/courses')
-    }
+        db.CourseImage.destroy({
+            where: {
+            course_id: req.params.id
+            }
+        })
+        .then(() => { 
+            db.Course.destroy({
+            where: {
+                id: courseId
+                }
+            })
+        })
+        .then(() => res.redirect('/admin/courses'))
+        .catch((error) => console.log(error))
+    },
 }
+
+
+   

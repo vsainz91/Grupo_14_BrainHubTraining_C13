@@ -1,5 +1,5 @@
 const { getProducts } = require('../data');
-
+const db = require('../database/models');
 
 module.exports = {
     productDetail: (req, res) => {
@@ -24,5 +24,11 @@ module.exports = {
            courses: getProducts,
            session: req.session
         })
-    },
+    }
+/*     index o listado: function (req, res){
+        db.courses.findAll()
+        .then(function(courses){
+           res.render('index', {courses: courses})
+       })
+    } */
 };

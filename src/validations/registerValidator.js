@@ -4,7 +4,7 @@ const {getUsers} = require('../data');
 let validateRegister = [
     check("name")
         .notEmpty().withMessage('El nombre es requerido').bail()
-        .isLength({ min:5 }).withMessage('Ingrese un nombre válido'),
+        .isLength({ min:3 }).withMessage('Ingrese un nombre válido'),
     check("email")
         .notEmpty().withMessage(" El e-mail es requerido").bail()
         .isEmail().withMessage("Ingrese un e-mail válido"),
