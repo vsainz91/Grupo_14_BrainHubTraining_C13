@@ -6,10 +6,6 @@ Nuestros cursos están dirigidos a cualquier persona que quiera adquirir nuevos 
 
 Nuestro equipo está conformado por un grupo de profesionales con altas competencias en la enseñanza de educación no formal.
 
-### Beimar Delgado 
-- 28 años.
-- Experto en Wireframes.
-
 ### Valeria Sainz
 - 30 años.
 - Experta en Back-end.
@@ -18,9 +14,6 @@ Nuestro equipo está conformado por un grupo de profesionales con altas competen
 - 65 años.
 - Experto en Front-end.
 
-### Matias Martorell
-- 45 años.
-- Experto en Java.
 
 ## Referentes
 
