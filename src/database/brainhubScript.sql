@@ -3,6 +3,7 @@
 
 -- brainhub_db.categories definition
 
+DROP TABLE IF EXISTS `categories`];
 CREATE TABLE `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -10,15 +11,15 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --  Auto-generated SQL script #202206091730
-INSERT INTO brainhub_db.categories (id,name)
-	VALUES (1,'Idiomas');
-INSERT INTO brainhub_db.categories (id,name)
-	VALUES (2,'Programacion');
+INSERT INTO brainhub_db.categories (name)
+	VALUES ('Idiomas');
+INSERT INTO brainhub_db.categories (name)
+	VALUES ('Programacion');
 
 
 -- brainhub_db.course_images definition
-
-CREATE TABLE `course_images` (
+DROP TABLE IF EXISTS `courses_images`;
+CREATE TABLE `courses_images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `image_name` varchar(100) NOT NULL,
   `course_id` int(10) NOT null,
@@ -26,26 +27,26 @@ CREATE TABLE `course_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --  Auto-generated SQL script #202206091725
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (1,'curso-english1.jpg',1);
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (2,'curso-portugues.jpg',2);
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (3,'curso-chino1.jpg',3);
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (4,'curso-reactjs1.png',4);
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (5,'curso-DataScience.jpg',5);
-INSERT INTO brainhub_db.courses_images (id,image_name,course_id)
-	VALUES (6,'curso-Nodejs.jpg',6);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-english1.jpg',1);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-portugues.jpg',2);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-chino1.jpg',3);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-reactjs1.png',4);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-DataScience.jpg',5);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-Nodejs.jpg',6);
 
 
 -- brainhub_db.courses definition
-
+DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` int(11) NOT NULL,
-  `price` int(10) unsigned NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `price` int(11) unsigned NOT NULL,
   `description` text NOT NULL,
   `instructor` varchar(100) NOT NULL,
   `practice_time` int(10) unsigned NOT NULL,
@@ -57,27 +58,27 @@ CREATE TABLE `courses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(1, 'Curso Completo de Ingles: Iniciaciï¿½n', 3500, 'Curso completo de inglï¿½s para dominar la gramï¿½tica, traducciï¿½n, conversaciï¿½n, vocabulario, pronunciaciï¿½n y mucho mï¿½s.', 'Mark Thompson', 16, 28, 2, 1, NULL);
+(name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Curso Completo de Inglés: Iniciación', 3500, 'Curso completo de inglés para dominar la gramática, traducción, conversación, vocabulario, pronunciación y mucho más.', 'Mark Thompson', 16, 28, 2, 1, NULL);
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(2, 'Portugues de Brasil basico', 4050, 'Este curso esta diseï¿½ado para hispanohablantes y enseï¿½a de forma objetiva, con explicaciones claras y concisas, el idioma portuguï¿½s', 'Joao Fernandez', 25, 73, 4, 1, NULL);
+(name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Portugués de Brasil básico', 4050, 'Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con explicaciones claras y concisas, el idioma portugués', 'Joao Fernandez', 25, 73, 4, 1, NULL);
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(3, 'Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer video de la forma mï¿½s dinï¿½mica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
+(name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer vídeo de la forma más dinámica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(4, 'Curso de Introduccion a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu informaciï¿½n en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
+(name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Curso de Introducción a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu información en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(5, 'Como y Por Que Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce como iniciar una carrera en data science e inteligencia artificial entendiendo cï¿½mo funciona esta ï¿½rea de la tecnologï¿½a, quï¿½ oportunidades tiene y quï¿½ caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
+( name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Cómo y Por Qué Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce cómo iniciar una carrera en data science e inteligencia artificial entendiendo cómo funciona esta área de la tecnología, qué oportunidades tiene y qué caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
 INSERT INTO brainhub_db.courses
-(id, name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES(6, 'Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validaciï¿½n de datos. Despliega tu aplicaciï¿½n a producciï¿½n en Heroku.', 'Juan Garcï¿½a', 12, 25, 3, 2, NULL);
+(name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
+VALUES('Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validación de datos. Despliega tu aplicación a producción en Heroku.', 'Juan García', 12, 25, 3, 2, NULL);
 
 
 -- brainhub_db.users definition
-
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -91,7 +92,7 @@ CREATE TABLE `users` (
 
 
 -- brainhub_db.users_rol definition
-
+DROP TABLE IF EXISTS `users_rol`;
 CREATE TABLE `users_rol` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rol_name` VARCHAR(45) NOT NULL,
@@ -99,9 +100,9 @@ CREATE TABLE `users_rol` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --  Auto-generated SQL script #202206091748
-INSERT INTO brainhub_db.users_rol (id,rol_name)
-	VALUES (1,'USER');
-INSERT INTO brainhub_db.users_rol (id,rol_name)
-	VALUES (2,'ADMIN');
+INSERT INTO brainhub_db.users_rol (rol_name)
+	VALUES ('USER');
+INSERT INTO brainhub_db.users_rol (rol_name)
+	VALUES ('ADMIN');
 
 
