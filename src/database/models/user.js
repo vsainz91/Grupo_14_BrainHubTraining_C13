@@ -21,17 +21,15 @@ module.exports = function(sequelize, dataTypes){
         },
 
         avatar: {
-            type: dataTypes.STRING // revisar//
+            type: dataTypes.STRING
         },
-
-       
         course_id: {
             type : dataTypes.INTEGER(11),
             foreignKey :true
         },
         rol_id: {
             type : dataTypes.INTEGER(11),
-            foreignKey :true//revisar
+            foreignKey :true
         }
     }
     let config = {
@@ -43,8 +41,8 @@ module.exports = function(sequelize, dataTypes){
     User.associate = function (models) {
         User.belongsToMany(models.Course, {
             as: "courses",
-            through: "user_course",// revisar tabla intermedia//
-            foreignKey: "user_id",
+            through: "users_courses", 
+            foreignKey: "users_id",
             otherKey: "course_id",
             timestamps: false
 

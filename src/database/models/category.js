@@ -1,5 +1,3 @@
-// const { name } = require("ejs");
-
 module.exports = function(sequelize, dataTypes){
     let alias = "Category";
     let cols = {

@@ -14,7 +14,7 @@ module.exports = {
         let errors = validationResult(req);
         
         if (errors.isEmpty()){
-            //Levantar sesión
+            
             db.User.findOne({
                 where: {
                     email: req.body.email
@@ -55,7 +55,6 @@ module.exports = {
             where: {
                 id: req.session.user.id
             },
-            // include: [{ association: "addresses" }],
         })
         .then((user) => {
             res.render("users/profile", {
@@ -85,7 +84,6 @@ module.exports = {
                 where: {
                     id: req.session.user.id
                 },
-                // include: [{ association: "addresses" }],
             })
             .then((user) => {
                 res.render("users/profile", {
@@ -110,7 +108,7 @@ module.exports = {
             db.User.create({
                 name: req.body.name,
                 email: req.body.email,
-                rol_id: 4,
+                rol_id: req.session.userRol.id,
                 pass: bcrypt.hashSync(req.body.pass, 10),
                 avatar: req.file ? req.file.filename : "default-image.png"
             })
