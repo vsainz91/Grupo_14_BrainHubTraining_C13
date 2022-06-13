@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
         },
 
         price: {
-            type : dataTypes.INTEGER(10)
+            type : dataTypes.INTEGER(11)
         },
 
         description: {
@@ -69,7 +69,7 @@ module.exports = function(sequelize, dataTypes){
             otherKey: "user_id", 
             timestamps: false
         });
-        Course.belongsTo(models.CourseImage, {
+        Course.hasOne(models.CourseImage, {
             as: "courseImage",
             foreignKey: "course_id"
         });

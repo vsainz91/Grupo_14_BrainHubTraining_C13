@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: "course_images",
+        tableName: "courses_images",
         timestamps: false,
     };
 

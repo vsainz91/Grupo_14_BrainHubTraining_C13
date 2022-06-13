@@ -6,20 +6,22 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
-
+            allowNull: false,
         },
         name: {
             type: dataTypes.STRING,
+            allowNull: false,
         },
 
         email: {
-            type : dataTypes.STRING,
+            type: dataTypes.STRING,
+            allowNull: false,
         },
 
         pass: {
             type: dataTypes.STRING,
+            allowNull: false,
         },
-
         avatar: {
             type: dataTypes.STRING
         },
@@ -45,7 +47,6 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "users_id",
             otherKey: "course_id",
             timestamps: false
-
         });
     }
 
