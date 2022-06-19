@@ -1,4 +1,3 @@
-const {getProducts} = require('../../data');
 
 module.exports = {
     index: (req, res) => {

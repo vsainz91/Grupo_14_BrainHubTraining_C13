@@ -9,17 +9,17 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false,
         },
         name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
             allowNull: false,
         },
 
         email: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
             allowNull: false,
         },
 
         pass: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
             allowNull: false,
         },
         avatar: {

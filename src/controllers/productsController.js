@@ -25,10 +25,4 @@ module.exports = {
            session: req.session
         })
     }
-/*     index o listado: function (req, res){
-        db.courses.findAll()
-        .then(function(courses){
-           res.render('index', {courses: courses})
-       })
-    } */
 };
