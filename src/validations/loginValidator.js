@@ -12,9 +12,9 @@ let validateLogin = [
                 email: req.body.email,
             }
         }).then((user)=>{
-                if(!bcrypt.compareSync(req.body.pass, user.pass)){
-                    return Promise.reject()
-                }
+            if(!bcrypt.compareSync(req.body.pass, user.pass)){
+                return Promise.reject()
+            }
         })
         .catch((error)=>{
             return Promise.reject("Email o contraseña incorrecto")

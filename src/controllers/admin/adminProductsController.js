@@ -6,11 +6,11 @@ module.exports = {
     list: (req, res) => {
         db.Course.findAll()
         .then(courses => {
-        res.render('admin/products/listProducts', {
-            titulo: "Listado de cursos",
-            course: courses,
+            res.render('admin/products/listProducts', {
+                titulo: "Listado de cursos",
+                course: courses,
+            })
         })
-      })
     },
     productAdd: (req, res) => {
         res.render('admin/products/addProduct', {

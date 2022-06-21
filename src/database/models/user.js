@@ -25,10 +25,6 @@ module.exports = function(sequelize, dataTypes){
         avatar: {
             type: dataTypes.STRING
         },
-        course_id: {
-            type : dataTypes.INTEGER(11),
-            foreignKey :true
-        },
         rol_id: {
             type : dataTypes.INTEGER(11),
             foreignKey :true

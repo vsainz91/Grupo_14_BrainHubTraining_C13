@@ -6,7 +6,6 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
-
         },
         name: {
             type: dataTypes.TEXT('tiny')
@@ -38,17 +37,12 @@ module.exports = function(sequelize, dataTypes){
 
         courses_images_id: {
             type: dataTypes.STRING,
-            foreignKey :true
+            /* foreignKey :true */
         }, 
-
         category_id: {
             type : dataTypes.INTEGER(10),
             foreignKey :true
         },
-        users_id: {
-            type : dataTypes.INTEGER(10),
-            foreignKey :true
-        }
     }
     let config = {
         tableName : "courses",
@@ -69,10 +63,10 @@ module.exports = function(sequelize, dataTypes){
             otherKey: "user_id", 
             timestamps: false
         });
-        Course.hasOne(models.CourseImage, {
+/*         Course.hasOne(models.CourseImage, {
             as: "courseImage",
             foreignKey: "course_id"
-        });
+        }); */
     }
     
     return Course;

@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         course_id: {
             type : dataTypes.INTEGER(11),
-            foreignKey: true
+            /* foreignKey: true */
         }
         
     };
@@ -26,12 +26,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const CourseImage = sequelize.define(alias, cols, config);
 
-    CourseImage.associate = (models) => {
+    /* CourseImage.associate = (models) => {
         CourseImage.belongsTo(models.Course, {
             as: "courses",
             foreingKey: "course_id"
         })
-    }
+    } */
 
     return CourseImage;
 }
