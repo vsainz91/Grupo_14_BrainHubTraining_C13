@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes){
     }
     let User = sequelize.define(alias, cols, config);
 
-    User.associate = function (models) {
+ /*    User.associate = function (models) {
         User.belongsToMany(models.Course, {
             as: "courses",
             through: "users_courses", 
@@ -44,7 +44,7 @@ module.exports = function(sequelize, dataTypes){
             otherKey: "course_id",
             timestamps: false
         });
-    }
+    } */
 
     return User;
 }

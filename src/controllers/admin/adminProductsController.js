@@ -13,8 +13,12 @@ module.exports = {
         })
     },
     productAdd: (req, res) => {
-        res.render('admin/products/addProduct', {
-            titulo: "Agregar curso"
+        db.Category.findAll()
+        .then(categories => {
+            res.render('admin/products/addProduct', {
+                titulo: "Agregar curso",
+                categories
+            })
         })
     },
     productCreate: (req, res) => {
@@ -23,7 +27,6 @@ module.exports = {
         if (errors.isEmpty()) {
             db.Course.create({
                 ...req.body,
-                user_id: req.session.user.id, 
             })
             // if req.files para preguntar
             .then((course) => {
@@ -44,12 +47,14 @@ module.exports = {
     },
     productEdit: (req, res) => {
         let courseId = +req.params.id;
-
-        db.Course.findByPk(courseId)
-        .then(course => {
+        let course = db.Course.findByPk(courseId, {include : ['category']})
+        let categories = db.Category.findAll()
+        Promise.all([course, categories])
+        .then(([course, categories]) => {
             res.render('admin/products/editProduct', {
                 titulo: "Edición",
-                course
+                course,
+                categories
             })
         })
         .catch(error => console.log(error))
@@ -60,35 +65,32 @@ module.exports = {
         if(errors.isEmpty()){
             db.Course.update({
                 ...req.body,
-                user_id: req.session.user.id,
+            },{
+                where : { id : req.params.id}
             })
+            .then(() => {
+                res.redirect('/admin/courses');
+            })
+            .catch(error => res.send(error))
 
+/*             }else{
+                let courseId = +req.params.id;
 
-        res.redirect('/admin/courses');
-
-    }else{
-        let courseId = +req.params.id;
-
-        db.Course.findByPk(courseId)
-        .then(course => {
-          res.render('admin/products/editProduct', {
-            titulo: "Editar Curso",
-            course,
-            errors: errors.mapped(),
-            old: req.body
-          })
-        })
-        .catch(error => console.log(error))
-      }
+                db.Course.findByPk(courseId)
+                .then(course => {
+                res.render('admin/products/editProduct', {
+                    titulo: "Editar Curso",
+                    course,
+                    errors: errors.mapped(),
+                    old: req.body
+                })
+            })
+            .catch(error => console.log(error)) */
+        }
     },
     productDelete: (req, res) => {
         let courseId = +req.params.id;
 
-        db.CourseImage.findAll({
-            where: {
-              course_id: courseId,
-            }
-        })
         db.CourseImage.destroy({
             where: {
             course_id: req.params.id

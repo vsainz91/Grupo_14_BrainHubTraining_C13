@@ -61,7 +61,7 @@ module.exports = {
             db.User.create({
                 name: req.body.name,
                 email: req.body.email,
-                rol_id: 2,
+                rol_id: 1,
                 pass: bcrypt.hashSync(req.body.pass, 10),
                 avatar: req.file ? req.file.filename : "default-image.png"
             })

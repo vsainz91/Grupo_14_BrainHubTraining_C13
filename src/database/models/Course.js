@@ -34,11 +34,7 @@ module.exports = function(sequelize, dataTypes){
         content_hours: {
             type: dataTypes.INTEGER(11)
         },
-
-        courses_images_id: {
-            type: dataTypes.STRING,
-            /* foreignKey :true */
-        }, 
+         
         category_id: {
             type : dataTypes.INTEGER(10),
             foreignKey :true
@@ -55,18 +51,18 @@ module.exports = function(sequelize, dataTypes){
             as: "category",
             foreignKey: "category_id"
         });
-
+/* 
         Course.belongsToMany(models.User, {
             as: "users",
             through: "users_courses",
             foreignKey: "course_id",
             otherKey: "user_id", 
             timestamps: false
-        });
-/*         Course.hasOne(models.CourseImage, {
+        }); */
+        Course.hasMany(models.CourseImage, {
             as: "courseImage",
             foreignKey: "course_id"
-        }); */
+        });
     }
     
     return Course;

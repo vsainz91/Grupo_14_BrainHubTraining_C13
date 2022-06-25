@@ -9,11 +9,8 @@ module.exports = function(sequelize, dataTypes){
         name: {
             type: dataTypes.STRING,
         },
-        course_id: {
-            type : dataTypes.INTEGER(11),
-            foreignKey: true
-        }
     }
+
     let config = {
         tableName : "categories",
         timestamps: false
@@ -23,7 +20,7 @@ module.exports = function(sequelize, dataTypes){
     Category.associate = function (models) {
         Category.hasMany(models.Course, {
             as: "courses",
-            foreignKey: "course_id"
+            foreignKey: "category_id"
         });
     }
 

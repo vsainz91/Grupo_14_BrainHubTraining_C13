@@ -17,30 +17,6 @@ INSERT INTO brainhub_db.categories (name)
 	VALUES ('Programacion');
 
 
--- brainhub_db.course_images definition
-DROP TABLE IF EXISTS `courses_images`;
-CREATE TABLE `courses_images` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `image_name` varchar(100) NOT NULL,
-  `course_id` int(10) NOT null,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---  Auto-generated SQL script #202206091725
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-english1.jpg',1);
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-portugues.jpg',2);
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-chino1.jpg',3);
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-reactjs1.png',4);
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-DataScience.jpg',5);
-INSERT INTO brainhub_db.courses_images (image_name,course_id)
-	VALUES ('curso-Nodejs.jpg',6);
-
-
 -- brainhub_db.courses definition
 DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
@@ -78,6 +54,30 @@ INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
 VALUES('Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validaci�n de datos. Despliega tu aplicaci�n a producci�n en Heroku.', 'Juan Garc�a', 12, 25, 3, 2, NULL);
 
+
+-- brainhub_db.course_images definition
+DROP TABLE IF EXISTS `courses_images`;
+CREATE TABLE `courses_images` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image_name` varchar(100) NOT NULL,
+  `course_id` int(10) NOT null,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--  Auto-generated SQL script #202206091725
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-english1.jpg',1);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-portugues.jpg',2);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-chino1.jpg',3);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-reactjs1.png',4);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-DataScience.jpg',5);
+INSERT INTO brainhub_db.courses_images (image_name,course_id)
+	VALUES ('curso-Nodejs.jpg',6);
+
 -- brainhub_db.users_rol definition
 DROP TABLE IF EXISTS `users_rols`;
 CREATE TABLE `users_rols` (
@@ -98,7 +98,7 @@ CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `pass` varchar(45) NOT NULL,
+  `pass` varchar(100) NOT NULL,
   `rol_id` int(11) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
