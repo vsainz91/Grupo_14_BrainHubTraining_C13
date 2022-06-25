@@ -6,32 +6,28 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
-
+            allowNull: false,
         },
         name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
+            allowNull: false,
         },
 
         email: {
-            type : dataTypes.STRING,
+            type: dataTypes.STRING(45),
+            allowNull: false,
         },
 
         pass: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(45),
+            allowNull: false,
         },
-
         avatar: {
-            type: dataTypes.STRING // revisar//
-        },
-
-       
-        course_id: {
-            type : dataTypes.INTEGER(11),
-            foreignKey :true
+            type: dataTypes.STRING
         },
         rol_id: {
             type : dataTypes.INTEGER(11),
-            foreignKey :true//revisar
+            foreignKey :true
         }
     }
     let config = {
@@ -40,16 +36,15 @@ module.exports = function(sequelize, dataTypes){
     }
     let User = sequelize.define(alias, cols, config);
 
-    User.associate = function (models) {
+ /*    User.associate = function (models) {
         User.belongsToMany(models.Course, {
             as: "courses",
-            through: "user_course",// revisar tabla intermedia//
-            foreignKey: "user_id",
+            through: "users_courses", 
+            foreignKey: "users_id",
             otherKey: "course_id",
             timestamps: false
-
         });
-    }
+    } */
 
     return User;
 }

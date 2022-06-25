@@ -1,4 +1,5 @@
 const { getProducts } = require('../data');
+const db = require('../database/models');
 
 module.exports = {
     index: (req, res) => {
@@ -8,5 +9,5 @@ module.exports = {
            cursos: getProducts,
            session: req.session
         })
-    },
+     },
 } 

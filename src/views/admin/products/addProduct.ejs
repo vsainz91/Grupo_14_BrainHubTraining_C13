@@ -26,10 +26,11 @@
         <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
         
         <label for="category" class="form-label">Categorias</label>
-    <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
+    <select name="category_d" class="form-control" id="category" aria-label="Default select example">
             <option selected hidden>Categoría</option>
-            <option value="Idiomas">Idiomas</option>
-            <option value="Programación">Programación</option>
+            <% categories.forEach(({id, name}) => { %>
+                <option value="<%= id %>"><%= name %> </option>
+            <% }) %> 
         </select>
         <label for="description" class="form-label">Descripción</label>
         <textarea name="description" class="form-control" id="description" rows="3"
@@ -45,4 +46,7 @@
      
 </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 155d0541cc748b7b5552fa32ff3974ac3857b81a

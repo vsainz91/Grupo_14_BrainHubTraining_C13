@@ -1,5 +1,3 @@
-// const { name } = require("ejs");
-// const { text } = require("express");
 
 module.exports = function(sequelize, dataTypes){
     let alias = "Course";
@@ -8,14 +6,13 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
-
         },
         name: {
-            type: dataTypes.INTEGER(11)//revisar
+            type: dataTypes.TEXT('tiny')
         },
 
         price: {
-            type : dataTypes.INTEGER(10)
+            type : dataTypes.INTEGER(11)
         },
 
         description: {
@@ -37,15 +34,11 @@ module.exports = function(sequelize, dataTypes){
         content_hours: {
             type: dataTypes.INTEGER(11)
         },
-
-        /*image: {
-            type: dataTypes.image // revisar NO ESTA EN DB//
-        },*/
-
+         
         category_id: {
             type : dataTypes.INTEGER(10),
             foreignKey :true
-        }
+        },
     }
     let config = {
         tableName : "courses",
@@ -56,16 +49,19 @@ module.exports = function(sequelize, dataTypes){
     Course.associate = function (models) {
         Course.belongsTo(models.Category, {
             as: "category",
-            foreignKey: "product_id"
+            foreignKey: "category_id"
         });
-
+/* 
         Course.belongsToMany(models.User, {
-            ass: "users",
-            through: "user_product",// revisar tabla intermedia//
-            foreignKey: "product_id",
-            otherKey: "user_id",
+            as: "users",
+            through: "users_courses",
+            foreignKey: "course_id",
+            otherKey: "user_id", 
             timestamps: false
-
+        }); */
+        Course.hasMany(models.CourseImage, {
+            as: "courseImage",
+            foreignKey: "course_id"
         });
     }
     

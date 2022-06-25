@@ -1,4 +1,3 @@
-
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require("../database/models");
@@ -14,7 +13,6 @@ module.exports = {
         let errors = validationResult(req);
         
         if (errors.isEmpty()){
-            //Levantar sesión
             db.User.findOne({
                 where: {
                     email: req.body.email
@@ -50,12 +48,41 @@ module.exports = {
             })
         }
     },
+    register: (req, res) => {
+        res.render('users/register', {
+            titulo: "Registro",
+            session: req.session
+        })
+    },
+    processRegister: (req, res) => {
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            db.User.create({
+                name: req.body.name,
+                email: req.body.email,
+                rol_id: 1,
+                pass: bcrypt.hashSync(req.body.pass, 10),
+                avatar: req.file ? req.file.filename : "default-image.png"
+            })
+                .then((user) => {
+                    res.redirect("/users/login")
+                })
+                .catch(error => res.send(error))
+        } else {
+            res.render('users/register', {
+                titulo: "Registro",
+                errors: errors.mapped(),
+                session: req.session,
+                old: req.body
+            });
+        }
+    },
     profile: (req, res) => {
         db.User.findOne({
             where: {
                 id: req.session.user.id
             },
-            // include: [{ association: "addresses" }],
         })
         .then((user) => {
             res.render("users/profile", {
@@ -85,7 +112,6 @@ module.exports = {
                 where: {
                     id: req.session.user.id
                 },
-                // include: [{ association: "addresses" }],
             })
             .then((user) => {
                 res.render("users/profile", {
@@ -97,37 +123,6 @@ module.exports = {
             })
         }
     },
-    register: (req, res) => {
-        res.render('users/register', {
-            titulo: "Registro",
-            session: req.session
-        })
-    },
-    processRegister: (req, res) => {
-        let errors = validationResult(req);
-
-        if (errors.isEmpty()) {
-            db.User.create({
-                name: req.body.name,
-                email: req.body.email,
-                rol_id: 4,
-                pass: bcrypt.hashSync(req.body.pass, 10),
-                avatar: req.file ? req.file.filename : "default-image.png"
-            })
-                .then((user) => {
-                    res.redirect("/users/login")
-                })
-                .catch(error => res.send(error))
-        } else {
-            //Código para mostrar errores
-            res.render('users/register', {
-                titulo: "Registro",
-                errors: errors.mapped(),
-                session: req.session,
-                old: req.body
-            });
-        }
-    },
     logout: (req, res) => {
         req.session.destroy();
 
@@ -137,6 +132,6 @@ module.exports = {
 
         res.redirect('/')
     }
-    }
+}
 
 

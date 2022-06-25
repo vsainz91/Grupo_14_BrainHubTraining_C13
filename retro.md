@@ -57,3 +57,40 @@
 
 ## *Dejar de hacer:*
 - Perder más integrantes.
+
+# SPRINT 4 
+
+## *Comenzar a hacer:*
+- Pedir ayuda cuando estamos trabados.
+ 
+## *Hacer más:*
+- Revisiones con tiempo.
+
+## *Continuar haciendo:*
+- Cumplir plazos.
+- Comprometerse con el equipo.
+- Ponernos al día.
+
+## *Hacer menos:*
+- Frustrarse.
+
+## *Dejar de hacer:*
+- Tener mala suerte con las herramientas de trabajo.
+
+# SPRINT 5 
+
+## *Comenzar a hacer:*
+- Pedir ayuda cuando estamos trabados.
+ 
+## *Hacer más:*
+- Revisiones con tiempo.
+
+## *Continuar haciendo:*
+- Comprometerse con el equipo.
+- Ponernos al día.
+
+## *Hacer menos:*
+- Frustrarse.
+
+## *Dejar de hacer:*
+- Tener mala suerte con las herramientas de trabajo.

@@ -1,5 +1,3 @@
-// const { name } = require("ejs");
-
 module.exports = function(sequelize, dataTypes){
     let alias = "Category";
     let cols = {
@@ -7,16 +5,12 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(10), 
             primaryKey: true,
             autoIncrement: true,
-
         },
         name: {
             type: dataTypes.STRING,
         },
-        course_id: {
-            type : dataTypes.INTEGER(11),
-            foreignKey: true
-        }
     }
+
     let config = {
         tableName : "categories",
         timestamps: false
@@ -26,8 +20,7 @@ module.exports = function(sequelize, dataTypes){
     Category.associate = function (models) {
         Category.hasMany(models.Course, {
             as: "courses",
-            foreignKey: "course_id"
-
+            foreignKey: "category_id"
         });
     }
 
