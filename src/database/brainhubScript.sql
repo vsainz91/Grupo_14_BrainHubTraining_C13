@@ -55,7 +55,7 @@ INSERT INTO brainhub_db.courses
 VALUES('Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validaci�n de datos. Despliega tu aplicaci�n a producci�n en Heroku.', 'Juan Garc�a', 12, 25, 3, 2, NULL);
 
 
--- brainhub_db.course_images definition
+-- brainhub_db.courses_images definition
 DROP TABLE IF EXISTS `courses_images`;
 CREATE TABLE `courses_images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
