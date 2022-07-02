@@ -4,7 +4,7 @@ const db = require('../database/models')
 let validateRegister = [
     check("name")
         .notEmpty().withMessage('El nombre es requerido').bail()
-        .isLength({ min:3 }).withMessage('Ingrese un nombre válido'),
+        .isLength({ min:2 }).withMessage('Ingrese un nombre válido'),
     check("email")
         .notEmpty().withMessage(" El e-mail es requerido").bail()
         .isEmail().withMessage("Ingrese un e-mail válido"),
@@ -31,6 +31,8 @@ let validateRegister = [
         }
         return true;
     }).withMessage("Las contraseñas no coinciden")
+
+    // 
 ];
 
 module.exports = validateRegister;
