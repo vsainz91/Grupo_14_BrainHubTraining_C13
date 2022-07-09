@@ -36,16 +36,20 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let User = sequelize.define(alias, cols, config);
-/* 
+
     User.associate = function (models) {
-        User.belongsToMany(models.Course, {
+        User.belongsTo(models.UserRol, {
+            as: "rol",
+            foreignKey: "rol_id"
+        });
+        /* User.belongsToMany(models.Course, {
             as: "courses",
             through: "users_courses", 
             foreignKey: "users_id",
             otherKey: "course_id",
             timestamps: false
-        });
+        }); */
     } 
- */
+
     return User;
 }

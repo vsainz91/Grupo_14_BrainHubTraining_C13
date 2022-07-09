@@ -5,7 +5,7 @@
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -29,30 +29,28 @@ CREATE TABLE `courses` (
   `lessons` int(10) unsigned NOT NULL,
   `content_hours` int(11) NOT NULL,
   `courses_images_id` int(10) null,
-  `category_id` int(10) unsigned NOT NULL,
+  `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-  KEY `courses_FK` (`category_id`),
-  CONSTRAINT `courses_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('Curso Completo de Ingles: Iniciacion', 3500, 'Curso completo de ingl�s para dominar la gram�tica, traducci�n, conversaci�n, vocabulario, pronunciaci�n y mucho m�s.', 'Mark Thompson', 16, 28, 2, 1, NULL);
+VALUES('Curso Completo de Inglés: Iniciación', 3500, 'Curso completo de inglés para dominar la gramática, traducción, conversación, vocabulario, pronunciación y mucho más.', 'Mark Thompson', 16, 28, 2, 1, NULL);
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('Portugu�s de Brasil b�sico', 4050, 'Este curso est� dise�ado para hispanohablantes y ense�a de forma objetiva, con explicaciones claras y concisas, el idioma portugu�s', 'Joao Fernandez', 25, 73, 4, 1, NULL);
+VALUES('Portugués de Brasil básico', 4050, 'Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con explicaciones claras y concisas, el idioma portugués', 'Joao Fernandez', 25, 73, 4, 1, NULL);
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer v�deo de la forma m�s din�mica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
+VALUES('Aprender Chino a la primera', 5500, 'Curso de chino. Empieza desde cero y habla desde el primer video de la forma más dinámica y divertida.', 'Ariel Lin', 41, 210, 14, 1, NULL);
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('Curso de Introducci�n a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu informaci�n en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
+VALUES('Curso de Introducción a React.js', 4500, 'Trabaja con componentes, propiedades, estado y efectos. Almacena tu información en Local Storage, implementa React Context para comunicar componentes y teletransporta componentes con React Portals. Crea tu primer proyecto web con React junto a tu profesor.', 'Pepita Perez', 14, 21, 5, 2, NULL);
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('C�mo y Por Qu� Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce c�mo iniciar una carrera en data science e inteligencia artificial entendiendo c�mo funciona esta �rea de la tecnolog�a, qu� oportunidades tiene y qu� caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
+VALUES('Cómo y Por Qué Aprender Data Science e Inteligencia Artificial', 5000, 'Conoce cómo iniciar una carrera en data science e inteligencia artificial entendiendo cómo funciona esta área de la tecnología, qué oportunidades tiene y qué caminos seguir para conseguir tu primer trabajo en datos.', 'Mariano Rodriguez', 12, 22, 2, 2, NULL);
 INSERT INTO brainhub_db.courses
 (name, price, description, instructor, practice_time, lessons, content_hours, category_id, courses_images_id)
-VALUES('Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validaci�n de datos. Despliega tu aplicaci�n a producci�n en Heroku.', 'Juan Garc�a', 12, 25, 3, 2, NULL);
+VALUES('Curso de Backend con Node.js: API REST con Express.js', 5300, 'Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validación de datos. Despliega tu aplicación a producción en Heroku.', 'Juan García', 12, 25, 3, 2, NULL);
 
 
 -- brainhub_db.courses_images definition
@@ -104,7 +102,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE brainhub_db.users ADD CONSTRAINT users_FK FOREIGN KEY (rol_id) REFERENCES brainhub_db.users_rol(id);
+
 
 DROP TABLE IF EXISTS `users_courses`;
 CREATE TABLE brainhub_db.users_courses (

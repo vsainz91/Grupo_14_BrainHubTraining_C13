@@ -30,13 +30,16 @@ module.exports = {
             })
             // if req.files para preguntar
             .then((course) => {
-                db.CourseImage.create({
-                    image_name: req.file.filename,
-                    course_id: course.id
+                let courseImages = req.files.map(image => {
+                    return {
+                      image_name: image.filename,
+                      course_id: course.id
+                    } 
                 })
+                db.CourseImage.create(courseImages)
+                .then(() => res.redirect('/admin/courses'))
+                .catch(error => console.log(error))
             })                
-            .then(() => res.redirect('/admin/courses'))
-            .catch(error => console.log(error))
         }else {
             res.render('admin/products/addProduct', {
                 titulo: "Agregar Curso",
@@ -73,7 +76,7 @@ module.exports = {
             })
             .catch(error => res.send(error))
 
-/*             }else{
+            }else{
                 let courseId = +req.params.id;
 
                 db.Course.findByPk(courseId)
@@ -85,7 +88,7 @@ module.exports = {
                     old: req.body
                 })
             })
-            .catch(error => console.log(error)) */
+            .catch(error => console.log(error))
         }
     },
     productDelete: (req, res) => {

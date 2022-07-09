@@ -125,7 +125,7 @@ section.container-login .input-container {
 section.container-login .container-form .input-log {
     height: 50px;
     width: 100%;
-    margin-top: 10px;
+    margin: 5px;
     padding: 10px;
 }
 

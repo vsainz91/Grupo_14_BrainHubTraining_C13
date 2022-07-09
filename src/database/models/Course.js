@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes){
         },
          
         category_id: {
-            type : dataTypes.INTEGER(10),
+            type : dataTypes.INTEGER(11),
             foreignKey :true
         },
     }

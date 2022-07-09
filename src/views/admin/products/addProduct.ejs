@@ -31,8 +31,8 @@
         <label for="category" class="form-label">Categorias</label>
     <select name="category_d" class="form-control" id="category" aria-label="Default select example">
             <option selected hidden>Categoría</option>
-            <% categories.forEach(({id, name}) => { %>
-                <option value="<%= id %>"><%= name %> </option>
+            <% categories.forEach((category) => { %>
+                <option value="<%= category.id %>"><%= category.name %></option>
             <% }) %> 
         </select>
         <label for="description" class="form-label">Descripción</label>

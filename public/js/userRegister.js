@@ -3,90 +3,91 @@ function qs(element) {
 }
 
 window.addEventListener("load", () => {
-    let $inputName = qs('#name'),
+    let name = qs('#name'),
         $nameErrors = qs('#nameErrors'),
-        $email = qs('#email'),
+        email = qs('#email'),
         $emailErrors = qs('#emailErrors'),
-        $pass = qs('#pass'),
+        pass = qs('#pass'),
         $passErrors = qs('#passErrors'),
-        $pass2 = qs('#password2'),
+        pass2 = qs('#password2'),
         $pass2Errors = qs('#pass2Errors'),
         avatar = qs('#avatar'),
+        $form = qs('#form'),
         $fileErrors = qs('#fileErrors'),
         $imgPreview = qs('#img-preview'),
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-        $inputName.addEventListener("blur", () => {
+        name.addEventListener("blur", () => {
             switch (true) {
-                case !$inputName.value.trim(): 
+                case !name.value.trim(): 
                     $nameErrors.innerHTML = "Requerido";
-                    $inputName.classList.add("is-invalid");
+                    name.classList.add("is-invalid");
                     break;
-                case !regExAlpha.test($inputName.value):
+                case !regExAlpha.test(name.value):
                     $nameErrors.innerHTML = "Nombre y Apellido inválidos";
-                    $inputName.classList.add("is-invalid");
+                    name.classList.add("is-invalid");
                     break;
                 default: 
-                    $inputName.classList.remove("is-invalid");
-                    $inputName.classList.add("is-valid");
+                    name.classList.remove("is-invalid");
+                    name.classList.add("is-valid");
                     $nameErrors.innerHTML = "";
                     break;
             }
         })
 
-        $email.addEventListener("blur", () => {
+        email.addEventListener("blur", () => {
             switch (true) {
-                case !$email.value.trim(): 
+                case !email.value.trim(): 
                     $emailErrors.innerHTML = "Requerido";
-                    $email.classList.add("is-invalid");
+                    email.classList.add("is-invalid");
                     break;
-                case !regExEmail.test($email.value):
+                case !regExEmail.test(email.value):
                     $emailErrors.innerHTML = "E-mail inválido";
-                    $email.classList.add("is-invalid");
+                    email.classList.add("is-invalid");
                     break;
                 default: 
-                    $email.classList.remove("is-invalid");
-                    $email.classList.add("is-valid");
+                    email.classList.remove("is-invalid");
+                    email.classList.add("is-valid");
                     $emailErrors.innerHTML = "";
                     break;
             }
         })
 
-        $pass.addEventListener('blur', function(){
+        pass.addEventListener('blur', function(){
             switch (true) {
-                case !$pass.value.trim():
+                case !pass.value.trim():
                     $passErrors.innerHTML = 'El campo contraseña es obligatorio'
-                    $pass.classList.add('is-invalid')
+                    pass.classList.add('is-invalid')
                     break;
-                case !regExPass.test($pass.value):
+                case !regExPass.test(pass.value):
                     $passErrors.innerHTML = 'La contraseña debe tener: entre 6 y 12 caracteres, al menos una mayúscula, una minúscula y un número';
-                    $pass.classList.add('is-invalid')
+                    pass.classList.add('is-invalid')
                     break;    
                 default:
-                    $pass.classList.remove("is-invalid");
-                    $pass.classList.add('is-valid')
+                    pass.classList.remove("is-invalid");
+                    pass.classList.add('is-valid')
                     $passErrors.innerHTML = ""
                     break;
             }
         })
     
-        $pass2.addEventListener('blur', function(){
+        pass2.addEventListener('blur', function(){
             switch (true) {
-                case !$pass2.value.trim():
+                case !pass2.value.trim():
                     $pass2Errors.innerHTML = 'Reingresa tu contraseña'
-                    $pass2.classList.add('is-invalid')
+                    pass2.classList.add('is-invalid')
                     break;
     
-                case $pass2.value !== $pass.value:
+                case pass2.value !== pass.value:
                     $pass2Errors.innerHTML = 'Las contraseñas no coinciden';
-                    $pass2.classList.add('is-invalid')
+                    pass2.classList.add('is-invalid')
                     break;    
     
                 default:
-                    $pass2.classList.remove("is-invalid");
-                    $pass2.classList.add('is-valid')
+                    pass2.classList.remove("is-invalid");
+                    pass2.classList.add('is-valid')
                     $pass2Errors.innerHTML = ""
                     break;
             }
@@ -111,6 +112,29 @@ window.addEventListener("load", () => {
                 $fileErrors.innerHTML = '';
                 avatar.classList.remove('is-invalid')
             }
+        }
+    })
+
+    $form.addEventListener('submit', function(event) {
+        
+        event.preventDefault()
+        let formElements = this.elements;
+        let errores = false;
+
+        for (let index = 0; index < formElements.length - 1; index++) {
+            if(formElements[index].value == "" 
+            && formElements[index].name !== "apellido"
+            && formElements[index].type !== "file"
+            || formElements[index].classList.contains("is-invalid")
+            ){
+                formElements[index].classList.add("is-invalid");
+                submitErrors.innerHTML = "Hay errores en el formulario";
+                errores = true;
+            }           
+        }
+
+        if(!errores){
+            $form.submit()
         }
     })
 })
