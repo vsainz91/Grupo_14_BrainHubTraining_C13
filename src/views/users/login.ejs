@@ -9,14 +9,19 @@
             <button class="btn-log-google btn">Inicia sesión con Google</button>
             <form class="container-form" action="/users/login" method="POST">
                 <div class="input-container">
-                    <input class="input-log" type="email" class="input-style" name="email" placeholder="Ingrese su email">
+                    <input class="input-log" type="email" class="input-style" id ="email" name="email"  placeholder="Ingrese su email">
+                    <span class="error" id="nameErrors"></span>
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger" style="color: red;"><%= errors.email.msg %></small>
                     <% } %> 
-                    <input class="input-log" type="password" name="pass" placeholder="Ingrese su contraseña">
+                    
+
+                    <input class="input-log" type="password" name="pass" id ="pass" placeholder="Ingrese su contraseña">
+                    <span id="passErrors"></span>
                     <% if (locals.errors && errors.pass) { %>
                         <small class="text-danger" style="color: red;"><%= errors.pass.msg %></small>
                     <% } %>
+                    
                 </div>
                 <% if (locals.errors && errors.custom) { %>
                     <small class="text-danger" style="color: red;"><%= errors.custom.msg %></small>
@@ -31,5 +36,6 @@
             </form>
         </section>
         <%- include ('../partials/footer') %>
+        <script src="../../../public/js/scriptLogin.js"></script>
     </body>
 </html>

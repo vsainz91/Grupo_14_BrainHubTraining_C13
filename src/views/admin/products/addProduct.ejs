@@ -14,20 +14,22 @@
         </div>
         <label for="name" class="form-label">Nombre del Curso</label>
         <input type="text" id="name" name="name" class="form-control" placeholder="Ej: Introducción a React">
-        <% if (locals.errors && errors.name) { %>
-            <small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
-        <% } %>
+        <span id="nameErrors"></span>
         <label for="price" class="form-label">Precio</label>
         <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
+        <span id="priceErrors"></span>
         <label for="instructor" class="form-label">Instructor</label>
         <input type="text" name="instructor" class="form-control" id="instructor" placeholder="Ej: Mark Thompson">
+        <span id="instructorErrors"></span>
         <label for="contentHours" class="form-label">Horas de contenido</label>
         <input type="number" name="content_hours" class="form-control" id="contentHours" placeholder="Ej: 40">
+        <span id="contentHoursErrors"></span>
         <label for="practiceTime" class="form-label">Horas de práctica</label>
         <input type="number" name="practice_time" class="form-control" id="practiceTime" placeholder="Ej: 30">
+        <span id="practiceTimeErrors"></span>
         <label for="lessons" class="form-label">Lecciones</label>
         <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
-        
+        <span id="lessonErrors"></span>
         <label for="category" class="form-label">Categorias</label>
     <select name="category_d" class="form-control" id="category" aria-label="Default select example">
             <option selected hidden>Categoría</option>
@@ -36,18 +38,22 @@
             <% }) %> 
         </select>
         <label for="description" class="form-label">Descripción</label>
-        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Escriba la descripción del curso"></textarea>
+        <textarea name="description" class="form-control" id="description" rows="3"
+            placeholder="Escriba la descripción del curso"></textarea>
+            <span id="descriptionErrors"></span>
             <% if (locals.errors && errors.description) { %>
                 <small class="text-danger" style="color: red;"><%= errors.description.msg %></small>
             <% } %>
         <label for="inputFile" class="form-label">Imagen del producto</label>
         <input type="file" multiple class="form-control" id="inputFile" name="image">
+        <span id="fileErrors"></span>
 
         <button class="btn_agregar" type="submit">Agregar</button>
     </form>
 </div>
 
       <%- include('../partials/footer') %> 
+      <script src="../../../../public/js/scriptAddProduct.js"></script>
      
 </body>
 </html>
