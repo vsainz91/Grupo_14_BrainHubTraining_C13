@@ -51,14 +51,15 @@ module.exports = function(sequelize, dataTypes){
             as: "category",
             foreignKey: "category_id"
         });
-/* 
+
         Course.belongsToMany(models.User, {
             as: "users",
             through: "users_courses",
             foreignKey: "course_id",
             otherKey: "user_id", 
             timestamps: false
-        }); */
+        }); 
+        
         Course.hasMany(models.CourseImage, {
             as: "courseImage",
             foreignKey: "course_id"

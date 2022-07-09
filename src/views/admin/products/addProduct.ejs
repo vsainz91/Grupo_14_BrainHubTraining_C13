@@ -14,7 +14,13 @@
         </div>
         <label for="name" class="form-label">Nombre del Curso</label>
         <input type="text" id="name" name="name" class="form-control" placeholder="Ej: Introducción a React">
+<<<<<<< HEAD
         <span id="nameErrors"></span>
+=======
+        <% if (locals.errors && errors.name) { %>
+            <small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
+        <% } %>
+>>>>>>> 1887eeab7bfc15c962baccc771937548dff43c25
         <label for="price" class="form-label">Precio</label>
         <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
         <span id="priceErrors"></span>
@@ -39,9 +45,16 @@
             <% }) %> 
         </select>
         <label for="description" class="form-label">Descripción</label>
+<<<<<<< HEAD
         <textarea name="description" class="form-control" id="description" rows="3"
             placeholder="Escriba la descripción del curso"></textarea>
             <span id="descriptionErrors"></span>
+=======
+        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Escriba la descripción del curso"></textarea>
+            <% if (locals.errors && errors.description) { %>
+                <small class="text-danger" style="color: red;"><%= errors.description.msg %></small>
+            <% } %>
+>>>>>>> 1887eeab7bfc15c962baccc771937548dff43c25
         <label for="inputFile" class="form-label">Imagen del producto</label>
         <input type="file" multiple class="form-control" id="inputFile" name="image">
         <span id="fileErrors"></span>
