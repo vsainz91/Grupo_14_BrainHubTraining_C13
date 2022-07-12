@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %> 
+
 <body>
   <%- include('../partials/header') %> 
+  
   
   <div class="contenedor">
     <form action="/admin/courses/<%= course.id %>?_method=PUT" method="post" class="form">
@@ -14,7 +16,8 @@
         </div>
         <label for="name" class="form-label"> Nombre del Curso</label>
         <input type="text" name="name" class="form-control" id="name" value="<%= course.name %>">
-        <span class="error" id="nameErrors"></span>
+        <span class="error" id="nameErrors"><%= (locals.errors  && errors.name) ? errors.name.msg : "" %></span>
+
         <label for="price" class="form-label">Precio</label>
         <input type="number" name="price" class="form-control" id="price" value="<%= course.price %>">
         <span class="error" id="priceErrors"></span>
@@ -34,7 +37,8 @@
 </div>
 
       <%- include('../partials/footer') %> 
-      <script src="../../../public/js/scriptEditProducts.js"></script>
+      <script src="/js/scriptEditProducts"></script>
+      
 
 </body>
 </html>
