@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head') %>
+<script src="/js/userRegister.js"></script>
     <body class="login_body">
         <%- include ('../partials/header') %>
             <section class="container-login">
@@ -10,25 +11,25 @@
                     <div class="input-container">
                         <input class="input-log" type="nombre" class="input-style" name="name" id="name" value="<%= locals.old && old.name %>"
                             placeholder="Ingrese su nombre y apellido" minlength="2">
-                            <span class="error" id="nameErrors"></span>
+                            <span class="error" id="nameErrors" style="color: red;"></span>
                             <% if (locals.errors && errors.name){
                                 %><small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
                                 <% } %>
                         <input class="input-log" type="email" class="input-style" id="email" name="email" value="<%= locals.old && old.email %>"
                             placeholder="Ingrese su email">
-                            <span id="emailErrors"></span>
+                            <span id="emailErrors" style="color: red;"></span>
                             <% if (locals.errors && errors.email){
                                 %><small class="text-danger" style="color: red;"><%= errors.email.msg %></small>
                                 <% } %>
                         <input class="input-log" type="password" id="pass" name="pass" placeholder="Crea tu contraseña">
-                        <span id="passErrors"></span>
+                        <span id="passErrors" style="color: red;"></span>
                         <% if (locals.errors && errors.pass){
                             %><small class="text-danger" style="color: red;"><%= errors.pass.msg %></small>
                             <% } %>
-                        <label for="password2" id=""> Repita su contraseña</label>
+                        <label for="password2" id=""> </label>
                         <input class="input-log" type="password" name="password2" required id="password2"
                             placeholder="Confirma tu contraseña">
-                            <span id="pass2Errors"></span>
+                            <span id="pass2Errors" style="color: red;"></span>
                             <% if (locals.errors && errors.password2){
                                 %><small class="text-danger" style="color: red;"><%= errors.password2.msg %></small>
                             <% } %>
@@ -37,7 +38,7 @@
                         <label for="avatar">Avatar</label>
                         <input type="file" name="avatar" id="avatar">
                         <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
-                        <span id="fileErrors"></span>
+                        <span id="fileErrors" style="color: red;"></span>
                     </div>
                     <div>
                     <button class="btn-register btn" type="submit">Registrate</button>
@@ -46,7 +47,6 @@
                 </form>
             </section>
             <%- include ('../partials/footer') %>
-            <script src="../../../public/js/userRegister.js"></script>
     </body>
 
 </html>

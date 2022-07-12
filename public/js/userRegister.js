@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
     name.addEventListener("blur", () => {
         switch (true) {
             case !name.value.trim(): 
-                $nameErrors.innerHTML = "Requerido";
+                $nameErrors.innerHTML = "El nombre es requerido";
                 name.classList.add("is-invalid");
                 break;
             case !regExAlpha.test(name.value):
@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
     email.addEventListener("blur", () => {
         switch (true) {
             case !email.value.trim(): 
-                $emailErrors.innerHTML = "Requerido";
+                $emailErrors.innerHTML = "El email es requerido";
                 email.classList.add("is-invalid");
                 break;
             case !regExEmail.test(email.value):
@@ -58,7 +58,7 @@ window.addEventListener("load", () => {
     pass.addEventListener('blur', function(){
         switch (true) {
             case !pass.value.trim():
-                $passErrors.innerHTML = 'El campo contraseña es obligatorio'
+                $passErrors.innerHTML = 'La contraseña es requerida'
                 pass.classList.add('is-invalid')
                 break;
             case !regExPass.test(pass.value):
@@ -106,7 +106,7 @@ window.addEventListener("load", () => {
             if(avatar.files && avatar.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'" width="100%" height="200px"/>';
                 };
                 reader.readAsDataURL(avatar.files[0]);
                 $fileErrors.innerHTML = '';

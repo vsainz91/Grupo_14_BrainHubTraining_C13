@@ -22,7 +22,8 @@ let validateRegister = [
     }),
     check("pass")
         .notEmpty().withMessage("Ingrese una contaseña")
-        .isLength({min:8}).withMessage("La contraseña debe tener por lo menos 8 caracteres"),
+        .isLength({min:6, max:12}).withMessage("La contraseña debe tener entre 6 y 12 caracteres")
+        .isAlphanumeric(),
     check("password2")
         .notEmpty().withMessage("Repita su contraseña"),
     body("password2").custom((value, {req}) => {

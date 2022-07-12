@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ('../partials/head') %> 
+    <script src="/js/profile.js"></script>
 <body>
     <%- include ('../partials/header') %> 
     <div class="contenedor_perfil">
@@ -14,7 +15,7 @@
             </div>
             <div class="input_file-avatar">
                 <span class="avatar_span">Editar imagen</span>
-                <input type="file" name="avatar" >
+                <input type="file" name="avatar" id="avatar">
             </div>
             <div class="profile-info">
                 <p>Nombre: <%= user.name %></p>
@@ -24,7 +25,7 @@
                 <label for="name" class="form-edit"> Nuevo nombre </label>
                 <input type="text" name="name" class="form-edit" id="name" value="<%= locals.old && old.name %>">
                 <% if (locals.errors && errors.name) { %>
-                    <small class="text-danger"><%= errors.name.msg %></small>
+                    <small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
                     <% } %>
             </div>
             <div class="interests">

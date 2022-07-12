@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head') %> 
+<script src="/js/scriptLogin.js"></script>
     <body class="login_body">
         <%- include ('../partials/header') %> 
         <section class="container-login">
@@ -10,14 +11,13 @@
             <form class="container-form" action="/users/login" method="POST">
                 <div class="input-container">
                     <input class="input-log" type="email" class="input-style" id ="email" name="email"  placeholder="Ingrese su email">
-                    <span class="error" id="nameErrors"></span>
+                    <span class="error" id="emailErrors" style="color: red;"></span>
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger" style="color: red;"><%= errors.email.msg %></small>
                     <% } %> 
-                    
 
                     <input class="input-log" type="password" name="pass" id ="pass" placeholder="Ingrese su contraseña">
-                    <span id="passErrors"></span>
+                    <span id="passErrors" style="color: red;"></span>
                     <% if (locals.errors && errors.pass) { %>
                         <small class="text-danger" style="color: red;"><%= errors.pass.msg %></small>
                     <% } %>
@@ -36,6 +36,5 @@
             </form>
         </section>
         <%- include ('../partials/footer') %>
-        <script src="../../../public/js/scriptLogin.js"></script>
     </body>
 </html>

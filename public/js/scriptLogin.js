@@ -13,13 +13,10 @@ window.addEventListener("load", () => {
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-
-
-
     $email.addEventListener("blur", () => {
         switch (true) {
             case !$email.value.trim():
-                $emailErrors.innerHTML = "Requerido";
+                $emailErrors.innerHTML = "Email requerido";
                 $email.classList.add("is-invalid");
                 break;
             case !regExEmail.test($email.value):
@@ -33,6 +30,7 @@ window.addEventListener("load", () => {
                 break;
         }
     })
+
     $pass.addEventListener('blur', function () {
         switch (true) {
             case !$pass.value.trim():

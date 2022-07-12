@@ -26,21 +26,23 @@ module.exports = {
 
         if (errors.isEmpty()) {
             db.Course.create({
-                ...req.body,
-            })
-            // if req.files para preguntar
+                ...req.body, 
+            }, {include: ['courseImage']})
+            
+            // if req.files para preguntar?
             .then((course) => {
                 let courseImages = req.files.map(image => {
                     return {
                       image_name: image.filename,
-                      course_id: course.id
+                      course_id: course.id,
                     } 
                 })
-                db.CourseImage.create(courseImages)
+                db.CourseImage.bulkCreate(courseImages)
                 .then(() => res.redirect('/admin/courses'))
                 .catch(error => console.log(error))
             })                
         }else {
+
             res.render('admin/products/addProduct', {
                 titulo: "Agregar Curso",
                 errors: errors.mapped(),
@@ -50,7 +52,7 @@ module.exports = {
     },
     productEdit: (req, res) => {
         let courseId = +req.params.id;
-        let course = db.Course.findByPk(courseId, {include : ['category']})
+        let course = db.Course.findByPk(courseId, {include: ['category']})
         let categories = db.Category.findAll()
         Promise.all([course, categories])
         .then(([course, categories]) => {
@@ -69,7 +71,7 @@ module.exports = {
             db.Course.update({
                 ...req.body,
             },{
-                where : { id : req.params.id}
+                where: {id: req.params.id}
             })
             .then(() => {
                 res.redirect('/admin/courses');
@@ -95,15 +97,11 @@ module.exports = {
         let courseId = +req.params.id;
 
         db.CourseImage.destroy({
-            where: {
-            course_id: req.params.id
-            }
+            where: {course_id: req.params.id}
         })
         .then(() => { 
             db.Course.destroy({
-            where: {
-                id: courseId
-                }
+            where: {id: courseId}
             })
         })
         .then(() => res.redirect('/admin/courses'))

@@ -18,15 +18,15 @@ module.exports = function(sequelize, dataTypes){
         },
 
         pass: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(70),
             allowNull: false,
         },
         avatar: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING(45)
         },
         rol_id: {
             type : dataTypes.INTEGER(11),
-            foreignKey :true
+            allowNull: false,
         }
     }
 

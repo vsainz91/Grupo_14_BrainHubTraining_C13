@@ -100,7 +100,7 @@ window.addEventListener("load", () => {
 
         for (let index = 0; index < elementsForm.length - 1; index++) {
             if (elementsForm[index].value == ""
-                && elementsForm[index].name !== "apellido"
+                && elementsForm[index].name !== "nombre"
                 && elementsForm[index].type !== "file"
                 || elementsForm[index].classList.contains("is-invalid")) {
                 elementsForm[index].classList.add("is-invalid");
