@@ -5,21 +5,22 @@
 <body>
     <%- include ('../partials/header') %> 
     <div class="contenedor_perfil">
-        <form action="/users/profile" class="profile-form">
+        <form action="/users/profile" class="profile-form" method="post" enctype="multipart/form-data" id="form">
             <div class="profile-form-header">
                 <h1 class="form-title">Mi Perfil</span></h1>
             </div>
             <div class="profile-box_avatar">
                 <h3 class="profile-subtitle">Avatar</h3>
-                <div class="profile-avatar"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
+                <div class="profile-avatar" id="imgPreview" onChange="fileValidation"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
             </div>
             <div class="input_file-avatar">
                 <span class="avatar_span">Editar imagen</span>
                 <input type="file" name="avatar" id="avatar">
+                <span id="fileErrors" style="color: red;"></span>
             </div>
             <div class="profile-info">
-                <p>Nombre: <%= user.name %></p>
                 <p>Email: <%= user.email %></p>
+                <p>Nombre: <%= user.name %></p>
             </div>
             <div class="profile_editinfo" action="/users/perfil?_method=PUT" method="POST">
                 <label for="name" class="form-edit"> Nuevo nombre </label>
@@ -27,6 +28,7 @@
                 <% if (locals.errors && errors.name) { %>
                     <small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
                     <% } %>
+                <span id="nameErrors" style="color: red;"></span>
             </div>
             <div class="interests">
                 <h3 class="profile_h3">Tus intereses</h3>
@@ -37,17 +39,6 @@
                 <label for="languages">Idiomas</label>
                 <input type="checkbox" name="intereses" id="languages" value="languages">
             </div>
-            <!-- <div class="userData_container">
-                <h3 class="profile_h3">Datos de contacto</h3>
-                <div class="form_box">
-                    <div class="input-container">
-                        <input type="email" class="input-style" name="email" placeholder="Ingrese su email" value="" >
-                    </div>
-                    <div class="input-container">
-                        <input type="tel" class="input-style" name="tel" placeholder="Ingrese su teléfono">
-                    </div>
-                </div>
-            </div> -->
             <button class="btn_editar-profile" type="submit">Editar Datos</button>
         </form>
     </div>

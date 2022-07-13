@@ -213,6 +213,10 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
     display: block;
 }
 
+div#carrito-icon{
+    padding: 5px;
+}
+
 .header_avatar{
    
         width: 4rem;
@@ -237,6 +241,8 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
 .header_avatar img{
     height: 65px;
     border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
 }
 
 /* END HEADER */

@@ -45,11 +45,12 @@
 .profile-info p {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
     justify-content: center;
 }
 .profile_editinfo {
     margin-left: 150px ;
+    margin-bottom: 20px;
 }
 
 .profile_editinfo .form-edit input {
@@ -68,6 +69,7 @@
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    object-fit: cover;
 }
 
 .interests {
