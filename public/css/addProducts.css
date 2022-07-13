@@ -78,6 +78,7 @@
       transition: all .5s ease;
       border-radius: 5px;
       margin-top: 10px;
+      margin-bottom: 10px;
   }
 
   .btn_agregar:hover {
@@ -104,13 +105,18 @@
   
 
   span {
-      color: rgb(173, 42, 6);
+      color: rgb(144, 35, 4);
       font-weight: bold;
   }
 
   label {
       margin-bottom: 4px;
       margin-top: 10px;
+      
+  }
+  span.submitErrors {
+    color: rgb(144, 35, 4);
+      font-weight: bold;
       
   }
 

@@ -100,7 +100,7 @@ window.addEventListener("load", () => {
             default:
                 $contentHours.classList.remove("is-invalid");
                 $contentHours.classList.add("is-valid");
-                $contentHoursErrors.innerHTML = "el valor debe ser mayor a cero";
+                $contentHoursErrors.innerHTML = " ";
                 break;
         }
     })
@@ -111,7 +111,7 @@ window.addEventListener("load", () => {
                 $practiceTime.classList.add('is-invalid')
                 break;
             case !regExPracticeTime.test($practiceTime.value):
-                $practiceTimeErrors.innerHTML = 'el valor debe ser mayor a cero';
+                $practiceTimeErrors.innerHTML = " ";
                 $practiceTime.classList.add('is-invalid')
                 break;
             default:
@@ -134,7 +134,7 @@ window.addEventListener("load", () => {
             default:
                 $lessons.classList.remove("is-invalid");
                 $lessons.classList.add("is-valid");
-                $lessonErrors.innerHTML = "el valor debe ser mayor a cero";
+                $lessonErrors.innerHTML = " ";
                 break;
         }
     })
