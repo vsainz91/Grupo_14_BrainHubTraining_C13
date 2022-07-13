@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
     <script src="/js/scriptAddProduct.js"></script>
-<body>
-  <%- include('../partials/header') %> 
-  
-  <div class="contenedor">
-    <form action="/admin/courses" method="post" class="form" enctype="multipart/form-data" id="form">
-        <div class="form-header">
-            <h1 class="form-title">Agregar Curso</span></h1>
-        </div>
-        <div class="form-header">
-            <h1 class="agregar-Curso"></h1>
-        </div>
-        <label for="name" class="form-label">Nombre del Curso</label>
-        <input type="text" id="name" name="name" class="form-control" placeholder="Ej: Introducción a React">
-        <span id="nameErrors" style="color: red;"></span>
-        <label for="price" class="form-label">Precio</label>
-        <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
-        <span id="priceErrors" style="color: red;"></span>
-        <label for="instructor" class="form-label">Instructor</label>
-        <input type="text" name="instructor" class="form-control" id="instructor" placeholder="Ej: Mark Thompson">
-        <span id="instructorErrors" style="color: red;"></span>
-        <label for="contentHours" class="form-label">Horas de contenido</label>
-        <input type="number" name="content_hours" class="form-control" id="contentHours" placeholder="Ej: 40">
-        <span id="contentHoursErrors" style="color: red;"></span>
-        <label for="practiceTime" class="form-label">Horas de práctica</label>
-        <input type="number" name="practice_time" class="form-control" id="practiceTime" placeholder="Ej: 30">
-        <span id="practiceTimeErrors" style="color: red;"></span>
-        <label for="lessons" class="form-label">Lecciones</label>
-        <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
-        <span id="lessonErrors" style="color: red;"></span>
-        <label for="category" class="form-label">Categorias</label>
-    <select name="category_d" class="form-control" id="category" aria-label="Default select example">
-            <option selected hidden>Categoría</option>
-            <% categories.forEach((category) => { %>
-                <option value="<%= category.id %>"><%= category.name %></option>
-            <% }) %> 
-        </select>
-        <label for="description" class="form-label">Descripción</label>
-        <textarea name="description" class="form-control" id="description" rows="3"
-            placeholder="Escriba la descripción del curso"></textarea>
-            <span id="descriptionErrors" style="color: red;"></span>
-            <% if (locals.errors && errors.description) { %>
-                <small class="text-danger" style="color: red;"><%= errors.description.msg %></small>
-            <% } %>
-        <label for="inputFile" class="form-label">Imagen del producto</label>
-        <input type="file" multiple class="form-control" id="inputFile" name="image">
-        <span id="fileErrors" style="color: red;"></span>
 
-        <button class="btn_agregar" type="submit">Agregar</button>
-        <span id="submitErrors" style="color: red;"></span>
-    </form>
-</div>
+    <body>
+        <%- include('../partials/header') %>
 
-      <%- include('../partials/footer') %> 
-     
-</body>
+            <div class="contenedor">
+                <form action="/admin/courses" method="post" class="form" enctype="multipart/form-data" id="form">
+                    <div class="form-header">
+                        <h1 class="form-title">Agregar Curso</span></h1>
+                    </div>
+                    <div class="form-header">
+                        <h1 class="agregar-Curso"></h1>
+                    </div>
+                    <label for="name" class="form-label">Nombre del Curso</label>
+                    <input type="text" id="name" name="name" class="form-control"
+                        placeholder="Ej: Introducción a React">
+                    <span id="nameErrors"></span>
+                    <label for="price" class="form-label">Precio</label>
+                    <input type="number" name="price" class="form-control" id="price" placeholder="Ej: $1500">
+                    <span id="priceErrors"></span>
+                    <label for="instructor" class="form-label">Instructor</label>
+                    <input type="text" name="instructor" class="form-control" id="instructor"
+                        placeholder="Ej: Mark Thompson">
+                    <span id="instructorErrors"></span>
+                    <label for="contentHours" class="form-label">Horas de contenido</label>
+                    <input type="number" name="content_hours" class="form-control" id="contentHours"
+                        placeholder="Ej: 40">
+                    <span id="contentHoursErrors"></span>
+                    <label for="practiceTime" class="form-label">Horas de práctica</label>
+                    <input type="number" name="practice_time" class="form-control" id="practiceTime"
+                        placeholder="Ej: 30">
+                    <span id="practiceTimeErrors"></span>
+                    <label for="lessons" class="form-label">Lecciones</label>
+                    <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
+                    <span id="lessonErrors"></span>
+                    <label for="category" class="form-label">Categorias</label>
+                    <select name="category_d" class="form-control" id="category" aria-label="Default select example">
+                        <option selected hidden>Categoría</option>
+                        <% categories.forEach((category)=> { %>
+                            <option value="<%= category.id %>">
+                                <%= category.name %>
+                            </option>
+                            <% }) %>
+                    </select>
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea name="description" class="form-control" id="description" rows="3"
+                        placeholder="Escriba la descripción del curso"></textarea>
+                    <span id="descriptionErrors"></span>
+                    <% if (locals.errors && errors.description) { %>
+                        <small class="text-danger">
+                            <%= errors.description.msg %>
+                        </small>
+                        <% } %>
+
+                            <div class="upload-courseimage">
+                                <label for="inputFile" class="form-label">Imagen del Producto</label>
+                                <input type="file" name="courseImage" id="courseImage">
+                                <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
+                                <span id="fileErrors"></span>
+                            </div>
+
+                            <div>
+                                <span id="submitErrors" ></span>
+
+                                <button class="limpiar-btn" type="reset">Eliminar Imagen</button>
+                            </div>
+                            <button class="btn_agregar" type="submit">Agregar</button>
+                            <span id="submitErrors"></span>
+            </div>
+
+
+           
+
+
+
+            <%- include('../partials/footer') %>
+
+    </body>
+
 </html>

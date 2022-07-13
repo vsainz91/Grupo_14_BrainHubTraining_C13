@@ -14,11 +14,11 @@
         </div>
         <label for="name" class="form-label"> Nombre del Curso</label>
         <input type="text" name="name" class="form-control" id="name" value="<%= course.name %>">
-        <span class="error" id="nameErrors" style="color: red;"><%= (locals.errors  && errors.name) ? errors.name.msg : "" %></span>
+        <span class="error" id="nameErrors" ><%= (locals.errors  && errors.name) ? errors.name.msg : "" %></span>
 
         <label for="price" class="form-label">Precio</label>
         <input type="number" name="price" class="form-control" id="price" value="<%= course.price %>">
-        <span class="error" id="priceErrors" style="color: red;"></span>
+        <span class="error" id="priceErrors" ></span>
         <label for="category" class="form-label">Categorias</label>
         <select name="categoryId" class="form-control" id="category" aria-label="Default select example">
             <option selected hidden>Categoría</option>
@@ -26,10 +26,11 @@
                 <option value="<%- category.id %>" <%= (locals.old && old.category_id) && old.category_id === category.id || category.id === course.category_id ? "selected" : "" %>><%- category.name %> </option>
               <% }) %>
         </select>
-        <span class="error" id="categoryErrors" style="color: red;"></span> 
+        <span class="error" id="categoryErrors" ></span> 
         <label for="description" class="form-label">Descripción</label>
         <textarea name="description" class="form-control" id="description" rows="3"><%= course.description %></textarea>
-        <span class="error" id="descriptionErrors" style="color: red;"></span>
+        <span class="error" id="descriptionErrors" ></span>
+        
         <button class="btn_editar" type="submit">Editar</button>
     </form>
 </div>
