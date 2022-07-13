@@ -33,7 +33,6 @@ let validateRegister = [
         return true;
     }).withMessage("Las contraseñas no coinciden")
 
-    // 
 ];
 
 module.exports = validateRegister;

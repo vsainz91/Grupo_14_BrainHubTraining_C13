@@ -6,7 +6,7 @@
         <%- include ('../partials/header') %>
             <section class="container-login">
                 <p class="text-end">¿Ya estás registrado? <a href="/users/login" id="register-a-login">¡Logueate!</a></p>
-                <h2 class="title">Registrarse</h2>
+                <h2 class="register-title">Registrarse</h2>
                 <form class="container-form" action="/users/register" method="post" enctype="multipart/form-data" id="form">
                     <div class="input-container">
                         <input class="input-log" type="nombre" class="input-style" name="name" id="name" value="<%= locals.old && old.name %>"
@@ -41,8 +41,9 @@
                         <span id="fileErrors" style="color: red;"></span>
                     </div>
                     <div>
-                    <button class="btn-register btn" type="submit">Registrate</button>
-                    <button class="btn" type="reset">Limpiar</button>
+                        <span id="submitErrors" style="color: red;"></span>
+                        <button class="btn-register btn" type="submit">Registrate</button>
+                        <button class="limpiar-btn" type="reset">Limpiar</button>
                     </div>
                 </form>
             </section>

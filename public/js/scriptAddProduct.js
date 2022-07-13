@@ -23,19 +23,19 @@ window.addEventListener("load", () => {
         $inputFileErrors = qs('#inputFileErrors'),
         
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExPrice = /^[0-9]{7,8}$/,
+        regExPrice = /^[0-9]{4,6}$/,
         regExInstructor = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExContentHours = /^[0-9]{7,8}$/,
-        regExPracticeTime = /^[0-9]{7,8}$/,
-        regExLessons = /^[0-9]{7,8}$/,
+        regExContentHours = /^[0-9]{1,4}$/,
+        regExPracticeTime = /^[0-9]{1,4}$/,
+        regExLessons = /^[0-9]{1,4}$/,
         regExCategory = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExDescription = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{20,100}$/;
+        regExDescription = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,100}$/;
         
 
     $inputName.addEventListener("blur", () => {
         switch (true) {
             case !$inputName.value.trim():
-                $nameErrors.innerHTML = "Requerido";
+                $nameErrors.innerHTML = "Nombre del curso requerido";
                 $inputName.classList.add("is-invalid");
                 break;
             case !regExAlpha.test($inputName.value):
@@ -53,11 +53,11 @@ window.addEventListener("load", () => {
     $price.addEventListener("blur", () => {
         switch (true) {
             case !$price.value.trim():
-                $priceErrors.innerHTML = "Requerido";
+                $priceErrors.innerHTML = "Precio requerido";
                 $price.classList.add("is-invalid");
                 break;
             case !regExPrice.test($price.value):
-                $priceErrors.innerHTML = "Ingrese un precio válido";
+                $priceErrors.innerHTML = "Ingrese un precio entre 4 y 6 dígitos";
                 $price.classList.add("is-invalid");
                 break;
             default:
@@ -70,7 +70,7 @@ window.addEventListener("load", () => {
     $instructor.addEventListener("blur", () => {
         switch (true) {
             case !$instructor.value.trim():
-                $instructorErrors.innerHTML = "Requerido";
+                $instructorErrors.innerHTML = "Nombre del instructor equerido";
                 $instructor.classList.add("is-invalid");
                 break;
             case !regExInstructor.test($instructor.value):
@@ -87,7 +87,7 @@ window.addEventListener("load", () => {
     $contentHours.addEventListener("blur", () => {
         switch (true) {
             case !$contentHours.value.trim():
-                $contentHoursErrors.innerHTML = "Requerido";
+                $contentHoursErrors.innerHTML = "Cantidad de horas requeridas";
                 $contentHours.classList.add("is-invalid");
                 break;
             case !regExContentHours.test($contentHours.value):
@@ -121,7 +121,7 @@ window.addEventListener("load", () => {
     $lessons.addEventListener("blur", () => {
         switch (true) {
             case !$lessons.value.trim():
-                $lessonErrors.innerHTML = "Requerido";
+                $lessonErrors.innerHTML = "Cantidad de lecciones requeridas";
                 $lessons.classList.add("is-invalid");
                 break;
             case !regExLessons.test($lessons.value):
@@ -138,11 +138,7 @@ window.addEventListener("load", () => {
     $category.addEventListener("blur", () => {
         switch (true) {
             case !$category.value.trim():
-                $categoryErrors.innerHTML = "Requerido";
-                $category.classList.add("is-invalid");
-                break;
-            case !regExCategory.test($category.value):
-                $categoryErrors.innerHTML = "Requerido";
+                $categoryErrors.innerHTML = "Categoría requerida";
                 $category.classList.add("is-invalid");
                 break;
             default:
@@ -155,7 +151,7 @@ window.addEventListener("load", () => {
     $description.addEventListener("blur", () => {
         switch (true) {
             case !$description.value.trim():
-                $descriptionErrors.innerHTML = "Requerido";
+                $descriptionErrors.innerHTML = "Descripción del curso requerida";
                 $description.classList.add("is-invalid");
                 break;
             case !regExDescription.test($description.value):
@@ -185,7 +181,7 @@ window.addEventListener("load", () => {
                 if ($file.files && $file.files[0]) {
                     let reader = new FileReader();
                     reader.onload = function (e) {
-                        $imgPreview.innerHTML = '<img src="' + e.target.result + '"/>';
+                        $imgPreview.innerHTML = '<img src="' + e.target.result + '" width="auto" height="auto"/>';
                     };
                     reader.readAsDataURL($file.files[0]);
                     $fileErrors.innerHTML = '';
@@ -203,7 +199,7 @@ window.addEventListener("load", () => {
 
         for (let index = 0; index < elementsForm.length - 1; index++) {
             if (elementsForm[index].value == ""
-                && elementsForm[index].name !== "apellido"
+                && elementsForm[index].name !== ""
                 && elementsForm[index].type !== "file"
                 || elementsForm[index].classList.contains("is-invalid")) {
                 elementsForm[index].classList.add("is-invalid");

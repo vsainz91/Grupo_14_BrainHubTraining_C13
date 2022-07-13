@@ -23,6 +23,15 @@ input .avatar {
     text-align: center;
 }
 
+section.container-login .limpiar-btn {
+    font-size: 17px;
+    border: solid 2px darkslategray;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
 section.container-login .container-form .btn-register {
     border: solid 2px #263CFF;
     color: #263CFF;
@@ -37,3 +46,9 @@ section.container-login .container-form .btn-register {
     color: green;
     font-weight: bold;
 }
+
+section.container-login .register-title{
+    margin-top: 15px;
+}
+
+

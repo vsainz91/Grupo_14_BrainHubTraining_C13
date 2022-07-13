@@ -123,7 +123,7 @@ window.addEventListener("load", () => {
 
         for (let index = 0; index < formElements.length - 1; index++) {
             if(formElements[index].value == "" 
-            && formElements[index].name !== "apellido"
+            && formElements[index].name !== ""
             && formElements[index].type !== "file"
             || formElements[index].classList.contains("is-invalid")
             ){
