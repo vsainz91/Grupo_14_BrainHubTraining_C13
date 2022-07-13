@@ -21,6 +21,8 @@ window.addEventListener("load", () => {
         $descriptionErrors = qs ('#descriptionErrors'),
         $inputFile = qs('#inputFile');
         $inputFileErrors = qs('#inputFileErrors'),
+        $form = qs('#form'),
+        submitErrors = qs('#submitErrors'),
         
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExPrice = /^[0-9]{4,6}$/,
@@ -29,7 +31,7 @@ window.addEventListener("load", () => {
         regExPracticeTime = /^[0-9]{1,4}$/,
         regExLessons = /^[0-9]{1,4}$/,
         regExCategory = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExDescription = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,100}$/;
+        regExDescription = /^([a-zA-Z0-9 _-]+){10,100}$/;
         
 
     $inputName.addEventListener("blur", () => {
@@ -107,7 +109,7 @@ window.addEventListener("load", () => {
                 $practiceTimeErrors.innerHTML = 'Ingrese un número válido'
                 $practiceTime.classList.add('is-invalid')
                 break;
-            case !regExPracticeTime.test($pass.value):
+            case !regExPracticeTime.test($practiceTime.value):
                 $practiceTimeErrors.innerHTML = 'el valor debe ser mayor a cero';
                 $practiceTime.classList.add('is-invalid')
                 break;
@@ -166,25 +168,25 @@ window.addEventListener("load", () => {
         }
     })
 
-    $file.addEventListener('change',
+    $inputFile.addEventListener('change',
         function fileValidation() {
-            let filePath = $file.value, //Capturo el valor del input
+            let filePath = $inputFile.value, //Capturo el valor del input
                 allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
             if (!allowefExtensions.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-                $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-                $file.value = '';
+                $inputFileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                $inputFile.value = '';
                 $imgPreview.innerHTML = '';
             }
             else {
                 // Image preview
                 console.log($file.files);
-                if ($file.files && $file.files[0]) {
+                if ($inputFile.files && $inputFile.files[0]) {
                     let reader = new FileReader();
                     reader.onload = function (e) {
                         $imgPreview.innerHTML = '<img src="' + e.target.result + '" width="auto" height="auto"/>';
                     };
                     reader.readAsDataURL($file.files[0]);
-                    $fileErrors.innerHTML = '';
+                    $inputFileErrors.innerHTML = '';
                     $file.classList.remove('is-invalid')
                 }
             }

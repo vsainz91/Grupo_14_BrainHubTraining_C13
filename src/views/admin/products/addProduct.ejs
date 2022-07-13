@@ -6,7 +6,7 @@
   <%- include('../partials/header') %> 
   
   <div class="contenedor">
-    <form action="/admin/courses" method="post" class="form" enctype="multipart/form-data">
+    <form action="/admin/courses" method="post" class="form" enctype="multipart/form-data" id="form">
         <div class="form-header">
             <h1 class="form-title">Agregar Curso</span></h1>
         </div>
@@ -50,6 +50,7 @@
         <span id="fileErrors" style="color: red;"></span>
 
         <button class="btn_agregar" type="submit">Agregar</button>
+        <span id="submitErrors" style="color: red;"></span>
     </form>
 </div>
 
