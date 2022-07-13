@@ -19,10 +19,11 @@ window.addEventListener("load", () => {
         $categoryErrors = ('#categoryErrors')
         $description = qs ('#description'),
         $descriptionErrors = qs ('#descriptionErrors'),
-        $inputFile = qs('#inputFile');
-        $inputFileErrors = qs('#inputFileErrors'),
+        avatar = qs('#avatar'),
         $form = qs('#form'),
-        submitErrors = qs('#submitErrors'),
+        $fileErrors = qs('#fileErrors'),
+        $imgPreview = qs('#img-preview'),
+        
         
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExPrice = /^[0-9]{4,6}$/,
@@ -72,7 +73,7 @@ window.addEventListener("load", () => {
     $instructor.addEventListener("blur", () => {
         switch (true) {
             case !$instructor.value.trim():
-                $instructorErrors.innerHTML = "Nombre del instructor equerido";
+                $instructorErrors.innerHTML = "Nombre del instructor requerido";
                 $instructor.classList.add("is-invalid");
                 break;
             case !regExInstructor.test($instructor.value):
@@ -99,7 +100,7 @@ window.addEventListener("load", () => {
             default:
                 $contentHours.classList.remove("is-invalid");
                 $contentHours.classList.add("is-valid");
-                $contentHoursErrors.innerHTML = "el valor debe ser mayor a cero";
+                $contentHoursErrors.innerHTML = " ";
                 break;
         }
     })
@@ -110,7 +111,7 @@ window.addEventListener("load", () => {
                 $practiceTime.classList.add('is-invalid')
                 break;
             case !regExPracticeTime.test($practiceTime.value):
-                $practiceTimeErrors.innerHTML = 'el valor debe ser mayor a cero';
+                $practiceTimeErrors.innerHTML = " ";
                 $practiceTime.classList.add('is-invalid')
                 break;
             default:
@@ -133,7 +134,7 @@ window.addEventListener("load", () => {
             default:
                 $lessons.classList.remove("is-invalid");
                 $lessons.classList.add("is-valid");
-                $lessonErrors.innerHTML = "el valor debe ser mayor a cero";
+                $lessonErrors.innerHTML = " ";
                 break;
         }
     })
@@ -167,30 +168,30 @@ window.addEventListener("load", () => {
                 break;
         }
     })
-
-    $inputFile.addEventListener('change',
-        function fileValidation() {
-            let filePath = $inputFile.value, //Capturo el valor del input
-                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-            if (!allowefExtensions.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-                $inputFileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-                $inputFile.value = '';
-                $imgPreview.innerHTML = '';
+    courseImage.addEventListener('change', function fileValidation(){
+        let filePath = courseImage.value, 
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i 
+        if(!allowefExtensions.exec(filePath)){ 
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            courseImage.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        }else{
+            console.log(courseImage.files);
+            if(courseImage.files && courseImage.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'" width="100%" height="200px"/>';
+                };
+                reader.readAsDataURL(courseImage.files[0]);
+                $fileErrors.innerHTML = '';
+                courseImage.classList.remove('is-invalid')
             }
-            else {
-                // Image preview
-                console.log($file.files);
-                if ($inputFile.files && $inputFile.files[0]) {
-                    let reader = new FileReader();
-                    reader.onload = function (e) {
-                        $imgPreview.innerHTML = '<img src="' + e.target.result + '" width="auto" height="auto"/>';
-                    };
-                    reader.readAsDataURL($file.files[0]);
-                    $inputFileErrors.innerHTML = '';
-                    $file.classList.remove('is-invalid')
-                }
-            }
+        }
     })
+
+
+   
     $form.addEventListener("submit", function (event) {
 
         event.preventDefault()

@@ -1,74 +1,129 @@
+  @import url('root.css');
+
+  body {
+
+      background-size: cover;
+      background-attachment: fixed;
+  }
+
+  .contenedor {
+      margin-top: 2rem;
+  }
+
+  .contenedor .form {
+      background-color: rgba(0, 0, 0, .6);
+      width: 90%;
+      max-width: 650px;
+      margin: auto;
+      padding: 5px 25px;
+      margin-top: 30px;
+      padding-bottom: 3px;
+      border-radius: 5px;
+      max-height: auto;
+
+  }
+
+  .contenedor .form .form-header .form-title {
+      font-weight: normal;
+      color: antiquewhite;
+      margin-bottom: 10px;
+      text-align: center;
+      margin-top: 5px;
+
+
+  }
+
+  .contenedor .form .form-header .form-title span {
+      color: antiquewhite;
+  }
+
+  .contenedor .form .form-label {
+      display: block;
+      color: antiquewhite;
+      font-size: 16px;
+      position: relative;
+  }
+
+  .contenedor .form .form-control {
+      background: rgba(0, 0, 0, .7);
+      border: none;
+      outline: none;
+      border-bottom: 5px solid #345B63;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      color: antiquewhite;
+
+
+  }
+
+  .contenedor .form .textarea {
+      resize: vertical;
+      max-height: 150px;
+      min-height: 50px;
+
+  }
+
+  .btn_agregar {
+      width: 100%;
+      outline: none;
+      background-color: #345B63;
+      font-size: 16px;
+      border: none;
+      color: antiquewhite;
+      padding: 15px 0px;
+      cursor: pointer;
+      transition: all .5s ease;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  .btn_agregar:hover {
+      background-color: #264349;
+  }
+  .limpiar-btn{
+    width: 25%;
+      outline: none;
+      background-color: #345B63;
+      font-size: 16px;
+      border: none;
+      color: antiquewhite;
+      padding: 15px 0px;
+      cursor: pointer;
+      transition: all .5s ease;
+      border-radius: 5px;
+      
+  }
+  .limpiar-btn:hover {
+    background-color: #264349;
+
+  }
+
   
-@import url('root.css'); 
 
-    body{
-        
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    .contenedor{
-        margin-top: 2rem;
-    }
-   
-    .contenedor .form {
-        background-color: rgba(0,0,0,.6);
-        width: 90%;
-        max-width: 650px;
-        margin: auto;
-        padding: 5px 25px;
-        margin-top: 30px;
-        padding-bottom: 30px;
-        border-radius: 5px;
-        
-    }
-    .contenedor .form .form-header .form-title{
-        font-weight: normal;
-        color: antiquewhite;
-        margin-bottom: 10px;
-        text-align: center;
-        
+  span {
+      color: rgb(144, 35, 4);
+      font-weight: bold;
+  }
 
-    }
-    .contenedor .form .form-header .form-title span{
-        color: antiquewhite;
-    }
-    .contenedor .form .form-label{
-        display: block;
-        color: antiquewhite;
-        font-size: 16px;
-        position: relative;
-    }
-    .contenedor .form  .form-control{
-        background: rgba(0,0,0,.7);
-        border: none;
-        outline: none;
-        border-bottom: 5px solid #345B63;
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        font-size: 14px;
-        color: antiquewhite;
+  label {
+      margin-bottom: 4px;
+      margin-top: 10px;
+      
+  }
+  span.submitErrors {
+    color: rgb(144, 35, 4);
+      font-weight: bold;
+      
+  }
 
-    }
-    .contenedor .form .textarea{
-        resize: vertical;
-        max-height: 150px;
-        min-height: 50px;
 
-    }
-    .btn_agregar{
-        width: 100%;
-        outline: none;
-        background-color: #345B63;
-        font-size: 16px;
-        border: none;
-        color: antiquewhite;
-        padding: 15px 0px;
-        cursor: pointer;
-        transition: all .5s ease;
-        border-radius: 5px;
-    }
-    .btn_agregar:hover{
-        background-color: #264349;
-    }
+ 
+
+
+
+
+  
