@@ -23,26 +23,21 @@ module.exports = {
     },
     productCreate: (req, res) => {
         let errors = validationResult(req);
-
+        
         if (errors.isEmpty()) {
             db.Course.create({
                 ...req.body, 
-            }, {include: ['courseImage']})
+            })
             
-            // if req.files para preguntar?
             .then((course) => {
-                let courseImages = req.files.map(image => {
-                    return {
-                      image_name: image.filename,
-                      course_id: course.id,
-                    } 
-                })
-                db.CourseImage.bulkCreate(courseImages)
+                db.CourseImage.create({
+                    image_name: req.file.filename,
+                    course_id: course.id,
+                  })
                 .then(() => res.redirect('/admin/courses'))
                 .catch(error => console.log(error))
             })                
         }else {
-
             res.render('admin/products/addProduct', {
                 titulo: "Agregar Curso",
                 errors: errors.mapped(),
@@ -73,6 +68,9 @@ module.exports = {
             },{
                 where: {id: req.params.id}
             })
+
+
+            
             .then(() => {
                 res.redirect('/admin/courses');
             })

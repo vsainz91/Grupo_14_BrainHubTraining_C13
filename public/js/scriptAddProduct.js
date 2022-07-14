@@ -21,6 +21,7 @@ window.addEventListener("load", () => {
         $descriptionErrors = qs ('#descriptionErrors'),
         avatar = qs('#avatar'),
         $form = qs('#form'),
+        submitErrors = qs('#submitErrors')
         $fileErrors = qs('#fileErrors'),
         $imgPreview = qs('#img-preview'),
         
@@ -190,8 +191,7 @@ window.addEventListener("load", () => {
         }
     })
 
-
-   
+  
     $form.addEventListener("submit", function (event) {
 
         event.preventDefault()
@@ -209,6 +209,9 @@ window.addEventListener("load", () => {
                 submitErrors.innerHTML = "Hay errores en el formulario"
                 errores = true;
             }
+        }
+        if(!errores){
+            $form.submit()
         }
     })
 })

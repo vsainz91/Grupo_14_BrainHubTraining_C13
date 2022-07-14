@@ -14,7 +14,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         course_id: {
             type : dataTypes.INTEGER(11),
-            /* foreignKey: true */
         }
         
     };

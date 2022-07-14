@@ -5,39 +5,39 @@
 <body>
     <%- include ('../partials/header') %> 
     <div class="contenedor_perfil">
-        <form action="/users/profile" class="profile-form" method="post" enctype="multipart/form-data" id="form">
-            <div class="profile-form-header">
-                <h1 class="form-title">Mi Perfil</span></h1>
-            </div>
-            <div class="profile-box_avatar">
-                <h3 class="profile-subtitle">Avatar</h3>
-                <div class="profile-avatar" id="imgPreview" onChange="fileValidation"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
-            </div>
+        <div class="profile-form-header">
+            <h1 class="form-title">Mi Perfil</span></h1>
+        </div>
+        <div class="profile-box_avatar">
+            <h3 class="profile-subtitle">Avatar</h3>
+            <div class="profile-avatar" id="imgPreview" onChange="fileValidation"><img src="/images/avatar/<%= user.avatar %>" alt="" /></div>
+        </div>
+        <div class="profile-info">
+            <p>Email: <%= user.email %></p>
+            <p>Nombre: <%= user.name %></p>
+        </div>
+        <div class="interests">
+            <h3 class="profile_h3">Tus intereses</h3>
+            <label for="photography">Fotografía</label>
+            <input type="checkbox" name="intereses" id="photography" value="photography">
+            <label for="dev">Desarrollo Web</label>
+            <input type="checkbox" name="intereses" id="dev" value="dev">
+            <label for="languages">Idiomas</label>
+            <input type="checkbox" name="intereses" id="languages" value="languages">
+        </div>
+        <form action="/users/profile?_method=PUT" method="POST" class="profile-form" enctype="multipart/form-data" id="form">
             <div class="input_file-avatar">
                 <span class="avatar_span">Editar imagen</span>
                 <input type="file" name="avatar" id="avatar">
                 <span id="fileErrors" style="color: red;"></span>
             </div>
-            <div class="profile-info">
-                <p>Email: <%= user.email %></p>
-                <p>Nombre: <%= user.name %></p>
-            </div>
-            <div class="profile_editinfo" action="/users/perfil?_method=PUT" method="POST">
+            <div class="profile_editinfo" >
                 <label for="name" class="form-edit"> Nuevo nombre </label>
                 <input type="text" name="name" class="form-edit" id="name" value="<%= locals.old && old.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <small class="text-danger" style="color: red;"><%= errors.name.msg %></small>
                     <% } %>
                 <span id="nameErrors" style="color: red;"></span>
-            </div>
-            <div class="interests">
-                <h3 class="profile_h3">Tus intereses</h3>
-                <label for="photography">Fotografía</label>
-                <input type="checkbox" name="intereses" id="photography" value="photography">
-                <label for="dev">Desarrollo Web</label>
-                <input type="checkbox" name="intereses" id="dev" value="dev">
-                <label for="languages">Idiomas</label>
-                <input type="checkbox" name="intereses" id="languages" value="languages">
             </div>
             <button class="btn_editar-profile" type="submit">Editar Datos</button>
         </form>

@@ -15,7 +15,7 @@ router.get('/courses', /* userSessionCheck, adminCheck, */ adminProductsControll
 
 router.get('/courses/add', /* userSessionCheck, adminCheck, */productsValidator, adminProductsController.productAdd);
 
-router.post('/courses', uploadFile.single('image'), adminProductsController.productCreate);
+router.post('/courses', uploadFile.single('courseImage'), adminProductsController.productCreate);
 
 router.get('/courses/edit/:id', /* userSessionCheck, adminCheck, */productsValidator, adminProductsController.productEdit);
 

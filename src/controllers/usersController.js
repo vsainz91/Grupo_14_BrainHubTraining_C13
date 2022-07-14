@@ -93,11 +93,9 @@ module.exports = {
         })
     },
     profileUpdate: (req, res) => {
-    let errors = validationResult(req);
-
-        if(errors.isEmpty()){
             db.User.update({
-                ...req.body
+                name: req.body.name,
+                avatar: req.file ? req.file.filename : req.session.user.avatar
             },{
                 where: {
                     id: req.session.user.id
@@ -107,21 +105,7 @@ module.exports = {
                 res.redirect("/users/profile")
             )
             .catch(error => res.send(error))
-        }else{
-            db.User.findOne({
-                where: {
-                    id: req.session.user.id
-                },
-            })
-            .then((user) => {
-                res.render("users/profile", {
-                    session: req.session,
-                    user,
-                    title: req.session.user.name,
-                    errors: errors.mapped()
-                })
-            })
-        }
+       
     },
     logout: (req, res) => {
         req.session.destroy();

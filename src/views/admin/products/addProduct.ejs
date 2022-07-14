@@ -2,10 +2,8 @@
 <html lang="en">
 <%- include('../partials/head') %>
     <script src="/js/scriptAddProduct.js"></script>
-
     <body>
         <%- include('../partials/header') %>
-
             <div class="contenedor">
                 <form action="/admin/courses" method="post" class="form" enctype="multipart/form-data" id="form">
                     <div class="form-header">
@@ -37,7 +35,7 @@
                     <input type="number" name="lessons" class="form-control" id="lessons" placeholder="Ej: 25">
                     <span id="lessonErrors"></span>
                     <label for="category" class="form-label">Categorias</label>
-                    <select name="category_d" class="form-control" id="category" aria-label="Default select example">
+                    <select name="category_id" class="form-control" id="category" aria-label="Default select example">
                         <option selected hidden>Categoría</option>
                         <% categories.forEach((category)=> { %>
                             <option value="<%= category.id %>">
@@ -54,34 +52,19 @@
                             <%= errors.description.msg %>
                         </small>
                         <% } %>
-
                             <div class="upload-courseimage">
                                 <label for="inputFile" class="form-label">Imagen del Producto</label>
                                 <input type="file" name="courseImage" id="courseImage">
                                 <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
                                 <span id="fileErrors"></span>
                             </div>
-
                             <div>
-                                
-
                                 <button class="limpiar-btn" type="reset">Eliminar Imagen</button>
-                                <button class="btn_agregar" type="submit">Agregar</button>
-                                <span id="submitErrors" ></span>
                             </div>
-                            
-                            
-                            
-                </form>
+                            <button class="btn_agregar" type="submit">Agregar</button>
+                            <span id="submitErrors"></span>
+                   </form>
             </div>
-
-
-           
-
-
-
             <%- include('../partials/footer') %>
-
     </body>
-
 </html>

@@ -90,6 +90,9 @@ window.addEventListener("load", () => {
                 errores = true;
             }
         }
+        if(!errores){
+            $form.submit()
+        }
     })
 
 })
