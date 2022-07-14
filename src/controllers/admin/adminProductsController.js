@@ -68,9 +68,31 @@ module.exports = {
             },{
                 where: {id: req.params.id}
             })
-
-
-            
+            .then(() => {
+                if(req.files !== undefined){
+                    db.courseImage.findOne({
+                        where: {
+                          course_id: req.params.id,
+                        }
+                    })
+                    .then((image) => {
+                        db.courseImage.destroy({
+                            where: {
+                              course_id: req.params.id,
+                            }
+                        })
+                        .then(() => {             
+                            db.courseImage.create({
+                                image_name: req.file.filename,
+                                course_id: course.id,
+                            })
+                            .then(() => res.redirect('/admin/courses'))
+                            .catch(error => console.log(error))
+                        })
+                        .catch(error => console.log(error))
+                    })
+                }
+            })
             .then(() => {
                 res.redirect('/admin/courses');
             })

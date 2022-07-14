@@ -38,7 +38,7 @@
                     <select name="category_id" class="form-control" id="category" aria-label="Default select example">
                         <option selected hidden>Categoría</option>
                         <% categories.forEach((category)=> { %>
-                            <option value="<%= category.id %>">
+                            <option value="<%= category.id %>" <%= (locals.old && old.category_id) && old.category_id === category.id ? "selected" : "" %>>
                                 <%= category.name %>
                             </option>
                             <% }) %>
