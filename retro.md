@@ -94,3 +94,21 @@
 
 ## *Dejar de hacer:*
 - Tener mala suerte con las herramientas de trabajo.
+
+# SPRINT 6 
+
+## *Comenzar a hacer:*
+- Pedir ayuda cuando estamos trabados.
+ 
+## *Hacer más:*
+- Revisiones con tiempo.
+
+## *Continuar haciendo:*
+- Comprometerse con el equipo.
+- Ponernos al día.
+
+## *Hacer menos:*
+- Frustrarse.
+
+## *Dejar de hacer:*
+- Tener mala suerte con las herramientas de trabajo.
