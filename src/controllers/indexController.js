@@ -9,7 +9,7 @@ const removeAccents = (str) => {
 module.exports = {
     index: (req, res) => {
         res.render('index', {
-           titulo: "Homepage",
+           titulo: "Brainhub",
            products_title: "Cursos",
            cursos: getProducts,
            session: req.session

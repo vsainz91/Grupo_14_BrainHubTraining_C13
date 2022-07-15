@@ -93,18 +93,40 @@ module.exports = {
         })
     },
     profileUpdate: (req, res) => {
-            db.User.update({
-                name: req.body.name,
-                avatar: req.file ? req.file.filename : req.session.user.avatar
-            },{
-                where: {
-                    id: req.session.user.id
-                }
-            })
-            .then(() => 
-                res.redirect("/users/profile")
-            )
-            .catch(error => res.send(error))
+        db.User.update({
+            name: req.body.name,
+            avatar: req.file ? req.file.filename : req.session.user.avatar
+        },{
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(() => {
+            if(req.files !== undefined){
+                db.User.findOne({
+                    where: {
+                        avatar: req.params.id,
+                    }
+                })
+                .then((image) => {
+                    db.User.destroy({
+                        where: {
+                            avatar: req.params.id,
+                        }
+                    })
+                    .then(() => {             
+                        db.User.create({
+                            image_name: req.file.filename,
+                            avatar: user.avatar,
+                        })
+                    })  
+                })
+            }
+        })
+        .then(() => 
+            res.redirect("/users/profile")
+        )
+        .catch(error => res.send(error))
        
     },
     logout: (req, res) => {

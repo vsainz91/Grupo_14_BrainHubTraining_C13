@@ -35,7 +35,7 @@ header .logo img {
 header div.user{
     border: none;
     width: 4rem;
-    height: 3rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@ header div.user{
 }
 
 header div.user:hover{
-    background-color: #98CA3F;
+    background-color: #5499daea;
     box-shadow: 0 5px 5px gray;
     color: white;
 }
