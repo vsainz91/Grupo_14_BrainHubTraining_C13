@@ -45,6 +45,7 @@ main.main_index .main_banner .titulo_banner {
      font-size: 200%;
      color: black;     
      top: 70%; 
+     left: 0;
      width: 100%;
      text-shadow: 0 0 20px #dbb6d6;
      text-align: center;

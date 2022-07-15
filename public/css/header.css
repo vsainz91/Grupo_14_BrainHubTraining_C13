@@ -136,6 +136,11 @@ header nav.menu-burger:hover {
     color: #000;
 }
 
+.buscador form.search-form{
+    display: flex;
+    padding: 5px;
+}
+
 .buscador input{
     border: solid 1px white;
     border-radius: 5px;
@@ -306,6 +311,11 @@ div#carrito-icon{
         border: #000;
     }
 
+    .buscador form.search-form{
+        display: flex;
+        padding: 5px;
+    }
+
     .buscador button {
         border-radius: 5px;
         background-color: white;
@@ -335,6 +345,7 @@ div#carrito-icon{
     .buscador {
         width: 15rem;
     }
+
 
     .buscador .search-input{
         display: block;
@@ -366,7 +377,5 @@ div#carrito-icon{
         margin-left: 150px;
         margin-right: 130px;
     }
-
-    
 
 }
