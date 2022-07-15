@@ -8,6 +8,8 @@ window.addEventListener("load", () => {
         $emailErrors = qs('#emailErrors'),
         $pass = qs('#pass'),
         $passErrors = qs('#passErrors'),
+        submitErrors = qs('#submitErrors'),
+        $form = qs('#form')
 
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
@@ -49,7 +51,28 @@ window.addEventListener("load", () => {
         }
     })
 
-    //add evento submit
+    $form.addEventListener("submit", function (event) {
+
+        event.preventDefault()
+        let elementsForm = this.elements;
+        let errores = false;
+
+        console.log(elementsForm)
+
+        for (let index = 0; index < elementsForm.length - 1; index++) {
+            if (elementsForm[index].value == ""
+                && elementsForm[index].name !== ""
+                && elementsForm[index].type !== "file"
+                || elementsForm[index].classList.contains("is-invalid")) {
+                elementsForm[index].classList.add("is-invalid");
+                submitErrors.innerHTML = "Hay errores en el formulario"
+                errores = true;
+            }
+        }
+        if (!errores) {
+            $form.submit()
+        }
+    })
 })
 
 

@@ -9,7 +9,9 @@ window.addEventListener("load", () => {
     name = qs('#name'), 
     imgPreview = qs('#imgPreview'), 
     fileErrors = qs('#fileErrors'),
-    nameErrors = qs('#nameErrors');
+    nameErrors = qs('#nameErrors'),
+    submitErrors = qs('#submitErrors'),
+    $form = qs('#form');
 
     name.addEventListener("blur", () => {
         switch (true) {
@@ -51,5 +53,26 @@ window.addEventListener("load", () => {
         }
     })
 
-    
+    $form.addEventListener("submit", function (event) {
+
+        event.preventDefault()
+        let elementsForm = this.elements;
+        let errores = false;
+
+        console.log(elementsForm)
+
+        for (let index = 0; index < elementsForm.length - 1; index++) {
+            if (elementsForm[index].value == ""
+                && elementsForm[index].name !== ""
+                && elementsForm[index].type !== "file"
+                || elementsForm[index].classList.contains("is-invalid")) {
+                elementsForm[index].classList.add("is-invalid");
+                submitErrors.innerHTML = "Hay errores en el formulario"
+                errores = true;
+            }
+        }
+        if (!errores) {
+            $form.submit()
+        }
+    })
 })
