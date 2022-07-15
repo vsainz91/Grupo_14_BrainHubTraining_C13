@@ -30,8 +30,19 @@
         <label for="description" class="form-label">Descripción</label>
         <textarea name="description" class="form-control" id="description" rows="3"><%= course.description %></textarea>
         <span class="error" id="descriptionErrors" ></span>
+        <div class="upload-courseimage">
+            <label for="inputFile" class="form-label">Imagen del Producto</label>
+            <input type="file" name="courseImage" id="courseImage">
+            <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
+            <span id="fileErrors"></span>
+        </div>
+        <div>
+            
+            <button class="btn_editar" type="submit">Editar</button>
+            <span id="submitErrors" ></span>
+        </div>
         
-        <button class="btn_editar" type="submit">Editar</button>
+        
     </form>
 </div>
       <%- include('../partials/footer') %> 

@@ -7,13 +7,18 @@ window.addEventListener("load", () => {
         $nameErrors = qs('#nameErrors'),
         $price = qs('#price'),
         $priceErrors = qs('#priceErrors'),
-        $description = qs ('#description'),
-        $descriptionErrors = qs ('#descriptionErrors'),
-                
+        $description = qs('#description'),
+        $descriptionErrors = qs('#descriptionErrors'),
+        avatar = qs('#avatar'),
+        $form = qs('#form'),
+        submitErrors = qs('#submitErrors')
+    $fileErrors = qs('#fileErrors'),
+        $imgPreview = qs('#img-preview'),
+
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExPrice = /^[0-9]{4,6}$/,
         regExDescription = /^([a-zA-Z0-9 _-]+){10,100}$/;
-        
+
 
     $inputName.addEventListener("blur", () => {
         switch (true) {
@@ -51,8 +56,8 @@ window.addEventListener("load", () => {
                 break;
         }
     })
-    
-        
+
+
     $description.addEventListener("blur", () => {
         switch (true) {
             case !$description.value.trim():
@@ -70,8 +75,30 @@ window.addEventListener("load", () => {
                 break;
         }
     })
-           
-      
+    courseImage.addEventListener('change', function fileValidation() {
+        let filePath = courseImage.value,
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
+        if (!allowefExtensions.exec(filePath)) {
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            courseImage.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        } else {
+            console.log(courseImage.files);
+            if (courseImage.files && courseImage.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    $imgPreview.innerHTML = '<img src="' + e.target.result + '" width="100%" height="200px"/>';
+                };
+                reader.readAsDataURL(courseImage.files[0]);
+                $fileErrors.innerHTML = '';
+                courseImage.classList.remove('is-invalid')
+            }
+        }
+    })
+
+
+
     $form.addEventListener("submit", function (event) {
 
         event.preventDefault()
@@ -90,7 +117,7 @@ window.addEventListener("load", () => {
                 errores = true;
             }
         }
-        if(!errores){
+        if (!errores) {
             $form.submit()
         }
     })
