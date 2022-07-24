@@ -1,80 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('partials/head') %>
-<body>
-    <%- include ('partials/header') %> 
-    <main class="main_index">
-        <section class="main_banner">
-            <div class="titulo_banner">
-                <h1>CURSOS DISPONIBLES</h1>
+
+    <body>
+        <%- include ('partials/header') %>
+            <div class="container">
+                <div class="text-box">
+                    <p>Somos</p>
+                    <h1>BRAIN-HUB</h1>
+                    <h3>TRAINING </h3>
+                    <p>cursos on line</p>
+
+                </div>
             </div>
-      </section>
-        <section>
-            <h3 id="idiomas">IDIOMAS</h3>
-            <article class="main-courses">
-                <a href="/products/detail/1">
-                    <picture><img width="100%" src="/images/curso-english1.jpg" alt="Curso Inglés" class="course_image"></picture>
-                    <h4>Curso Completo de Inglés: Iniciación</h4>
-                    <p>Curso completo de inglés para dominar la gramática, traducción, conversación, vocabulario, pronunciación y mucho más.</p>
-                    <p class="course-price">ARS$2.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-            <article class="main-courses">
-                <a href="/products/detail/2">
-                    <picture><img width="100%" src="/images/curso-portugues.jpg" alt="Curso Portugués" class="course_image"></picture>
-                    <h4>Portugués de Brasil básico</h4>
-                    <p>Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con explicaciones claras y concisas, el idioma portugués.</p>
-                    <p class="course-price">ARS$2.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-            <article class="main-courses">
-                <a href="/products/detail/3">
-                    <picture><img width="100%" src="/images/curso-chino1.jpg" alt="Curso Chino" class="course_image"></picture>
-                    <h4>Aprender Chino a la primera</h4>
-                    <p>Curso de chino. Empieza desde cero y habla desde el primer vídeo de la forma más dinámica y divertida.</p>
-                    <p class="course-price">ARS$3.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-        </section>
-        <section>
-            <h3 id="tecnologia">PROGRAMACIÓN</h3>
-            <article class="main-courses">
-                <a href="/products/detail/4">
-                    <picture id="reactImg"><img width="100%" src="/images/curso-reactjs1.png" alt="Curso React.js" class="course_image"></picture>
-                    <h4>Curso de Introducción a React.js</h4>
-                    <p>¡Aprende React.js, la librería más popular de JavaScript para crear aplicaciones web interactivas!
-                        Descubre las ventajas de manejar el estado con React Hooks
-                        Comprende la diferencia entre componentes, elementos y etiquetas
-                        Crea tu primer webapp interactiva con React.js
-                    </p>
-                    <p class="course-price">ARS$3.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-            <article class="main-courses">
-                <a href="/products/detail/5">
-                    <picture><img width="100%" src="/images/curso-DataScience.jpg" alt="Data Science" class="course_image"></picture>
-                    <h4>Cómo y Por Qué Aprender Data Science e Inteligencia Artificial</h4>
-                    <p>Conoce cómo iniciar una carrera en data science e inteligencia artificial entendiendo cómo funciona esta área de la tecnología, qué oportunidades tiene y qué caminos seguir para conseguir tu primer trabajo en datos.</p>
-                    <p class="course-price">ARS$5.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-            <article class="main-courses">
-                <a href="/products/detail/6">
-                    <picture><img width="100%" src="/images/curso-Nodejs.jpg" alt="Backend con Node.js" class="course_image"></picture>
-                    <h4>Curso de Backend con Node.js: API REST con Express.js</h4>
-                    <p>¡Aprende desarrollo backend con Node.js! Trabaja con rutas, servidores y middlewares de Express.js. Construye una API, manipula errores y haz validación de datos. Despliega tu aplicación a producción en Heroku.</p>
-                    <p class="course-price">ARS$5.000</p>
-                    <p class="more-info">+ INFO</p>
-                </a>
-            </article>
-        </section>
-    </main>
-    <%- include ('partials/footer') %> 
-    <script src="/js/header.js"></script>
-</body>
+            <main class="main_index">
+                <section class="main_banner">
+                    <div class="titulo_banner">
+                        <h1>NUESTROS CURSOS</h1>
+                    </div>
+                </section>
+                <section>
+                    <h3 id="idiomas">IDIOMAS</h3>
+                    <article class="main-courses">
+                            <a href="/products/detail/1">
+                                <span></span>
+                            <picture><img width="100%" src="/images/curso-english1.jpg" alt="Curso Inglés"
+                                    class="course_image"></picture>
+                            <h4>Curso Completo de Inglés: Iniciación</h4>
+                            <p>Curso completo de inglés para dominar la gramática, traducción, conversación,
+                                vocabulario, pronunciación y mucho más.</p>
+                            <p class="course-price">ARS$2.000</p>
+                            <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                    <article class="main-courses">
+                        <a href="/products/detail/2">
+                            <span></span>
+                            <picture><img width="100%" src="/images/curso-portugues.jpg" alt="Curso Portugués"
+                                    class="course_image"></picture>
+                            <h4>Portugués de Brasil básico</h4>
+                            <p>Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con
+                                explicaciones claras y concisas, el idioma portugués.</p>
+                            <p class="course-price">ARS$2.000</p>
+                            <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                    <article class="main-courses">
+                        
+                        <a href="/products/detail/3">
+                            <span></span>
+                            <picture><img width="100%" src="/images/curso-chino1.jpg" alt="Curso Chino"
+                                    class="course_image"></picture>
+                            <h4>Aprender Chino a la primera</h4>
+                            <p>Curso de chino. Empieza desde cero y habla desde el primer vídeo de la forma más dinámica
+                                y divertida.</p>
+                            <p class="course-price">ARS$3.000</p>
+                            <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                </section>
+                <section>
+                    <h3 id="tecnologia">PROGRAMACIÓN</h3>
+                    <article class="main-courses">
+                        
+                        <a href="/products/detail/4">
+                            <span></span>
+                            <picture id="reactImg"><img width="100%" src="/images/curso-reactjs1.png"
+                                    alt="Curso React.js" class="course_image"></picture>
+                            <h4>Curso de Introducción a React.js</h4>
+                            <p>¡Aprende React.js, la librería más popular de JavaScript para crear aplicaciones web
+                                interactivas!
+                                Descubre las ventajas de manejar el estado con React Hooks
+                                Comprende la diferencia entre componentes, elementos y etiquetas
+                                Crea tu primer webapp interactiva con React.js
+                            </p>
+                            <p class="course-price">ARS$3.000</p>
+                            <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                    <article class="main-courses">
+                        
+                        <a href="/products/detail/5">
+                            <span></span>
+                            <picture><img width="100%" src="/images/curso-DataScience.jpg" alt="Data Science"
+                                    class="course_image"></picture>
+                            <h4>Cómo y Por Qué Aprender Data Science e Inteligencia Artificial</h4>
+                            <p>Conoce cómo iniciar una carrera en data science e inteligencia artificial entendiendo
+                                cómo funciona esta área de la tecnología, qué oportunidades tiene y qué caminos seguir
+                                para conseguir tu primer trabajo en datos.</p>
+                            <p class="course-price">ARS$5.000</p>
+                            <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                    <article class="main-courses">
+                        
+                        <div class="content">
+                            <a href="/products/detail/6">
+                                <span></span>
+                                <picture><img width="100%" src="/images/curso-Nodejs.jpg" alt="Backend con Node.js"
+                                        class="course_image"></picture>
+                                <h4>Curso de Backend con Node.js: API REST con Express.js</h4>
+                                <p>¡Aprende desarrollo backend con Node.js! Trabaja con rutas, servidores y middlewares
+                                    de Express.js. Construye una API, manipula errores y haz validación de datos.
+                                    Despliega tu aplicación a producción en Heroku.</p>
+                                <p class="course-price">ARS$5.000</p>
+                                <p class="more-info">+ INFO</p>
+                            </a>
+                        </div>
+                    </article>
+                </section>
+            </main>
+            <%- include ('partials/footer') %>
+                <script src="/js/header.js"></script>
+    </body>
+
 </html>
