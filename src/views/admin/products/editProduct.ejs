@@ -33,7 +33,7 @@
         <div class="upload-courseimage">
             <label for="inputFile" class="form-label">Imagen del Producto</label>
             <input type="file" name="courseImage" id="courseImage">
-            <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
+            <div class="img-container" id="img-preview" onChange="fileValidation" value="<%= locals.old && old.courseImage %>"> </div>
             <span id="fileErrors"></span>
         </div>
         <div>
