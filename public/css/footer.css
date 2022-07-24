@@ -3,7 +3,7 @@
 footer{
     width: 100%;
     padding: 10px 0px;
-    background: #345B63;
+    background: radial-gradient(79.43% 251.48% at 23.18% 73.07%, #0142a0, #0f133a 44.41%, #151544 56.43% );
     margin: 0;
 }
 
@@ -32,26 +32,27 @@ footer{
 .article__footer .somos_Brainhub{
     max-width: 280px;
     font-weight: 500;
-    color: black;
+    color: #fff;
     font-size: 18px;
     padding-top: 0px;
 }
 
 .article__footer h2{
     margin-bottom: 30px;
-    color: black;
+    color: #fff;
     font-weight: 700;
 }
 
 .article__footer a{
     margin-top: 10px;
-    color: black;
+    color: rgb(190, 187, 187);
     font-weight: 600;
+    opacity: 0.8;
 }
 
 .article__footer a:hover{
-    opacity: 0.8;
-    color: plum;
+    
+    color: #fff;
 }
 
 .article__footer a .fab{
