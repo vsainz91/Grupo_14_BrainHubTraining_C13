@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 6rem;
-
+    background: #010615;
 }
 
 .profile-form {
@@ -25,7 +25,7 @@
 
 .profile-form-header {
     text-align: center;
-    
+    color: white;
 }
 
 .profile-form .profile-box_avatar {
@@ -34,9 +34,12 @@
     align-items: center;
     margin: 10px;
     justify-content: center;
+    
 }
 .profile-subtitle {
     width: 30%;
+    color: white;
+    margin: 20px;
 }
 .avatar_span {
     width: 20%;
@@ -47,15 +50,23 @@
     align-items: center;
     margin: 20px;
     justify-content: center;
+    color: white;
 }
 .profile_editinfo {
     margin-left: 150px ;
     margin-bottom: 20px;
+    color: white;
 }
+
+.profile_editinfo label.form-edit {
+    margin: 10px;
+    color: black;
+}
+
 
 .profile_editinfo .form-edit input {
     margin: 10px;
-    
+    color: white;
 }
 
 /* .profile_h3 {
@@ -77,6 +88,16 @@
     align-items: center;
     justify-content: space-around;
     margin: 10px;
+    color: white;
+}
+.interests label {
+    margin-bottom: 4px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.interests input {
+    margin-left: 5px;
 }
 
 .btn_editar-profile {

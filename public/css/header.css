@@ -35,6 +35,20 @@ header .logo img {
     width: 120px;
     display: flex;
     align-items: center;
+    margin-top: 10px;
+}
+
+header .logo-admin {
+    display: flex;
+    border: none;
+    width: 5rem;
+}
+
+header .logo-admin img#logo-admin {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 header div.user{
@@ -260,13 +274,13 @@ div#carrito-icon{
 
 .header_avatar{
    
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background-color:#345B63;
-        position: relative;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: radial-gradient(79.43% 251.48% at 23.18% 73.07%, #0142a0, #0f133a 44.41%, #101034 56.43% );;
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
         
 }
 .avatar_session {

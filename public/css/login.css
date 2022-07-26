@@ -12,7 +12,7 @@ a {
 
 body.login_body {
     padding-top: 6rem;
-   
+    background-color: #010615;
 }
 
 /*  FORM  */
@@ -32,10 +32,12 @@ section.container-login {
     max-width: 400px;
     margin: 0 auto;
 }
-section.container-login h2 {
+section.container-login h2.login-title {
     margin-bottom: 20px;
     text-align: center;
     width: 100%;
+    color: white;
+    font-weight: 300;
 }
 
 section.container-login div.lineal {
@@ -94,11 +96,13 @@ section.container-login .container-form .btn-log:hover {
 section.container-login .btn-log-facebook {
     background-color: #335089;
     color: white;
+    text-shadow: 1px 1px black;
 }
 
 section.container-login .btn-log-google {
-    background-color: #A8B8BF;
+    background-color: #7aaabe;
     color: white;
+    text-shadow: 1px 1px black;
 }
 
 section.container-login .container-form .btn-log {
@@ -108,10 +112,10 @@ section.container-login .container-form .btn-log {
     font-size: 1rem;
 }
 
-section.container-login .container-form .btn-register {
-    border: solid 2px #263CFF;
-    color: #263CFF;
-    background-color: white;
+section.container-login .container-form .btn-register-login {
+    border: solid 2px #020417;
+    color: white;
+    background-color: rgb(11, 6, 59);
     margin-top: 8px;
     height: 37px;
     font-size: 1rem;
@@ -120,6 +124,7 @@ section.container-login .container-form .btn-register {
 
 section.container-login .input-container {
     width: 100%;
+    margin-right: 9px;
 }
 
 section.container-login .container-form .input-log {
@@ -129,6 +134,15 @@ section.container-login .container-form .input-log {
     padding: 10px;
 }
 
+section.container-login .container-form label.login-remember {
+    color: white;
+}
+
+input#remember {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 section.container-login .container-form .check-remember {
     margin-top: 1rem;
 }
@@ -136,4 +150,8 @@ section.container-login .container-form .check-remember {
 section.container-login .container-form p.link_pass-recover {
     margin-bottom: 30px;
     cursor: pointer;
+}
+
+section.container-login .container-form p.register-p {
+    color: white;
 }

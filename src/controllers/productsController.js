@@ -1,4 +1,5 @@
 const { getProducts } = require('../data');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models');
 
 module.exports = {
@@ -18,11 +19,15 @@ module.exports = {
         })
     },
     index: (req, res) => {
-        res.render('index', {
-           titulo: "Homepage",
-           products_title: "Cursos",
-           courses: getProducts,
-           session: req.session
-        })
+        db.Course.findAll()
+		.then(courses => {
+			res.render('index', {
+				titulo: "Brainhub",
+				products_title: "Cursos",
+				courses,
+				session: req.session,
+                toThousand
+			})
+		})
     }
 };

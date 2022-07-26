@@ -15,3 +15,4 @@ let searchDisplay = document.querySelector('.search-input');
 searchButton.addEventListener('click', function () { 
     searchDisplay.classList.toggle('active');
 });
+

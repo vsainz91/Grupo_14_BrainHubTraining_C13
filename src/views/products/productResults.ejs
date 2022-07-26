@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include ('../partials/head') %>
+<%- include ('../partials/head', {title: 'Resultados de tu búsqueda'}) %>
 <body>
 	<%- include ('../partials/header') %>
 	<div class="container products-wrapper">
@@ -11,6 +11,18 @@
 			<% if (searchResult.length > 0) { %>
 			 	<% searchResult.forEach(course => { %>
 					<div class="">
+						<article class="main-courses">
+							<a href="/products/detail/<%- course.id %>">
+								<span class="course-span"></span>
+								<picture><img width="100%" src="/images/products/curso-portugues.jpg" alt="Curso Portugués"
+										class="course_image"></picture>
+								<h4 class="course-title">Portugués de Brasil básico</h4>
+								<p class="course-description">Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con
+									explicaciones claras y concisas, el idioma portugués.</p>
+								<p class="course-price">ARS$2.000</p>
+								<p class="more-info">+ INFO</p>
+							</a>
+						</article>
 						<section class="product-box">
 							<a href="/products/detail/<%- course.id %>">
 								<figure class="product-box_image">

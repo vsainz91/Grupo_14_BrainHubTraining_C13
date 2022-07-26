@@ -16,20 +16,27 @@ input .avatar {
 }
 
 .img-container {
-    width: 100%;
+    width: 200px;
     height: 200px;
-    border: thin solid gray ;
-    border-radius: 10px;
-    text-align: center;
+    border: thin solid gray;
+    border-radius: 100px;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 72px;
+    object-fit: cover;
 }
 
-section.container-login .limpiar-btn {
+section.container-login .limpiar-btn-register {
+    margin-left: 5px;
     font-size: 17px;
     border: solid 2px darkslategray;
     height: 40px;
     width: 100%;
     border-radius: 4px;
     margin-bottom: 1rem;
+    background-color: rgb(47 47 145);
+    color: white;
+    align-content: center;
 }
 
 section.container-login .container-form .btn-register {
@@ -47,8 +54,23 @@ section.container-login .container-form .btn-register {
     font-weight: bold;
 }
 
+.text-end-to-login{
+    color: white;
+}
+
 section.container-login .register-title{
     margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 300;
+}
+
+.red-span{
+    margin-left: 5px;
+    font-weight: 100;
 }
 
 
+.register-avatar-label{
+    color: white;
+}

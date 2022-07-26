@@ -5,7 +5,7 @@
     <body class="login_body">
         <%- include ('../partials/header') %> 
         <section class="container-login">
-            <h2 class="title">Iniciar sesión</h2>
+            <h2 class="login-title">INICIAR SESIÓN</h2>
             <button class="btn-log-facebook btn"> <a href="https://facebook.com">Inicia sesión con Facebook</a> </button>
             <button class="btn-log-google btn">Inicia sesión con Google</button>
             <form class="container-form" action="/users/login" method="POST" id="form">
@@ -25,13 +25,13 @@
                 </div>
                 
                 <div class="check-remember">
-                    <label for="remember">Recordar<input type="checkbox" name="remember" id="remember"></label>
+                    <label for="remember" class="login-remember">Recordar<input type="checkbox" name="remember" id="remember"></label>
                 </div>
                 <button type="submit" class="btn btn-log">Ingresar</button>
                 <span class="error" id="submitErrors" style="color: red;"></span>
                 <p class="link_pass-recover"><a href="#">¿Olvidaste tu contraseña?</a></p>
-                <p>¿Aún no tienes cuenta en BrainHub?</p>
-                <button class="btn-register btn"> <a href="/users/register">Registrate</a></button>
+                <p class="register-p">¿Aún no tienes cuenta en BrainHub?</p>
+                <button class="btn-register-login btn"> <a href="/users/register">Registrate</a></button>
             </form>
         </section>
         <%- include ('../partials/footer') %>

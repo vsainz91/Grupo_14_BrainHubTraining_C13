@@ -8,14 +8,26 @@ const removeAccents = (str) => {
 
 module.exports = {
     index: (req, res) => {
-        res.render('index', {
-           titulo: "Brainhub",
-           products_title: "Cursos",
-           cursos: getProducts,
-           session: req.session
-        })
-     },
-     search: (req, res) => {
+		db.Course.findAll()
+		.then(courses => {
+			res.render('index', {
+				titulo: "Brainhub",
+				products_title: "Cursos",
+				courses,
+				session: req.session,
+				toThousand
+			})
+		})
+		/* db.CourseImage.findAll()
+		.then(images => {
+			res.render('index', {
+				images,
+				session: req.session,
+			})
+		}) */
+        
+    },
+    search: (req, res) => {
 		let searchResult = [];
 		getProducts.forEach(course => {
 			if(removeAccents(course.name/* .toLowerCase() */).includes(req.query.keywords/* .toLowerCase() */)){
@@ -26,7 +38,8 @@ module.exports = {
 		res.render('products/productResults', {
 			searchResult,
 			keyword: req.query.keywords,
-			toThousand
+			toThousand,
+			session: req.session
 		})
 	},
 } 

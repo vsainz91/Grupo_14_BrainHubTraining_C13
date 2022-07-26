@@ -4,6 +4,7 @@
 	margin: 150px auto;
 	width: 600px;
 	margin-top: 6rem;
+	background: #010615;
 }
 
 table{
@@ -18,7 +19,7 @@ th, td{
 }
 
 thead{
-	background-color: #246355;
+	background-color: #0f013f;
 	border-bottom: solid 5px #0F362D;
 	color: white;
 }
