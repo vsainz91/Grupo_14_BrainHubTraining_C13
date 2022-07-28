@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include ('../partials/head') %>
+<body>
+	<%- include ('../partials/header') %>
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Cursos encontrados en <%= category.name %>:</h2>
+			</div>
+			<section>
+                <% courses.forEach(({id, name, price, description}) => { %> 
+                    <article class="main-courses">
+                        <a href="/products/detail/<%= id %>">
+                        <span class="course-span"> </span>
+                        <picture><img width="100%" alt="Curso Inglés" class="course_image"></picture>
+                        <h4 class="course-title"><%= name %> </h4>
+                        <p class="course-description"><%= description %> </p>
+                        <p class="course-price">ARS$ <%- toThousand(price)%> </p>
+                        <p class="more-info">+ INFO</p>
+                        </a>
+                    </article>
+                <% }) %> 
+            </section>
+	</div>
+	<%- include('../partials/footer') %>
+</body>	
+</html>

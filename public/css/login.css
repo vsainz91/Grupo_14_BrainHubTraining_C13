@@ -17,9 +17,9 @@ body.login_body {
 
 /*  FORM  */
 
-section.container-login form a {
-    color: rgb(34, 34, 182);
-    font-size: 14px;
+section.container-login form a#registrate-btn {
+    color: rgb(215, 215, 255);
+    font-size: 16px;
     text-decoration: none;
 }
 
@@ -29,8 +29,11 @@ section.container-login {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
+    background-image: linear-gradient(180deg, #872af1 0, #5a27c0 25%, #4f35ca 50%, #1a28ad 75%, #001d92 100%);
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 section.container-login h2.login-title {
     margin-bottom: 20px;
@@ -91,18 +94,22 @@ section.container-login .container-form .btn-log:hover {
     background: linear-gradient(225deg, #cc245c, #ccf000);
     box-shadow:  0 5px 5px grey;
     font-size: 20px;
+    cursor: pointer;
 }
 
 section.container-login .btn-log-facebook {
     background-color: #335089;
     color: white;
     text-shadow: 1px 1px black;
+    box-shadow: 2px 2px rgb(26, 25, 25);
 }
 
 section.container-login .btn-log-google {
     background-color: #7aaabe;
     color: white;
     text-shadow: 1px 1px black;
+    box-shadow: 2px 2px rgb(26, 25, 25);
+    cursor: pointer;
 }
 
 section.container-login .container-form .btn-log {
@@ -110,16 +117,24 @@ section.container-login .container-form .btn-log {
     color: white;
     margin-top: 1rem;
     font-size: 1rem;
+    width: 200px;
 }
 
 section.container-login .container-form .btn-register-login {
-    border: solid 2px #020417;
+    border: solid 2px #050b41;
     color: white;
     background-color: rgb(11, 6, 59);
     margin-top: 8px;
     height: 37px;
     font-size: 1rem;
     font-weight: 600;
+    width: 150px;
+}
+
+section.container-login .container-form .btn-register-login:hover {
+    background: linear-gradient(225deg, #8024cc, #0054f0);
+    box-shadow:  0 5px 5px grey;
+    font-size: 20px;
 }
 
 section.container-login .input-container {

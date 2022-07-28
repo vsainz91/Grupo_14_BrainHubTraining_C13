@@ -19,7 +19,6 @@ input .avatar {
     width: 200px;
     height: 200px;
     border: thin solid gray;
-    border-radius: 100px;
     align-items: center;
     margin-top: 10px;
     margin-left: 72px;
@@ -29,14 +28,15 @@ input .avatar {
 section.container-login .limpiar-btn-register {
     margin-left: 5px;
     font-size: 17px;
-    border: solid 2px darkslategray;
+    border: none;
     height: 40px;
     width: 100%;
     border-radius: 4px;
     margin-bottom: 1rem;
-    background-color: rgb(47 47 145);
+    background-color: rgb(59, 59, 235);
     color: white;
     align-content: center;
+    cursor: pointer;
 }
 
 section.container-login .container-form .btn-register {
@@ -47,11 +47,17 @@ section.container-login .container-form .btn-register {
     height: 37px;
     font-size: 1rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 #register-a-login {
-    color: green;
+    color: #024a02;
     font-weight: bold;
+}
+#register-a-login:hover {
+    color: #011f41;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .text-end-to-login{

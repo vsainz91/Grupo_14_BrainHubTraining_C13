@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include ('../partials/head', {title: 'Resultados de tu búsqueda'}) %>
+<%- include ('../partials/head', {titulo: 'Resultados de tu búsqueda'}) %>
 <body>
 	<%- include ('../partials/header') %>
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de la búsqueda: <%= keyword %> </h2>
+				<h2 class="products-title">Resultados de la búsqueda: <%= busqueda %> </h2>
 			</div>
-			<% if (searchResult.length > 0) { %>
-			 	<% searchResult.forEach(course => { %>
-					<div class="">
-						<article class="main-courses">
-							<a href="/products/detail/<%- course.id %>">
-								<span class="course-span"></span>
-								<picture><img width="100%" src="/images/products/curso-portugues.jpg" alt="Curso Portugués"
-										class="course_image"></picture>
-								<h4 class="course-title">Portugués de Brasil básico</h4>
-								<p class="course-description">Este curso está diseñado para hispanohablantes y enseña de forma objetiva, con
-									explicaciones claras y concisas, el idioma portugués.</p>
-								<p class="course-price">ARS$2.000</p>
+			<% if (courses.length > 0) { %>
+			 	<% courses.forEach(course => { %>
+					<div class="courses-found">
+						<% courses.forEach(({id, name, price, description}) => { %> 
+							<article class="main-courses">
+								<a href="/products/detail/<%= id %>">
+								<span class="course-span"> </span>
+								<picture><img width="100%" alt="Curso Inglés" class="course_image"></picture>
+								<h4 class="course-title"><%= name %> </h4>
+								<p class="course-description"><%= description %> </p>
+								<p class="course-price">ARS$ <%- toThousand(price)%> </p>
 								<p class="more-info">+ INFO</p>
-							</a>
-						</article>
-						<section class="product-box">
-							<a href="/products/detail/<%- course.id %>">
-								<figure class="product-box_image">
-									<img src="/images/<%- course.image %>" alt="imagen del curso">
-								</figure>
-								<article class="product-box_data">
-									<h2>$<%- toThousand(course.price) %> </h2>
-									<p><%- course.name %> </p>
-								</article>
-							</a>
-						</section>
+								</a>
+							</article>
+						<% }) %> 
 					</div>
 				<% }) %>
 			<% } else { %>

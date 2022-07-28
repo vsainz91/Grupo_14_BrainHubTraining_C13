@@ -1,5 +1,6 @@
 const { getProducts } = require('../data');
 const db = require('../database/models');
+const {Op} = require('sequelize')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const removeAccents = (str) => {
@@ -28,18 +29,23 @@ module.exports = {
         
     },
     search: (req, res) => {
-		let searchResult = [];
-		getProducts.forEach(course => {
-			if(removeAccents(course.name/* .toLowerCase() */).includes(req.query.keywords/* .toLowerCase() */)){
-				searchResult.push(course)
+		let busqueda = req.query.search.toLowerCase()
+        db.Course.findAll({
+			where: {
+				[Op.or]: [
+					{ name: {[Op.substring]: busqueda}},
+					{ description: {[Op.substring]: busqueda}}
+				]
 			}
-		});
-		
-		res.render('products/productResults', {
-			searchResult,
-			keyword: req.query.keywords,
-			toThousand,
-			session: req.session
 		})
+        .then(courses => {
+            res.render('products/productResults',{
+                courses,
+                busqueda,
+				toThousand,
+				session: req.session
+            })
+        })
+        .catch(errors => console.log(errors)) 
 	},
 } 
