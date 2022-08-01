@@ -7,6 +7,11 @@ body {
     width: 100%;
 }
 
+html{
+    background: url("/images/image4.jpg");
+    background-size: cover;
+}
+
 .admin-main {
     background-color: #010615;
     height: 100%;

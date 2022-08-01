@@ -165,8 +165,7 @@ section.container-login .container-form .input-log {
     margin: 5px;
     padding: 10px;
     background: rgba(18, 22, 1, 0.3);
-    
-    
+    color: white;
 }
 
 section.container-login .container-form label.login-remember {

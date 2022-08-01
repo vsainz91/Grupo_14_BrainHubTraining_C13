@@ -24,13 +24,11 @@
   }
 
   .contenedor .form .form-header .form-title {
-      font-weight: normal;
-      color: antiquewhite;
-      margin-bottom: 10px;
-      text-align: center;
-      margin-top: 5px;
-
-
+    font-weight: normal;
+    color: antiquewhite;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 5px;
   }
 
   .contenedor .form .form-header .form-title span {
@@ -45,18 +43,20 @@
   }
 
   .contenedor .form .form-control {
-      background: rgba(0, 0, 0, .7);
-      border: none;
-      outline: none;
-      border-bottom: 5px solid #345B63;
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      font-size: 14px;
-      color: antiquewhite;
+    background: rgba(0, 0, 0, .7);
+    border: none;
+    outline: none;
+    border-bottom: 5px solid #345B63;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: rgb(184, 177, 169);
+  }
 
-
+  ::placeholder{
+    color: darkgrey;
   }
 
   .contenedor .form .textarea {
@@ -67,38 +67,38 @@
   }
 
   .btn_agregar {
-      width: 100%;
-      outline: none;
-      background-color: #345B63;
-      font-size: 16px;
-      border: none;
-      color: antiquewhite;
-      padding: 15px 0px;
-      cursor: pointer;
-      transition: all .5s ease;
-      border-radius: 5px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+    width: 100%;
+    outline: none;
+    background-color: #0142a0;
+    font-size: 16px;
+    border: none;
+    color: antiquewhite;
+    padding: 15px 0px;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .btn_agregar:hover {
-      background-color: #264349;
+    background-color: #226fdb;
   }
   .limpiar-btn{
     width: 25%;
-      outline: none;
-      background-color: #345B63;
-      font-size: 16px;
-      border: none;
-      color: antiquewhite;
-      padding: 15px 0px;
-      cursor: pointer;
-      transition: all .5s ease;
-      border-radius: 5px;
+    outline: none;
+    background-color: #0142a0;
+    font-size: 16px;
+    border: none;
+    color: antiquewhite;
+    padding: 15px 0px;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 5px;
       
   }
   .limpiar-btn:hover {
-    background-color: #264349;
+    background-color: #5e56ca;
 
   }
 
