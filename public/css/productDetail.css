@@ -2,410 +2,235 @@
 @import url('footer.css');
 @import url('root.css');
 
+.detail-design{
 
-body{
-    margin: 0;
-    padding: 0;
-    background-color:white;
-    text-decoration: none;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
 }
-main.product_detail{
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    align-items: center;
-    margin: 0px auto;
+.price{
+	color: #4dff03;
+	margin-top: 5px;
+	margin-left: 5px;
 }
-
-/*BANNER*/
-
-.banner {
-    background: url("/images/curso4.jpg");
-    min-height: 100%;
-    position: relative;
-    opacity: 0.9;
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 60vh;
-    padding: 20px 10px;
-    font-weight: bold
-
-}
- .titulo_baner {
-     position: absolute;
-     font-size: 200%;
-     color: black;     
-     top: 20%; 
-     width: 100%;
-     text-shadow: 0 0 20px #dbb6d6;
-     text-align: center;
-     padding: 5rem;
-     
-}   
-
-.banner img {
-    width: 100%;
-}
-
-h2{
-    
-    color: black;
-}
-
-/*DESCRIPCION*/
-
-main.product_detail .descripcion .star img{
-    width: 250px;
-    display: none;
-}
-main.product_detail .descripcion2{
-    display: flexbox;
-    text-align: center;
-    
-    
-    
-}
-
-/* .product_detail .descripcion2 {
-    display: flex;
-    align-items: column;
-    flex-wrap: nowrap;
-} */
-
-.compra{
-    width: 20%;
-    z-index: -1;
-}
-
-/*CONTAINER*/
-.detail_container {
-    display: flex;
-    padding: 20px;
-    height: 100%;
-    width: 50%;
-    
-    justify-content: space-around;
-    background: #345b63;;
-    color: black;
-    border-radius: 15px;
-    text-align: center;
-    margin: 20px auto;  
-    font-size: 20px;
+.content h2{
+	color: #02030a;
     font-weight: bold;
-    box-shadow: 5px 10px 15px black;
-    cursor: pointer;
-}
-.detail_container:hover{
-    color: black;
-    transition: 2s;
-    background-color: #D4ECDD;
-}
-
-.compra{
-    padding: 10px;
-    cursor: pointer;
-    color: black;
-    background-color: rgb(240, 180, 16) ;
-    font-weight: 900;
-    border-radius: 15px;
     
-    font-size: 18px;
-    width: 50%;
-    box-shadow: 5px 10px 15px black;
-}
-.compra:hover{
-    background-color: #0de761;
-    transition: 1s;
-}
- 
-
-/*CARD*/
-.glass_card {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(138deg, rgba(255, 255, 255, 10%), rgba(18, 133, 3, 5%));
-    backdrop-filter:blur(10px);
-    z-index: 100;
-    padding: 30px;
-    border: 1px solid #fff;
-    border-radius: 20px;
-    margin: 45%;
-    width: 250px;
-    height: 100%;
-    text-align: center;
-    box-shadow: -5px 10px 20px black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(245, 163, 116);
-    margin: 20px auto;
-    
-}
-.content_top img {
-    width: 100%;
-    border-radius: 50%;
-    border: 3px solid #D4ECDD ;
+	
 }
 
-
-.content_top h2 {
-    margin-top: 10px;
-    font-size: 28px;
-}
-.content_top h3 {
-    font-size: 20px;
-    font-weight: 300;
-    color: black;
-    font-weight: bold;
-}
-.content_top p {
-    margin-top: 20px;
-    font-size: 12px;
-    font-weight: 300;
-    text-shadow: rgb(14, 12, 12) 2px;
-    color: black;
-    font-size: 16px;
-}
-.social_icons ul {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-.social_icons ul li a {
-    color: rgb(32, 5, 85);
-}
-.buttom {
-    margin-top: 30px;
-}
-.buttom a {
-    font-weight: 400;
-    font-size: 12px;
-    border-radius: 20px;
-    padding: 10px 30px;
-    color: #fff;
-    background-color: #600568;
-    box-shadow: 0px 0px 20px #b60bc5;
-}
-.content_bottom {
-    transform: translateY(60px);
-    opacity: 0;
-    transition: 0.5s;
-}
-.glass_card:hover .content_bottom {
-    transform: translateY(0px);
-    opacity: 1;
+.detail-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  margin-top: 50px;
+  background: url("/images/image4.jpg");
+  background-size: cover;
 }
 
-/*CONTENIDO*/
-.contenido{
-    
-    padding: 20px;
-    text-align: center;
-}
-.software{
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-/*REQUISITOS*/
-
-/*CARROUSEL*/
-.slider {
-    height: 250px;
-    position: relative;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    background: url("/images/curso4.jpg");
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-.slide-track {
-    display: flex;
-    width: calc(250px * 12);
-    animation: scroll 40s linear infinite ;
-
-}
-.slide-track:hover{
-    animation-play-state: paused;
-}
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-250px *6));
-    }
-}
-.slide {
-    height: 200px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    perspective: 100px;
-
-}
-.slider img {
-   width: 150px;
-   transition: transform 1s;
-}
-.slider img:hover {
-    transform: translateZ(20px);
-}
-.slider::before,
-.slider::after {
-    background: linear-gradient(to rigth, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255,0) 100%);
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 15%;
-    z-index: 2;
-}
-.slider::before {
-    left: 0;
-    top: 0;
-}
-.slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-
+.detail-container .box
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
 }
 
- /*TEMARIO*/
-
- .Temario{
-    background-color: #D4ECDD;
-    color: white;
-    width: 100%;
-    padding: 10px;
-    margin: 0px auto;
-    margin-top: 20px;
-} 
-.Temario .tema{
-    position: relative;
-}
-.Temario .tema .label{
-    position: relative;
-    background-color: rgb(245, 163, 116);
-    cursor: pointer;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 800;
-    color: black;
-}
-.Temario .tema .label:hover{
-    background-color:rgb(247, 122, 51) ;
-    transition: 0,5s;
-}
-.Temario .tema .label::before{
-    content: '+';
-    position: absolute;
-    top: 40%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-.Temario .tema.active .label::before{
-    content: '-';
-}
-.Temario .tema .content {
-    position: relative;
-    background-color: #345b63;
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    overflow-y: auto;
-    align-items: center;
-}
-.Temario .tema.active .content{
-    height: 120px;
+.detail-container .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
 }
 
-.Temario a{
-    display: block;
+.detail-container .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
 }
 
-
-
-/*KEY FRAMES*/
-
-/*TABLET*/
-@media (min-width:768px) {
-    .compra{
-        position: fixed;
-        margin-left: 25%;
-        margin-top: 0;
-        width: 20%;
-        z-index: 1;
-    }
-
-    .descripcion2{
-        overflow: hidden;
-        flex-wrap: wrap;
-    }
-
-    .descripcion2 .card{
-        float: left;
-        width: 45%;
-    }
-
-    .descripcion2 .contenido{
-        float: left;
-        width: 50%;
-    }
-    
-    .descripcion .star img{
-        display: inline-block;
-    }
-
+.detail-container .box:hover:before,
+.detail-container .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
 }
 
-    /*DESKTOP*/
-
-@media (min-width:1024px) {
-    .descripcion .star{
-        float: left;
-        width: 40%;
-    }
-
-    .descripcion .container{
-        width: 50%;
-        float: left;
-    }
-
-    .descripcion{
-        overflow: hidden;
-        align-items: center;
-    }
-
-    .descripcion .star img{
-        display: inline;
-    }
-
-    .compra{
-        position: relative;
-        margin-left: 0;
-        margin-bottom: 20px;
-        width: 30%;
-        z-index: 0;
-    }
-
-    .Temario{
-        overflow: hidden;
-    }
-
-    .tema{
-        float: left;
-        width: 48%;
-        align-items: center;
-        margin-right: 3px;
-    }
+.detail-container .box:nth-child(1):before,
+.detail-container .box:nth-child(1):after
+{
+  background: linear-gradient(315deg, #ffbc00, #ff0058)
 }
 
+.detail-container .box:nth-child(2):before,
+.detail-container .box:nth-child(2):after
+{
+  background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
+.detail-container .box:nth-child(3):before,
+.detail-container .box:nth-child(3):after
+{
+  background: linear-gradient(315deg, #4dff03, #00d0ff)
+}
+
+.detail-container .box span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.detail-container .box span::before
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;  
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.detail-container .box:hover span::before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.detail-container .box span::after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+}
+
+.detail-container .box:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+@keyframes animate
+{
+  0%, 100%
+  {
+    transform: translateY(10px);
+  }
+  
+  50%
+  {
+    transform: translate(-10px);
+  }
+}
+
+.detail-container .box .content
+{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+}
+
+.detail-container .box:hover .content
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.detail-container .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.detail-container .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.detail-container .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.detail-container .box .content a:hover
+{
+  background: #ffcf4d;
+  border: 1px solid rgba(255, 0, 88, 0.4);
+  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}

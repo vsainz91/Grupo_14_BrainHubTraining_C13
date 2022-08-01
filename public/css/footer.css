@@ -16,6 +16,7 @@ footer{
     margin: 20px auto;
     margin-top: 10px;
     z-index: 10;
+    
 }
 
 
@@ -25,10 +26,11 @@ footer{
     padding: 20px;
 }
 
-.article__footer .footer-logo img{
-    width: 100px;
+.footer-logo img{
+    width: 170px;
     margin-bottom: 0px;
-    margin-top: 15px;
+    margin-top: 25px;
+    margin-left: 40px;
 }
 
 .article__footer .somos_Brainhub{
