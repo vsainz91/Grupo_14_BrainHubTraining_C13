@@ -9,6 +9,7 @@
 @import url('editProducts.css');
 @import url('listProducts.css');
 @import url('edit-profile.css');
+@import url('adminIndex.css');
 
 .container {
     width: 100%;
@@ -25,14 +26,13 @@
     bottom: 20%;
     
 }
-.text-box p{
+.text-box p.brainhub-banner{
     font-size: 50px;
     font-weight: 600;
 }
 .text-box h1{
-    font-size: 110px;
+    font-size: 70px;
     line-height: 160px;
-    margin-left: -10px;
     color: transparent;
     -webkit-text-stroke:1px #fff;
     background: url(/images/back.png);
@@ -68,11 +68,10 @@
 
 
 main.main_index {
-    
+    background: #010615;
     height: 100%;
     width: 100%;
-    background: #010615;
-    
+    padding-top: 4rem;
 }
 
 main.main_index .main_banner {
@@ -88,8 +87,7 @@ main.main_index .main_banner {
     font-weight: bold;
     margin-top: -1px;
     width: 100%;
-    top: 10px;
- 
+    top: -40px;
 }
 
 main.main_index .main_banner .titulo_banner {
@@ -98,10 +96,9 @@ main.main_index .main_banner .titulo_banner {
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     line-height: 160px;
     text-shadow: #345B63;
-
  }   
 
 .main.main_index .main_banner img.course_image {
@@ -183,6 +180,10 @@ main.main_index section article.main-courses:nth-child(3)::after
     background: linear-gradient(315deg,#4dff03, #00d0ff);
 }
 
+.main_banner-categorias {
+        
+}
+
 
 main.main_index section article a picture img.course_image{
     height: 150px;
@@ -255,6 +256,15 @@ main.main_index section article a p.more-info:hover {
     color: white;
 }
 
+.categories-section{
+    margin-top: 15px;
+}
+
+.category-a{
+    font-size: 2rem;
+    margin: 10px;
+}
+
 /* END MAIN */
 
 
@@ -281,6 +291,51 @@ main.main_index section article a p.more-info:hover {
     main.main_index section article.main-courses picture {
         width: 100%;
     }
+
+    .text-box h1{
+        font-size: 110px;
+        line-height: 160px;
+        margin-left: -10px;
+        color: transparent;
+        -webkit-text-stroke:1px #fff;
+        background: url(/images/back.png);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: back 20s linear infinite;
+    }
+
+    .text-box p.brainhub-banner{
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    main.main_index .main_banner {
+        background: url("/images/image4.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 25vh;
+        font-weight: bold;
+        margin-top: -1px;
+        width: 100%;
+    }
+
+    
+
+    main.main_index .main_banner .titulo_banner {
+        position: absolute;
+        color: rgb(251, 242, 242);     
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
+        line-height: 160px;
+        text-shadow: #345B63;
+     }  
     
 }
 

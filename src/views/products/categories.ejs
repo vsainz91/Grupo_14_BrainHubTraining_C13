@@ -4,18 +4,17 @@
     <body>
         <%- include ('../partials/header') %>
             <main class="main_index">
-                <section class="main_banner">
+                <section class="main_banner-categorias">
                     <div class="titulo_banner">
                         <h1 class="titulo_banner">CATEGORIAS</h1>
                     </div>
                 </section>
-                <section>
+                <section class="categories-section">
                     <h3></h3>
                     <% getCategories.forEach( category => { %> 
                         <article class="main-courses">
 
-                            <span class="course-span"> </span>
-                            <h4 class="course-title"><%= category.name %> </h4>
+                            <span class="course-span"> <a href="/categories/<%- category.id %>" class="category-a"><%= category.name %></a></span>
                             
                         </article>
                     <% }) %> 

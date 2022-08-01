@@ -20,8 +20,6 @@ header {
 header nav div#carrito-icon {
     justify-content: center;
     padding: 1rem;
-    
-   
 }
 
 
@@ -62,7 +60,7 @@ header div.user{
     padding: 2px;
     order: 3;
     transition: all 1s ease-in-out;
-    
+    display: none;
     border-radius: 10px;
 }
 
@@ -85,8 +83,7 @@ header nav ul.burger-display {
     width: 23%;
     height: 15vh;
     transition: all .5s;
-    display: none;
-    
+    display: none; 
 }
 
 header nav ul.burger-display li {
@@ -202,10 +199,6 @@ header nav.menu-burger:hover {
 
 /* Menu */
 
-
-    
-
-
 header nav ul.menu {
     display: flex;
     list-style: none;
@@ -214,7 +207,6 @@ header nav ul.menu {
     width: 100%;
     display: none;
     color: #fff;
-    
 }
 
 header nav ul.menu li.menu-item{
@@ -234,9 +226,8 @@ header nav ul.menu li.menu-item::after{
     transform: translate(-50%);
     background: #fff;
     transition: width 0.5s;
-
-
 }
+
 header nav ul.menu li.menu-item:hover::after{
     width: 70%;
 }
@@ -246,7 +237,6 @@ a {
     text-decoration: none;
     flex-direction: column;
     color: #fff;
-    
 }
 
 header ul.submenu {
@@ -257,8 +247,6 @@ header ul.submenu {
     position: absolute;
     display: none;
     justify-content: space-around;
-    
-    
 }
 
 
@@ -269,11 +257,10 @@ header nav ul.menu li.menu-item:hover > ul.submenu {
 
 div#carrito-icon{
     padding: 5px;
-    
+    display: none
 }
 
 .header_avatar{
-   
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -302,6 +289,22 @@ div#carrito-icon{
 
 /* END HEADER */
 
+/* ADMIN HEADER */
+
+.menu-admin{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    display: none;
+    color: #fff;
+}
+
+/* END ADMIN HEADER */
+
+/* QUERIES */
+
 @media screen and (min-width: 768px){
     .logo {
         margin-left: 0;
@@ -310,7 +313,7 @@ div#carrito-icon{
         height: 100px;
     }
     
-    .burger-display {
+    .burger-display{
         position: relative;
         height: 100px;
         top: 0;
@@ -346,11 +349,10 @@ div#carrito-icon{
     }
 
     header .menu-item-admin {
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-left: 300px;
-        margin-right: 160px;
+        position: relative;
+        margin-top: 4px;
+        margin-right: 13px;
+        margin-left: 15px; 
     }
 
     .buscador {
@@ -369,6 +371,14 @@ div#carrito-icon{
     .buscador button {
         border-radius: 5px;
         background-color: white;
+    }
+    div#carrito-icon{
+        padding: 5px;
+        display: block
+    }
+
+    header div.user{
+        display: block;
     }
 
 }

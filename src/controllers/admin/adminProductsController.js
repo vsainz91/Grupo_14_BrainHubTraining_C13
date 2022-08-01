@@ -9,6 +9,7 @@ module.exports = {
             res.render('admin/products/listProducts', {
                 titulo: "Listado de cursos",
                 course: courses,
+                session: req.session
             })
         })
     },
@@ -17,7 +18,8 @@ module.exports = {
         .then(categories => {
             res.render('admin/products/addProduct', {
                 titulo: "Agregar curso",
-                categories
+                categories,
+                session: req.session
             })
         })
     },
@@ -41,7 +43,8 @@ module.exports = {
             res.render('admin/products/addProduct', {
                 titulo: "Agregar Curso",
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
     },
@@ -54,7 +57,8 @@ module.exports = {
             res.render('admin/products/editProduct', {
                 titulo: "Edición",
                 course,
-                categories
+                categories,
+                session: req.session
             })
         })
         .catch(error => console.log(error))
@@ -107,7 +111,8 @@ module.exports = {
                     titulo: "Editar Curso",
                     course,
                     errors: errors.mapped(),
-                    old: req.body
+                    old: req.body,
+                    session: req.session
                 })
             })
             .catch(error => console.log(error))

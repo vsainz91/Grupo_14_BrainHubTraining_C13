@@ -2,9 +2,9 @@
 <html lang="en">
 <%- include('../partials/head') %>
 
-  <body>
+  <body class="body-admin-products">
     <%- include('../partials/header') %>
-      <table class="main-container">
+      <table class="main-container-products">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -29,7 +29,7 @@
               <td>
                 <%- course.category_id %>
               </td>
-              <td>
+              <td width="10px">
                 <a href="/admin/courses/edit/<%- course.id %>" class="btn btn-success">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </a>

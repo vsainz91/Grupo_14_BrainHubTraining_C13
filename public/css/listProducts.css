@@ -1,10 +1,15 @@
 @import url('root.css');
 
-.main-container{
+.body-admin-products{
+	background-color: #010615;
+}
+
+.main-container-products{
 	margin: 150px auto;
-	width: 600px;
+	width: 650px;
 	margin-top: 6rem;
-	background: #010615;
+	background: white;
+	border-radius: 10px;
 }
 
 table{
@@ -12,6 +17,7 @@ table{
 	text-align: left;
 	border-collapse: collapse;
 	width: 100%;
+	color: black;
 }
 
 th, td{
@@ -19,7 +25,7 @@ th, td{
 }
 
 thead{
-	background-color: #0f013f;
+	background-color: #513b9b;
 	border-bottom: solid 5px #0F362D;
 	color: white;
 }

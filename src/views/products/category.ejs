@@ -3,25 +3,30 @@
 <%- include ('../partials/head') %>
 <body>
 	<%- include ('../partials/header') %>
-	<div class="container products-wrapper">
+	<div class="container products-wrapper" style="margin-top: 30px; padding: 0px;">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Cursos encontrados en <%= category.name %>:</h2>
 			</div>
-			<section>
-                <% courses.forEach(({id, name, price, description}) => { %> 
-                    <article class="main-courses">
-                        <a href="/products/detail/<%= id %>">
-                        <span class="course-span"> </span>
-                        <picture><img width="100%" alt="Curso Inglés" class="course_image"></picture>
-                        <h4 class="course-title"><%= name %> </h4>
-                        <p class="course-description"><%= description %> </p>
-                        <p class="course-price">ARS$ <%- toThousand(price)%> </p>
-                        <p class="more-info">+ INFO</p>
-                        </a>
-                    </article>
-                <% }) %> 
-            </section>
+            <main class="main_index">
+                <section>
+                    <span class="course-span" style="width: 100%; margin: 10px;"> 
+                        <a href="/categories/<%- category.id %>" class="category-a"><%= category.name %></a>
+                    </span>
+                        <% courses.forEach(({id, name, price, description, courseImage}) => { %> 
+                            <article class="main-courses">
+                                <a href="/products/detail/<%= id %>">
+                                <span class="course-span"> </span>
+                                <picture><img width="100%"  class="course_image"></picture>
+                                <h4 class="course-title"><%= name %> </h4>
+                                <p class="course-description"><%= description %> </p>
+                                <p class="course-price">ARS$ <%- toThousand(price)%> </p>
+                                <p class="more-info">+ INFO</p>
+                                </a>
+                            </article>
+                        <% }) %> 
+                </section>
+            </main>
 	</div>
 	<%- include('../partials/footer') %>
 </body>	

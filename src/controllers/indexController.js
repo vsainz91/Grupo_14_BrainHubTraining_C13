@@ -1,4 +1,3 @@
-const { getProducts } = require('../data');
 const db = require('../database/models');
 const {Op} = require('sequelize')
 
@@ -9,25 +8,24 @@ const removeAccents = (str) => {
 
 module.exports = {
     index: (req, res) => {
-		db.Course.findAll()
+		db.Course.findAll({
+			include: ["courseImage"],
+		})
 		.then(courses => {
+			let idiomas = courses.filter((course) => course.category_id === 1);
+			let programacion = courses.filter((course) => course.category_id === 2);
 			res.render('index', {
 				titulo: "Brainhub",
 				products_title: "Cursos",
 				courses,
+				idiomas,
+				programacion,
 				session: req.session,
 				toThousand
 			})
-		})
-		/* db.CourseImage.findAll()
-		.then(images => {
-			res.render('index', {
-				images,
-				session: req.session,
-			})
-		}) */
-        
+		})     
     },
+
     search: (req, res) => {
 		let busqueda = req.query.search.toLowerCase()
         db.Course.findAll({

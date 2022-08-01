@@ -15,7 +15,6 @@ module.exports = (sequelize, dataTypes) => {
         course_id: {
             type : dataTypes.INTEGER(11),
         }
-        
     };
 
     let config = {
@@ -27,8 +26,8 @@ module.exports = (sequelize, dataTypes) => {
 
     CourseImage.associate = (models) => {
         CourseImage.belongsTo(models.Course, {
-            as: "courses",
-            foreingKey: "course_id"
+            as: "course",
+            foreignKey: "course_id"
         })
     }
 

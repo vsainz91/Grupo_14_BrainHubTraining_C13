@@ -6,10 +6,10 @@
         <%- include ('partials/header') %>
             <div class="container">
                 <div class="text-box">
-                    <p>Somos</p>
-                    <h1>BRAIN-HUB</h1>
+                    <p class="brainhub-banner">Somos</p>
+                    <h1 id="brainhub">BRAIN-HUB</h1>
                     <h3>TRAINING </h3>
-                    <p>cursos on line</p>
+                    <p class="brainhub-banner">cursos on line</p>
 
                 </div>
             </div>
@@ -21,11 +21,11 @@
                 </section>
                 <section>
                     <h3 id="idiomas" class="course-categories">IDIOMAS</h3>
-                    <% courses.forEach(({id, name, price, description}) => { %> 
+                    <% idiomas.forEach(({id, name, price, description, courseImage}) => { %> 
                         <article class="main-courses">
                             <a href="/products/detail/<%= id %>">
                             <span class="course-span"> </span>
-                            <picture><img width="100%" alt="Curso Inglés" class="course_image"></picture>
+                            <picture><img width="100%"  class="course_image"></picture>
                             <h4 class="course-title"><%= name %> </h4>
                             <p class="course-description"><%= description %> </p>
                             <p class="course-price">ARS$ <%- toThousand(price)%> </p>
@@ -37,11 +37,11 @@
                 </section>
                 <section>
                     <h3 id="tecnologia" class="course-categories">PROGRAMACIÓN</h3>
-                    <% courses.forEach(({id, name, price, description}) => { %> 
+                    <% programacion.forEach(({id, name, price, description, courseImage}) => { %> 
                         <article class="main-courses">
                             <a href="/products/detail/<%= id %>">
                             <span class="course-span"> </span>
-                            <picture><img width="100%" src="/images/products/" alt="Curso Inglés" class="course_image"></picture>
+                            <picture><img width="100%" class="course_image"></picture>
                             <h4 class="course-title"><%= name %> </h4>
                             <p class="course-description"><%= description %> </p>
                             <p class="course-price">ARS$ <%- toThousand(price)%> </p>

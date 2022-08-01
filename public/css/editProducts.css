@@ -1,13 +1,12 @@
 @import url('root.css');
 
 body{
-    
     background-size: cover;
     background-attachment: fixed;
 }
 .contenedor {
-    margin-top: 6rem;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
+    background-color: #010615;
 }
 
 .contenedor .form {
@@ -26,8 +25,6 @@ body{
     color: antiquewhite;
     margin-bottom: 10px;
     text-align: center;
-    
-
 }
 .contenedor .form .form-header .form-title span{
     color: antiquewhite;
