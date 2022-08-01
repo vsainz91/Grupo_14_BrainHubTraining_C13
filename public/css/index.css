@@ -231,7 +231,7 @@ main.main_index section article.main-courses span::before{
 }
 
 main.main_index section article a p.course-price{
-    color:#08bb08;
+    color:#8bf68b;
     font-weight: bold;
     margin: 15px;
     text-align: center;
@@ -285,4 +285,8 @@ main.main_index section article a p.more-info:hover {
 }
 
 
+.titulo_banner .titulo_banner{
+    font-size: 20px;
+    
 
+}
