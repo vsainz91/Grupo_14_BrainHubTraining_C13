@@ -11,13 +11,12 @@ a {
 }
 
 body.login_body {
-    padding-top: 6rem;
+    padding-top: 0rem;
     background-color: #010615;
     background: url("/images/image4.jpg");
-    background-size: cover;
-    margin-top: 15px;
-    
+    background-size: cover; 
 }
+
 ::placeholder{
     color: white;
     font-size: medium;
@@ -45,10 +44,7 @@ section.container-login {
     margin-bottom: 20px;
     border: 1px solid white;
     backdrop-filter: blur (4.0px);
-    
-   
-    
-
+    margin-top: 30px;
 }
 
 section.container-login h2.login-title {

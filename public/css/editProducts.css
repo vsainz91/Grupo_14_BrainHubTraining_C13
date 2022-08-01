@@ -5,8 +5,9 @@ body{
     background-attachment: fixed;
 }
 .contenedor {
-    margin-top: 7rem;
-    margin-bottom: 30px;
+    margin-top: 0rem;
+    padding: 30px;
+    margin-bottom: 0px;
     background: url("/images/image4.jpg");
     background-size: cover;
 }
