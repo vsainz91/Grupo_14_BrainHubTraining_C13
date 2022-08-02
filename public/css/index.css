@@ -92,7 +92,9 @@ main.main_index .main_banner {
 }
 
 .titulo_banner .titulo_banner{
-    font-size: 20px;
+    font-size: 45px;
+    color: white;
+    font-weight: 400;
 }
 
 main.main_index .main_banner .titulo_banner {

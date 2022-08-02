@@ -49,14 +49,14 @@ body{
     border-radius: 5px;
     font-size: 14px;
     color: antiquewhite;
-
 }
+
 .contenedor .form .textarea{
     resize: vertical;
     max-height: 150px;
     min-height: 50px;
-
 }
+
 .btn_editar{
     width: 100%;
     outline: none;

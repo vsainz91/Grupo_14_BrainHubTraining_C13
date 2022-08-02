@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
         regExPracticeTime = /^[0-9]{1,4}$/,
         regExLessons = /^[0-9]{1,4}$/,
         regExCategory = /^[a-zA-Z\sñáéíóúü ]*$/,
-        regExDescription = /^([a-zA-Z0-9 _-]+){10,100}$/;
+        regExDescription = /^([a-zA-Z\sñáéíóúü0-9 _-]+){10,100}$/;
         
 
     $inputName.addEventListener("blur", () => {

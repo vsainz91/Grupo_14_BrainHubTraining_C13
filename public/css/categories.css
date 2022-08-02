@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px){
+    main.main_index section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+main.main_index section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.categories-section {
+    margin-top: 15px;
+}
+
+.titulo_banner .titulo_banner {
+    font-size: 45px;
+    color: white;
+    font-weight: 400;
+}
