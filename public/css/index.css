@@ -68,7 +68,7 @@
 
 
 main.main_index {
-    background: #010615;
+    background: #01061500;
     height: 100%;
     width: 100%;
     padding-top: 5rem;
@@ -264,9 +264,16 @@ main.main_index section article a p.more-info:hover {
 }
 
 .category-a{
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 10px;
 }
+
+h2.products-title-categories {
+    color: white;
+    margin-left: 0px;
+    text-align: center;
+}
+
 
 /* END MAIN */
 

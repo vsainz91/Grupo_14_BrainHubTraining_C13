@@ -10,12 +10,12 @@ a {
     text-decoration: none;
 }
 
-body.login_body {
+/* body.login_body {
     padding-top: 0rem;
     background-color: #010615;
     background: url("/images/image4.jpg");
     background-size: cover; 
-}
+} */
 
 ::placeholder{
     color: white;
