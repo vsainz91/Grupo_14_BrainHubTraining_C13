@@ -10,7 +10,8 @@
 			</div>
 			<% if (courses.length > 0) { %>
 			 	<% courses.forEach(course => { %>
-					<div class="courses-found">
+					<main class="main_index">
+						<section>
 						<% courses.forEach(({id, name, price, description, courseImage}) => { %> 
 							<article class="main-courses">
 								<a href="/products/detail/<%= id %>">
@@ -23,7 +24,8 @@
 								</a>
 							</article>
 						<% }) %> 
-					</div>
+						</section>
+					</main>
 				<% }) %>
 			<% } else { %>
 			<div class="col-12">

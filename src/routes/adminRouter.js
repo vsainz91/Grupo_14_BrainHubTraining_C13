@@ -13,11 +13,11 @@ router.get('/', userSessionCheck, adminCheck, adminController.index);
 
 router.get('/courses', userSessionCheck, adminCheck, adminProductsController.list);
 
-router.get('/courses/add', userSessionCheck, adminCheck,productsValidator, adminProductsController.productAdd);
+router.get('/courses/add', userSessionCheck, adminCheck, productsValidator, adminProductsController.productAdd);
 
 router.post('/courses', uploadFile.single('courseImage'), adminProductsController.productCreate);
 
-router.get('/courses/edit/:id', userSessionCheck, adminCheck,productsValidator, adminProductsController.productEdit);
+router.get('/courses/edit/:id', userSessionCheck, adminCheck, productsValidator, adminProductsController.productEdit);
 
 router.put('/courses/:id', adminProductsController.productUpdate);
 

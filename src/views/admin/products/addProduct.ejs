@@ -52,17 +52,17 @@
                             <%= errors.description.msg %>
                         </small>
                         <% } %>
-                            <div class="upload-courseimage">
-                                <label for="inputFile" class="form-label">Imagen del Producto</label>
-                                <input type="file" name="courseImage" id="courseImage">
-                                <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
-                                <span id="fileErrors"></span>
-                            </div>
-                            <div>
-                                <button class="limpiar-btn" type="reset">Limpiar Formulario</button>
-                                <button class="btn_agregar" type="submit">Agregar</button>
-                                <span id="submitErrors" ></span>
-                            </div>
+                        <div class="upload-courseimage">
+                            <label for="inputFile" class="form-label">Imagen del Producto</label>
+                            <input type="file" name="courseImage" id="courseImage">
+                            <div class="img-container" id="img-preview" onChange="fileValidation"> </div>
+                            <span id="fileErrors"></span>
+                        </div>
+                        <div>
+                            <button class="limpiar-btn" type="reset">Limpiar Formulario</button>
+                            <button class="btn_agregar" type="submit">Agregar</button>
+                            <span id="submitErrors" ></span>
+                        </div>
                    </form>
             </div>
             <%- include('../partials/footer') %>

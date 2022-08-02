@@ -68,8 +68,9 @@ body{
     cursor: pointer;
     transition: all .5s ease;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 .btn_editar:hover{
     background-color: #264349;
 }
+

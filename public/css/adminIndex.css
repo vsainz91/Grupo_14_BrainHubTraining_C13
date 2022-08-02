@@ -13,11 +13,17 @@ html{
 }
 
 .admin-main {
-    background-color: #010615;
+    background-color: #01061500;
     height: 100%;
     width: 100%;
 }
 
 .admin-main h1#admin-main-title{
     color: white;
+    text-align: center;
+    margin: 20px;
+    height: 0px;
+    width: 100%;
+    margin-top: 150px;
+    font-size: 40px;
 }

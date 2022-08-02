@@ -8,7 +8,7 @@ body {
 }
 
 main.main_cart {
-    background-color: #010615;
+    background-color: #01061500;
     height: 100%;
     width: 100%;
     margin-top: 80px;
@@ -16,19 +16,19 @@ main.main_cart {
     justify-content: center;
 }
     
-main.main_cart h2 {
+main.main_cart h2.carrito-h2 {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    font-size: 2.3rem;
+    margin-top: 0;
     color: white;
+    font-size: 40px;
 }
     
 main.main_cart p.cantidad {
     margin-top: 20px;
     margin-left: 65px;
     margin-bottom: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
     
 main.main_cart article {
@@ -41,6 +41,7 @@ main.main_cart article {
     padding: 20px;
     justify-content: center;
     width: 400px;
+    border-radius: 30px;
 }
     
 main.main_cart article div.carrito-cursos {
@@ -67,7 +68,7 @@ button.comprar {
     padding: 10px;
     cursor: pointer;
     color: black;
-    background-color: rgb(64, 16, 197) ;
+    background-image: linear-gradient(160deg, #84f600 0, #5ced04 25%, #1de227 50%, #00d738 75%, #00cc46 100%);
     font-weight: 900;
     border-radius: 10px;
     z-index: 1;
@@ -78,7 +79,7 @@ button.comprar {
 }
 
 button.comprar:hover{
-    background-color: #0de761;
+    background-color: #008d36;
     transition: 1s;
 }
 
@@ -96,10 +97,17 @@ div.total-amount {
     border-radius: 15px;
     text-align: center;
     justify-content: center;
-    font-weight: 400;
-    color: white;
+    font-weight: bold;
+    color: #e2af08;
+    font-size: 1.3rem;
+}
+.contenedor-boton{
+    text-align: center;
 }
 
+.comprar-span{
+    color: #171414;
+}
 
 @media (min-width: 1024px) {
     main.main_cart article {
@@ -111,6 +119,7 @@ div.total-amount {
         padding: 20px;
         justify-content: center;
         width: 90%;
+        border-radius: 30px;
     }
 
     button.comprar {

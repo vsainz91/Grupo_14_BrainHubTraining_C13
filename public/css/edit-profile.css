@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 6rem;
-    background: #010615;
+    background: #01061500;
 }
 
 .profile-form {
@@ -37,7 +37,7 @@
     
 }
 .profile-subtitle {
-    width: 30%;
+    width: 80%;
     color: white;
     margin: 20px;
 }

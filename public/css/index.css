@@ -10,10 +10,11 @@
 @import url('listProducts.css');
 @import url('edit-profile.css');
 @import url('adminIndex.css');
+@import url('results.css');
 
 .container {
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     background-image: linear-gradient(rgba(0,0,0,0.3),transparent), url(/images/backgroundImage.jpg);
     background-size: cover;
     background-position: center;
@@ -71,7 +72,7 @@ main.main_index {
     background: #01061500;
     height: 100%;
     width: 100%;
-    padding-top: 5rem;
+    padding-top: 0rem;
     top: 0;
 }
 
