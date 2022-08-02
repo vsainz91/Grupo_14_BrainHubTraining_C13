@@ -11,7 +11,7 @@
 			<% if (courses.length > 0) { %>
 			 	<% courses.forEach(course => { %>
 					<div class="courses-found">
-						<% courses.forEach(({id, name, price, description}) => { %> 
+						<% courses.forEach(({id, name, price, description, courseImage}) => { %> 
 							<article class="main-courses">
 								<a href="/products/detail/<%= id %>">
 								<span class="course-span"> </span>

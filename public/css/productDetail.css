@@ -22,18 +22,20 @@
 	
 }
 
-.detail-container
+.detail-containers
 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 40px 0;
-  background: url("/images/image4.jpg");
-  background-size: cover;
+  margin-top: 50px;
+  
+  
 }
 
-.detail-container .box{
+.detail-containers .box
+{
   position: relative;
   width: 320px;
   height: 400px;
@@ -44,7 +46,7 @@
   transition: 0.5s;
 }
 
-.detail-container .box::before{
+.detail-containers .box::before{
   content:' ';
   position: absolute;
   top: 0;
@@ -58,7 +60,7 @@
   transition: 0.5s;
 }
 
-.detail-container .box::after
+.detail-containers .box::after
 {
   content:'';
   position: absolute;
@@ -73,8 +75,8 @@
   filter: blur(30px);
 }
 
-.detail-container .box:hover:before,
-.detail-container .box:hover:after
+.detail-containers .box:hover:before,
+.detail-containers .box:hover:after
 {
   transform: skewX(0deg);
   left: 20px;
@@ -82,25 +84,25 @@
   
 }
 
-.detail-container .box:nth-child(1):before,
-.detail-container .box:nth-child(1):after
+.detail-containers .box:nth-child(1):before,
+.detail-containers .box:nth-child(1):after
 {
   background: linear-gradient(315deg, #ffbc00, #ff0058)
 }
 
-.detail-container .box:nth-child(2):before,
-.detail-container .box:nth-child(2):after
+.detail-containers .box:nth-child(2):before,
+.detail-containers .box:nth-child(2):after
 {
   background: linear-gradient(315deg, #03a9f4, #ff0058)
 }
 
-.detail-container .box:nth-child(3):before,
-.detail-container .box:nth-child(3):after
+.detail-containers .box:nth-child(3):before,
+.detail-containers .box:nth-child(3):after
 {
   background: linear-gradient(315deg, #4dff03, #00d0ff)
 }
 
-.detail-container .box span
+.detail-containers .box span
 {
   display: block;
   position: absolute;
@@ -112,7 +114,7 @@
   pointer-events: none;
 }
 
-.detail-container .box span::before
+.detail-containers .box span::before
 {
   content:'';
   position: absolute;
@@ -129,7 +131,7 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.08)
 }
 
-.detail-container .box:hover span::before
+.detail-containers .box:hover span::before
 {
   top: -50px;
   left: 50px;
@@ -138,7 +140,7 @@
   opacity: 1;
 }
 
-.detail-container .box span::after
+.detail-containers .box span::after
 {
   content:'';
   position: absolute;
@@ -156,7 +158,7 @@
   animation-delay: -1s;
 }
 
-.detail-container .box:hover span:after
+.detail-containers .box:hover span:after
 {
   bottom: -50px;
   right: 50px;
@@ -178,7 +180,7 @@
   }
 }
 
-.detail-container .box .content
+.detail-containers .box .content
 {
   position: relative;
   left: 0;
@@ -192,27 +194,27 @@
   color: #fff;
 }
 
-.detail-container .box:hover .content
+.detail-containers .box:hover .content
 {
   left: -25px;
   padding: 60px 40px;
 }
 
-.detail-container .box .content h2
+.detail-containers .box .content h2
 {
   font-size: 2em;
   color: #fff;
   margin-bottom: 10px;
 }
 
-.detail-container .box .content p
+.detail-containers .box .content p
 {
   font-size: 1.1em;
   margin-bottom: 10px;
   line-height: 1.4em;
 }
 
-.detail-container .box .content a
+.detail-containers .box .content a
 {
   display: inline-block;
   font-size: 1.1em;
@@ -225,7 +227,7 @@
   margin-top: 5px;
 }
 
-.detail-container .box .content a:hover
+.detail-containers .box .content a:hover
 {
   background: #ffcf4d;
   border: 1px solid rgba(255, 0, 88, 0.4);

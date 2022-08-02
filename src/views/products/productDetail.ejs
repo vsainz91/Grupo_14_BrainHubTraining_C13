@@ -2,65 +2,69 @@
 <html lang="en">
 <%- include ('../partials/head') %>
 
-    <body>
-        <%- include ('../partials/header') %>
+  <body>
+    <%- include ('../partials/header') %>
 
-            
-                <div class="detail-container">
-                    <div class="box">
-                      <span></span>
-                      <div class="content">
-                        <h2><%= courses.name %></h2>
-                        <span class="price"> AR$<%= courses.price %></span>
-                        
 
-                            
-        
-                        
-                      </div>
-                    </div>
-                    <div class="box">
-                      <span></span>
-                      <div class="content">
-                        <h2>Descripción del Curso</h2>
-                        <p><%= courses.description %></p>
-                        
-                      </div>
-                    </div>
-                    <div class="box">
-                      <span></span>
-                      <div class="content">
-                        <h2>Acerca del curso</h2>
-                        <div class="info">
-                           
-                            <ul>
-                                <li>Nivel introductorio </li>
-                                <li>
-                                    <%= courses.practiceTime %> horas de práctica
-                                </li>
-                                <li>
-                                    <%= courses.contentHours %> horas de contenido
-                                </li>
-                                <li>
-                                    <%= courses.lessons %> clases
-                                </li>
-                                <li>Material de apoyo</li>
-                                <li>Certificado al finalizar la cursada</li>
-                            </ul>
-                            <a href="/products/cart">Agregar al carrito</a>
-                        </div>
-                    </div>
-                        
-                        
-                      </div>
-                    </div>
-                  </div>
-                    
+      <div class="detail-containers">
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>
+              <%= courses.name %>
+            </h2>
+            <span class="price"> AR$<%= courses.price %></span>
 
-            <%- include ('../partials/footer') %>
 
-                <script src="/js/header.js"></script>
 
-    </body>
+
+
+          </div>
+        </div>
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>Descripción del Curso</h2>
+            <p>
+              <%= courses.description %>
+            </p>
+
+          </div>
+        </div>
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>Acerca del curso</h2>
+            <div class="info">
+
+              <ul>
+                <li>Nivel introductorio </li>
+                <li>
+                  <%= courses.practiceTime %> horas de práctica
+                </li>
+                <li>
+                  <%= courses.contentHours %> horas de contenido
+                </li>
+                <li>
+                  <%= courses.lessons %> clases
+                </li>
+                <li>Material de apoyo</li>
+                <li>Certificado al finalizar la cursada</li>
+              </ul>
+              <a href="/products/cart">Agregar al carrito</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      </div>
+
+
+      <%- include ('../partials/footer') %>
+
+        <script src="/js/header.js"></script>
+
+  </body>
 
 </html>
