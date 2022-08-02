@@ -15,6 +15,7 @@ const productsRouter = require('./routes/productsRouter');
 const usersRouter = require('./routes/usersRouter');
 const adminRouter = require('./routes/adminRouter');
 const categoryRouter = require('./routes/categoryRouter');
+const adminUsersRouter = require('./routes/adminUsers');
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
@@ -38,6 +39,7 @@ app.set('views', path.join(__dirname, "views"));
 app.use('/', indexRouter); // HOME - Contact 
 app.use('/users', usersRouter); // Login, registro, perfil
 app.use('/admin', adminRouter); // Admin, CRUD Cursos
+app.use('/admin/users', adminUsersRouter) // Admin users
 app.use('/products', productsRouter); // Carrito
 app.use('/categories', categoryRouter); // Categorías
 
