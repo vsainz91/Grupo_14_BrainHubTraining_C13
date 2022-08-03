@@ -120,9 +120,17 @@
       
   }
 
-
- 
-
+/* 
+  #img-preview-admin{
+    width: 200px;
+    height: 200px;
+    border: thin solid gray;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 200px;
+    object-fit: cover;
+  }
+ */
 
 
 

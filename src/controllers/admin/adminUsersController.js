@@ -46,16 +46,16 @@ module.exports = {
         .catch(error => console.log(error))
     },
     userSearch : (req, res) => {
-        let busqueda = req.query.search.toLowerCase()
+        let search = req.query.search
         User.findAll({
             where: {
-                rol: {[Sequelize.Op.substring]: busqueda}
+                rol_id: {[Sequelize.Op.substring]: search}
             }
         })
         .then(users => {
             res.render('admin/adminUsers',{
                 users,
-                busqueda,
+                search,
                 titulo: "Admin Users",
                 session: req.session
             })

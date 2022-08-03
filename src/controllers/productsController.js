@@ -18,17 +18,17 @@ module.exports = {
     productDetail: (req, res) => {
         let courseId = +req.params.id;
         db.Course.findOne({
-         where: {
-            id: courseId
-         }, 
-         include: ["courseImage"]
+            where: {
+                id: courseId
+            }, 
+            include: ["courseImage"]
         }) 
-         .then((courses) => {
-         res.render("products/productDetail", {
-            titulo: "Detalle",
-            courses,
-            session: req.session
-         })
+        .then((courses) => {
+            res.render("products/productDetail", {
+                titulo: "Detalle",
+                courses,
+                session: req.session
+        })
      }).catch((error) => console.log(error))
     },
 

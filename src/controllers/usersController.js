@@ -28,7 +28,7 @@ module.exports = {
                 }
                 
                 if(req.body.remember){
-                    const TIME_IN_MILISECONDS = 120000;
+                    const TIME_IN_MILISECONDS = 1200000;
                     res.cookie('brainhubCookie', req.session.user, {
                         expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                         httpOnly: true,

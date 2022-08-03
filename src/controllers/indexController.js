@@ -29,6 +29,7 @@ module.exports = {
     search: (req, res) => {
 		let busqueda = req.query.search.toLowerCase()
         db.Course.findAll({
+			include: ["courseImage"],
 			where: {
 				[Op.or]: [
 					{ name: {[Op.substring]: busqueda}},
