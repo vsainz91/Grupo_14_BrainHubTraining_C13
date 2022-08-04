@@ -33,7 +33,7 @@ header .logo img {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    margin-left: 60px;
+    margin-left: 50px;
 }
 
 header .logo-admin {
@@ -60,15 +60,15 @@ header div.user{
     padding: 2px;
     order: 3;
     transition: all 1s ease-in-out;
-    display: none;
     border-radius: 10px;
+    display: none;
 }
 
-header div.user:hover{
+/* header div.user:hover{
     background-color: #5499daea;
     box-shadow: 0 5px 5px gray;
     color: white;
-}
+} */
 
 header nav {
     display: flex;
@@ -422,8 +422,8 @@ div#carrito-icon{
         width: 14rem;
         margin-left: 35px;
         display: flex;
-    align-items: center;
-    justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
     }
 
 
@@ -437,6 +437,8 @@ div#carrito-icon{
         background-color: white;
         border-radius: 5px;
         color: grey;
+        margin-left: -7px;
+        padding: 5px;
     }
 
     .logo {
@@ -449,7 +451,7 @@ div#carrito-icon{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 0;
+        margin-left: -45px;
     }
 
     header .menu-item-admin {

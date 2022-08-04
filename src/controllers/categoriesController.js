@@ -3,7 +3,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     categories: (req, res) => {
-        db.Category.findAll()
+        db.Category.findAll({
+			include: ["Course", "courseImage"],
+		})
         .then(categories => {
             res.render('products/categories', {
                 getCategories: categories,

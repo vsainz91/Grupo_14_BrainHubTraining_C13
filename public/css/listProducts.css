@@ -19,15 +19,17 @@ table{
 	border-collapse: collapse;
 	width: 100%;
 	color: black;
+	border-radius: 10px;
 }
 
 th, td{
 	padding: 20px;
+	text-align: center;
 }
 
 thead{
 	background-color: #513b9b;
-	border-bottom: solid 5px #0F362D;
+	border-bottom: solid 5px #32186e;
 	color: white;
 }
 

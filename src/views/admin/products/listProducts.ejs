@@ -11,7 +11,8 @@
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Categoría</th>
-            <th scope="col"></th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -20,7 +21,7 @@
               <th scope="row">
                 <%- course.id %>
               </th>
-              <td>
+              <td >
                 <%- course.name %>
               </td>
               <td>
@@ -31,11 +32,13 @@
               </td>
               <td width="10px">
                 <a href="/admin/courses/edit/<%- course.id %>" class="btn btn-success">
-                  <i class="fa-solid fa-pen-to-square"></i>
+                  <i class="fa-solid fa-pen-to-square" style="color: rgb(63, 177, 63);"></i>
                 </a>
+              </td>
+              <td width="10px">
                 <form action="/admin/courses/delete/<%- course.id %>?_method=DELETE" method="post">
-                  <button class="btn btn-danger" type="submit">
-                    <i class="fa-solid fa-trash-can"></i>
+                  <button class="btn btn-danger" type="submit" style="border: none; background-color:rgba(240, 248, 255, 0)">
+                    <i class="fa-solid fa-trash-can" style="color: rgb(185, 16, 16);"></i>
                   </button>
                 </form>
               </td>
